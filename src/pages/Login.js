@@ -1,18 +1,16 @@
 import React, { useState } from "react";
+import { useMutation } from "@apollo/react-hooks";
 import { Link } from "react-router-dom";
 import to from "await-to-js";
 
-import { config } from "../config";
-import { http } from "../http";
+import { LOGIN_MUTATION } from "../graphql/Mutation";
 
 import Input from "../components/forms/Input";
 import AuthWrapper from "../hoc/AuthWrapper";
 
 import { setTokenToLocal } from "../utils/setTokenToLocal";
 
-const authUri = `${config.baseUrl}/auth`;
-
-function Login({history}) {
+function Login({ history }) {
   const [authData, setAuthData] = useState({
     email: "",
     password: ""
@@ -23,6 +21,8 @@ function Login({history}) {
     msg: ""
   });
 
+  const [authUser] = useMutation(LOGIN_MUTATION);
+
   const onInputChange = e => {
     const { name, value } = e.target;
     setAuthData({ ...authData, [name]: value });
@@ -31,18 +31,27 @@ function Login({history}) {
   const onSubmitForm = async e => {
     e.preventDefault();
 
-    let [err, response] = await to(http.post(authUri, authData));
+    const [error, response] = await to(
+      authUser({
+        variables: {
+          email: authData.email,
+          password: authData.password
+        }
+      })
+    );
 
-    if (err)
+
+    if (error) {
       return setAuthError({
         error: true,
-        msg: err.response.data.msg
+        msg: error.graphQLErrors[0].message
       });
+    }
 
-    // save it to localstorage.
-    setTokenToLocal.token(response.data.token);
-    setTokenToLocal.user(response.data.token);
-    history.push('/');
+    //save it to localstorage.
+    setTokenToLocal.token(response.data.authUser);
+    setTokenToLocal.user(response.data.authUser);
+    //history.push("/");
   };
 
   return (
@@ -69,9 +78,13 @@ function Login({history}) {
           />
         </div>
 
-        {authError.error ? <div className="alert alert-danger" role="alert">
-          {authError.msg}
-        </div> : ''}
+        {authError.error ? (
+          <div className="alert alert-danger" role="alert">
+            {authError.msg}
+          </div>
+        ) : (
+          ""
+        )}
 
         <div className="mt-3">
           <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">

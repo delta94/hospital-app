@@ -31,14 +31,10 @@ function Login({ history }) {
   const onSubmitForm = async e => {
     e.preventDefault();
 
+    const variables = authData;
+
     const [error, response] = await to(
-      authUser({
-        variables: {
-          email: authData.email,
-          password: authData.password
-        }
-      })
-    );
+      authUser({ variables}));
 
 
     if (error) {

@@ -28,6 +28,10 @@ function Login({ history }) {
     setAuthData({ ...authData, [name]: value });
   };
 
+  /**
+   * onSubmitForm function
+   *
+   */
   const onSubmitForm = async e => {
     e.preventDefault();
 
@@ -36,7 +40,7 @@ function Login({ history }) {
     const [error, response] = await to(
       authUser({ variables}));
 
-
+    // If error populate authError state
     if (error) {
       return setAuthError({
         error: true,
@@ -47,7 +51,8 @@ function Login({ history }) {
     //save it to localstorage.
     setTokenToLocal.token(response.data.authUser);
     setTokenToLocal.user(response.data.authUser);
-    //history.push("/");
+    // Push user to home page
+    history.push("/");
   };
 
   return (

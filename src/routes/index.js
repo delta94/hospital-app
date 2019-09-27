@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import PrivateRoute from './PrivateRoute';
 
 import Header from '../components/Header';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
+import CreateHospital from '../pages/create/CreateHospital';
 
 import { getItemFromLocal } from '../utils/localStorage';
 
@@ -17,6 +19,8 @@ function RouterComponent() {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
       </Switch>
+
+      <PrivateRoute path="/hospital/create" routeComponet={CreateHospital} />
     </Router>
   );
 }

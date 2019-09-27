@@ -8,7 +8,7 @@ import { LOGIN_MUTATION } from "../graphql/Mutation";
 import Input from "../components/forms/Input";
 import AuthWrapper from "../hoc/AuthWrapper";
 
-import { setTokenToLocal } from "../utils/setTokenToLocal";
+import { setTokenToLocal } from "../utils/localStorage";
 
 function Login({ history }) {
   const [authData, setAuthData] = useState({

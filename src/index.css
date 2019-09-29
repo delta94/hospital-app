@@ -16599,6 +16599,7 @@ code {
     .btn.btn-sm i, .btn-group-sm > .btn i, .fc .btn-group-sm > button i, .ajax-upload-dragdrop .btn-group-sm > .ajax-file-upload i, .swal2-modal .swal2-buttonswrapper .btn-group-sm > .swal2-styled i, .wizard > .actions .btn-group-sm > a i, .fc button i, .ajax-upload-dragdrop .btn-sm.ajax-file-upload i, .ajax-upload-dragdrop .fc button.ajax-file-upload i, .fc .ajax-upload-dragdrop button.ajax-file-upload i, .swal2-modal .swal2-buttonswrapper .btn-sm.swal2-styled i, .swal2-modal .swal2-buttonswrapper .fc button.swal2-styled i, .fc .swal2-modal .swal2-buttonswrapper button.swal2-styled i, .wizard > .actions a.btn-sm i {
       font-size: 0.875rem; }
   .btn.btn-lg, .btn-group-lg > .btn, .fc .btn-group-lg > button, .ajax-upload-dragdrop .btn-group-lg > .ajax-file-upload, .swal2-modal .swal2-buttonswrapper .btn-group-lg > .swal2-styled, .wizard > .actions .btn-group-lg > a, .fc button.btn-lg, .ajax-upload-dragdrop .btn-lg.ajax-file-upload, .swal2-modal .swal2-buttonswrapper .btn-lg.swal2-styled, .wizard > .actions a.btn-lg {
+    padding: 1.15rem 3rem !important;
     font-size: 0.875rem; }
     .btn.btn-lg i, .btn-group-lg > .btn i, .fc .btn-group-lg > button i, .ajax-upload-dragdrop .btn-group-lg > .ajax-file-upload i, .swal2-modal .swal2-buttonswrapper .btn-group-lg > .swal2-styled i, .wizard > .actions .btn-group-lg > a i, .fc button.btn-lg i, .ajax-upload-dragdrop .btn-lg.ajax-file-upload i, .swal2-modal .swal2-buttonswrapper .btn-lg.swal2-styled i, .wizard > .actions a.btn-lg i {
       font-size: 0.937rem; }
@@ -38597,6 +38598,7 @@ code {
     .btn.btn-sm i, .btn-group-sm > .btn i, .fc .btn-group-sm > button i, .ajax-upload-dragdrop .btn-group-sm > .ajax-file-upload i, .swal2-modal .swal2-buttonswrapper .btn-group-sm > .swal2-styled i, .wizard > .actions .btn-group-sm > a i, .fc button i, .ajax-upload-dragdrop .btn-sm.ajax-file-upload i, .ajax-upload-dragdrop .fc button.ajax-file-upload i, .fc .ajax-upload-dragdrop button.ajax-file-upload i, .swal2-modal .swal2-buttonswrapper .btn-sm.swal2-styled i, .swal2-modal .swal2-buttonswrapper .fc button.swal2-styled i, .fc .swal2-modal .swal2-buttonswrapper button.swal2-styled i, .wizard > .actions a.btn-sm i {
       font-size: 0.875rem; }
   .btn.btn-lg, .btn-group-lg > .btn, .fc .btn-group-lg > button, .ajax-upload-dragdrop .btn-group-lg > .ajax-file-upload, .swal2-modal .swal2-buttonswrapper .btn-group-lg > .swal2-styled, .wizard > .actions .btn-group-lg > a, .fc button.btn-lg, .ajax-upload-dragdrop .btn-lg.ajax-file-upload, .swal2-modal .swal2-buttonswrapper .btn-lg.swal2-styled, .wizard > .actions a.btn-lg {
+    padding: 1.15rem 3rem !important;
     font-size: 0.875rem; }
     .btn.btn-lg i, .btn-group-lg > .btn i, .fc .btn-group-lg > button i, .ajax-upload-dragdrop .btn-group-lg > .ajax-file-upload i, .swal2-modal .swal2-buttonswrapper .btn-group-lg > .swal2-styled i, .wizard > .actions .btn-group-lg > a i, .fc button.btn-lg i, .ajax-upload-dragdrop .btn-lg.ajax-file-upload i, .swal2-modal .swal2-buttonswrapper .btn-lg.swal2-styled i, .wizard > .actions a.btn-lg i {
       font-size: 0.937rem; }

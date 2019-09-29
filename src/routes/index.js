@@ -5,10 +5,9 @@ import PrivateRoute from './PrivateRoute';
 import Header from '../components/Header';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
-import CreateHospital from '../pages/create/CreateHospital';
+import CreateHospital from '../pages/superadmin/CreateHospital';
 
 import { getItemFromLocal } from '../utils/localStorage';
-
 
 function RouterComponent() {
   const user = getItemFromLocal('user');

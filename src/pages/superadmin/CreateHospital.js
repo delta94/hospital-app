@@ -1,34 +1,45 @@
 import React, { useState } from 'react';
+import { useMutation } from '@apollo/react-hooks';
+import to from 'await-to-js';
 import Layout from '../../hoc/Layout';
-import Input from '../../components/forms/Input';
-import Button from '../../components/ui/Button';
+import CreateHospitalForm from '../../components/forms/CreateHospitalForm';
+
+import { HOSPITAL_MUTATION } from '../../graphql/Mutation';
 
 function CreateHospital() {
   const [hospital, setHospital] = useState({
     name: '',
+    err: false,
+    msg: ''
   });
+
+  const variables = {
+    hospital: {name: hospital.name}
+  }
+
+  const [addHospital] = useMutation(HOSPITAL_MUTATION);
+
+
+  const createHospital = async e => {
+    e.preventDefault();
+    console.log("on submit");
+    const [error, response] = await to(addHospital({ variables }));
+
+    if (error) return setHospital({
+      ...hospital, err: true,
+      msg: error.graphQLErrors[0].message
+    });
+
+    setHospital({ name: '', error: false, msg: '' });
+  };
   return (
     <Layout>
       <h2 className="pb-3">Hospitals</h2>
-
-      <form action="">
-        <div className="row align-items-end">
-          <div className="col-md-8">
-            <Input
-              label="Create Hospital"
-              name="name"
-              bm={false}
-              value={hospital.name}
-              onChange={e => setHospital({ name: e.target.value })}
-              placeholder="Hospital Name"
-              className="form-control mb-0"
-            />
-          </div>
-          <div className="col-md-4">
-            <Button type="submit" text="Add Hospital" />
-          </div>
-        </div>
-      </form>
+      <CreateHospitalForm
+        hospitalValue={hospital.name}
+        onChange={e => setHospital({ name: e.target.value })}
+        onHospitalSubmit={createHospital}
+      />
     </Layout>
   );
 };

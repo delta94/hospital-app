@@ -35,10 +35,8 @@ function Login({ history }) {
   const onSubmitForm = async e => {
     e.preventDefault();
 
-    const variables = authData;
-
     const [error, response] = await to(
-      authUser({ variables}));
+      authUser({ variables: authData }));
 
     // If error populate authError state
     if (error) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../ui/Button';
 import Input from './Input';
+import Error from '../ui/Error';
 
 const CreateHospitalForm = props => (
   <form action="" onSubmit={props.onHospitalSubmit}>
@@ -18,6 +19,10 @@ const CreateHospitalForm = props => (
       </div>
       <div className="col-md-4">
         <Button type="submit" text="Add Hospital" />
+      </div>
+
+      <div className="col-md-12 mt-2">
+        <Error err={props.error} msg={props.errorMsg} />
       </div>
     </div>
   </form>

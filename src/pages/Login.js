@@ -7,18 +7,16 @@ import { LOGIN_MUTATION } from "../graphql/Mutation";
 
 import Input from "../components/forms/Input";
 import AuthWrapper from "../hoc/AuthWrapper";
+import Error from '../components/ui/Error';
 
 import { setTokenToLocal } from "../utils/localStorage";
 
 function Login({ history }) {
   const [authData, setAuthData] = useState({
-    email: "",
-    password: ""
-  });
-
-  const [authError, setAuthError] = useState({
+    email: '',
+    password: '',
     error: false,
-    msg: ""
+    msg: ''
   });
 
   const [authUser] = useMutation(LOGIN_MUTATION);
@@ -36,11 +34,12 @@ function Login({ history }) {
     e.preventDefault();
 
     const [error, response] = await to(
-      authUser({ variables: authData }));
+      authUser({ variables: {name: authData.error, password: authData.password} }));
 
     // If error populate authError state
     if (error) {
-      return setAuthError({
+      return setAuthData({
+        ...authData,
         error: true,
         msg: error.graphQLErrors[0].message
       });
@@ -77,13 +76,7 @@ function Login({ history }) {
           />
         </div>
 
-        {authError.error ? (
-          <div className="alert alert-danger" role="alert">
-            {authError.msg}
-          </div>
-        ) : (
-          ""
-        )}
+        <Error err={authData.error} msg={authData.msg} />
 
         <div className="mt-3">
           <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">

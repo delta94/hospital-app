@@ -9,7 +9,7 @@ import { HOSPITAL_MUTATION } from '../../graphql/Mutation';
 function CreateHospital() {
   const [hospital, setHospital] = useState({
     name: '',
-    err: false,
+    error: false,
     msg: ''
   });
 
@@ -19,14 +19,15 @@ function CreateHospital() {
 
   const [addHospital] = useMutation(HOSPITAL_MUTATION);
 
-
   const createHospital = async e => {
     e.preventDefault();
     console.log("on submit");
-    const [error, response] = await to(addHospital({ variables }));
+    const [error, ] = await to(addHospital({ variables }));
+
+    console.log(error);
 
     if (error) return setHospital({
-      ...hospital, err: true,
+      ...hospital, error: true,
       msg: error.graphQLErrors[0].message
     });
 
@@ -39,6 +40,8 @@ function CreateHospital() {
         hospitalValue={hospital.name}
         onChange={e => setHospital({ name: e.target.value })}
         onHospitalSubmit={createHospital}
+        error={hospital.error}
+        errorMsg={hospital.msg}
       />
     </Layout>
   );

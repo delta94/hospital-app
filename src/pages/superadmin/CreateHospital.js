@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
 import to from 'await-to-js';
 import Layout from '../../hoc/Layout';
 import CreateHospitalForm from '../../components/forms/CreateHospitalForm';
 
 import { HOSPITAL_MUTATION } from '../../graphql/Mutation';
+import { HOSPITAL_QUERY } from "../../graphql/Query";
 
 function CreateHospital() {
   const [hospital, setHospital] = useState({
@@ -13,18 +14,18 @@ function CreateHospital() {
     msg: ''
   });
 
+  const [addHospital] = useMutation(HOSPITAL_MUTATION);
+  const { loading, error, data} = useQuery(HOSPITAL_QUERY);
+
   const variables = {
     hospital: {name: hospital.name}
   }
 
-  const [addHospital] = useMutation(HOSPITAL_MUTATION);
 
   const createHospital = async e => {
     e.preventDefault();
     console.log("on submit");
     const [error, ] = await to(addHospital({ variables }));
-
-    console.log(error);
 
     if (error) return setHospital({
       ...hospital, error: true,
@@ -43,6 +44,10 @@ function CreateHospital() {
         error={hospital.error}
         errorMsg={hospital.msg}
       />
+
+      <div className="hospitals-wrapper">
+        <div className="pixel-loader"></div>
+      </div>
     </Layout>
   );
 };

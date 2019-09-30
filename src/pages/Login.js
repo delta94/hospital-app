@@ -15,6 +15,9 @@ function Login({ history }) {
   const [authData, setAuthData] = useState({
     email: '',
     password: '',
+  });
+
+  const [authError, setAuthError] = useState({
     error: false,
     msg: ''
   });
@@ -33,15 +36,14 @@ function Login({ history }) {
   const onSubmitForm = async e => {
     e.preventDefault();
 
-    const [error, response] = await to(
-      authUser({ variables: {name: authData.error, password: authData.password} }));
+    const [err, response] = await to(
+      authUser({ variables: authData }));
 
-    // If error populate authError state
-    if (error) {
-      return setAuthData({
-        ...authData,
+    //If error populate authError state
+    if (err) {
+      return setAuthError({
         error: true,
-        msg: error.graphQLErrors[0].message
+        msg: err.graphQLErrors[0].message
       });
     }
 
@@ -76,7 +78,7 @@ function Login({ history }) {
           />
         </div>
 
-        <Error err={authData.error} msg={authData.msg} />
+        <Error err={authError.error} msg={authError.msg} />
 
         <div className="mt-3">
           <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">

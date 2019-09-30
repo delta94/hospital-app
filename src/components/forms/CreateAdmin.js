@@ -6,9 +6,7 @@ import Error from "../ui/Error";
 const CreateAdminFrom = props => (
   <form action="" onSubmit={props.onSubmit}>
     <Input
-      label="Name"
       name="name"
-      bm={false}
       value={props.adminNameValue}
       onChange={props.onChange}
       placeholder="Admin name"
@@ -16,9 +14,7 @@ const CreateAdminFrom = props => (
     />
 
     <Input
-      label="Email"
-      name="Email"
-      bm={false}
+      name="email"
       value={props.adminEmailValue}
       onChange={props.onChange}
       placeholder="Email"
@@ -26,13 +22,11 @@ const CreateAdminFrom = props => (
     />
 
     <Input
-      label="Password"
-      name="Email"
+      name="password"
       type="password"
-      bm={false}
-      value={props.adminEmailValue}
+      value={props.adminPasswordValue}
       onChange={props.onChange}
-      placeholder="Email"
+      placeholder="Temporary password"
       className="form-control white"
     />
 

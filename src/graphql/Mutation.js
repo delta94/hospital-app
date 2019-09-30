@@ -6,6 +6,12 @@ export const LOGIN_MUTATION = gql`
   }
 `;
 
+export const REGISTER_MUTATION = gql`
+  mutation AddUser($userInput: CreateUser!) {
+    addUser(userInput: $userInput)
+  }
+`;
+
 export const HOSPITAL_MUTATION = gql`
   mutation AddHospital($hospital: CreateHospital!) {
     addHospital(hospital: $hospital) {

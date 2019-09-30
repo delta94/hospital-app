@@ -45001,3 +45001,8 @@ div.tagsinput {
   @media (max-width: 991px) {
     #settings-trigger {
       display: none; } }
+
+.hospitals-wrapper {
+  padding-top: 100px; }
+  .hospitals-wrapper .card {
+    height: 100%; }

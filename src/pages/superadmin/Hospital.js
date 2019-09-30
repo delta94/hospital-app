@@ -1,23 +1,36 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import Layout from "../../hoc/Layout";
+import Loading from '../../components/ui/Loader';
+import Button from '../../components/ui/Button';
 
 import { SINGLE_HOSPITAL } from '../../graphql/Query';
 
 function HospitalEdit({match}) {
   const { id } = match.params;
 
-  const { data } = useQuery(SINGLE_HOSPITAL, {
+  const { loading, error, data } = useQuery(SINGLE_HOSPITAL, {
     variables: { id }
   });
 
-  console.log(data);
+  const HospitalDetails = () =>
+    <div>
+      <div className="d-flex align-items-center justify-content-between">
+        <h3>{data.hospital.name}</h3>
+        <Button text="Add Admin"  />
 
-  return (
-    <Layout>
-      <h3>Hospital edit</h3>
-    </Layout>
-  )
+      </div>
+      <p>{data.hospital.location}</p>
+    </div>
+
+
+  return <Layout>
+    {
+      loading
+      ? <Loading />
+        : <HospitalDetails />
+    }
+  </Layout>;
 }
 
 export default HospitalEdit;

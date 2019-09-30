@@ -1,10 +1,13 @@
 import React from 'react';
 
-const Button = ({text}) =>
-  <button
-    className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
-  >
-    {text}
-  </button>
+const Button = ({ text, block }) => {
+  const commonClasses =
+    "btn btn-primary btn-lg font-weight-medium auth-form-btn";
+
+  const btnClass = block ? `btn-block ${commonClasses}` : commonClasses;
+
+  return <button className={btnClass}>{text}</button>;
+};
+
 
 export default Button;

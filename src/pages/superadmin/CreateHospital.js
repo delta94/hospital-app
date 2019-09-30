@@ -38,6 +38,9 @@ function CreateHospital() {
     setHospital({ name: '', error: false, msg: '' });
   };
 
+  const onClickHospital = (id) => console.log(id);
+  console.log(data)
+
   return (
     <Layout>
       <h2 className="pb-3">Hospitals</h2>
@@ -58,6 +61,7 @@ function CreateHospital() {
               <HospitalCard
                 title={hospital.name}
                 location={hospital.location}
+                onClick={() => onClickHospital(hospital.id)}
               />
             </div>
           ))

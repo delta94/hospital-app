@@ -1,7 +1,7 @@
 import React from 'react';
 
-const HospitalCard = ({ title, location, img }) => (
-  <div className="card">
+const HospitalCard = ({ title, location, img, onClick }) => (
+  <div className="card" onClick={onClick}>
     <img
       className="card-img-top"
       src={img || 'https://via.placeholder.com/363x200'}

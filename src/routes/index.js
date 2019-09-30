@@ -18,10 +18,11 @@ function RouterComponent() {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <PrivateRoute path="/hospital/create" routeComponet={CreateHospital} />
+        <PrivateRoute path="/hospital/:id" routeComponet={HospitalEdit} />
       </Switch>
 
-      <PrivateRoute path="/hospital/create" routeComponet={CreateHospital} />
-      <PrivateRoute path="/hospital/:id" routeComponet={HospitalEdit} />
+
     </Router>
   );
 }

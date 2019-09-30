@@ -9,7 +9,7 @@ import HospitalCard from '../../components/hospital/HospitalCard';
 import { HOSPITAL_MUTATION } from '../../graphql/Mutation';
 import { HOSPITAL_QUERY } from "../../graphql/Query";
 
-function CreateHospital() {
+function CreateHospital({history}) {
   const [hospital, setHospital] = useState({
     name: '',
     error: false,
@@ -19,7 +19,7 @@ function CreateHospital() {
   const [addHospital] = useMutation(HOSPITAL_MUTATION, {
     refetchQueries: [{ query: HOSPITAL_QUERY }]
   });
-  const { loading, error, data} = useQuery(HOSPITAL_QUERY);
+  const { loading, data} = useQuery(HOSPITAL_QUERY);
 
   const variables = {
     hospital: {name: hospital.name}
@@ -38,8 +38,7 @@ function CreateHospital() {
     setHospital({ name: '', error: false, msg: '' });
   };
 
-  const onClickHospital = (id) => console.log(id);
-  console.log(data)
+  const onClickHospital = (id) => history.push(`/hospital/${id}`);
 
   return (
     <Layout>

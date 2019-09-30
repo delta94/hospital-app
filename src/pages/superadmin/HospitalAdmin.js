@@ -12,15 +12,17 @@ import { SINGLE_HOSPITAL } from "../../graphql/Query";
 import { REGISTER_MUTATION } from "../../graphql/Mutation";
 import { ModalContext } from "../../context/modalContext";
 
+const initialState = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  password: '',
+  role: 'admin',
+  hospital: ''
+}
+
 function HospitalEdit({ match }) {
-  const [adminData, setAdminData] = useState({
-    firstName: "",
-    lastName: '',
-    email: "",
-    password: "",
-    role: 'admin',
-    hospital: ''
-  });
+  const [adminData, setAdminData] = useState(initialState);
 
   const [adminError, setAdminError] = useState({
     error: false,
@@ -55,7 +57,10 @@ function HospitalEdit({ match }) {
         error: true,
         msg: err.graphQLErrors[0].message
       })
-    }
+    };
+
+    setAdminData(initialState);
+    closeModal();
   };
 
   if (loading)

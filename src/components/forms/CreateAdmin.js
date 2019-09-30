@@ -6,10 +6,18 @@ import Error from "../ui/Error";
 const CreateAdminFrom = props => (
   <form action="" onSubmit={props.onSubmit}>
     <Input
-      name="name"
-      value={props.adminNameValue}
+      name="firstName"
+      value={props.adminFirstnameValue}
       onChange={props.onChange}
-      placeholder="Admin name"
+      placeholder="Firstname"
+      className="form-control white"
+    />
+
+    <Input
+      name="lastName"
+      value={props.adminLastnameValue}
+      onChange={props.onChange}
+      placeholder="Lastname"
       className="form-control white"
     />
 

@@ -1,22 +1,31 @@
 import React, { useState, useContext } from "react";
-import { useQuery } from "@apollo/react-hooks";
+import { useQuery, useMutation } from "@apollo/react-hooks";
+import to from 'await-to-js';
+
 import Layout from "../../hoc/Layout";
 import Loading from "../../components/ui/Loader";
 import Button from "../../components/ui/Button";
 import Modal from "../../components/modal/Modal";
-import CreateAdminForm from "../../components/forms/CreateAdmin";
+import CreateAdmin from "../../components/forms/CreateAdmin";
 
 import { SINGLE_HOSPITAL } from "../../graphql/Query";
+import { REGISTER_MUTATION } from "../../graphql/Mutation";
 import { ModalContext } from "../../context/modalContext";
 
 function HospitalEdit({ match }) {
   const [adminData, setAdminData] = useState({
-    name: "",
+    firstName: "",
+    lastName: '',
     email: "",
     password: "",
-    error: false,
-    msg: ""
+    role: 'admin',
+    hospital: ''
   });
+
+  const [adminError, setAdminError] = useState({
+    error: false,
+    msg: ''
+  })
 
   const { show, openModal, closeModal } = useContext(ModalContext);
 
@@ -24,13 +33,30 @@ function HospitalEdit({ match }) {
     variables: { id: match.params.id }
   });
 
-  const onChangeInput = e => {
-    console.log(e.target.value);
+  const [addUser] = useMutation(REGISTER_MUTATION);
 
+  const onChangeInput = e => {
     setAdminData({ ...adminData, [e.target.name]: e.target.value });
   };
 
-  const onCreateAdmin = e => e.preventDefault();
+  const onCreateAdmin = async e => {
+    e.preventDefault();
+    let [err, ] = await to(
+      addUser({
+        variables: {
+          userInput: {...adminData, hospital: data.hospital.id}
+        }
+      }));
+
+    console.log(err)
+
+    if (err) {
+      return setAdminError({
+        error: true,
+        msg: err.graphQLErrors[0].message
+      })
+    }
+  };
 
   if (loading)
     return (
@@ -51,13 +77,14 @@ function HospitalEdit({ match }) {
             onClose={closeModal}
             title={`Create Admin for ${data.hospital.name}`}
           >
-            <CreateAdminForm
-              adminNameValue={adminData.name}
+            <CreateAdmin
+              adminFirstnameValue={adminData.firstName}
+              adminLastnameValue={adminData.lastName}
               adminEmailValue={adminData.email}
               adminPasswordValue={adminData.password}
               onChange={onChangeInput}
-              error={adminData.error}
-              errorMsg={adminData.msg}
+              error={adminError.error}
+              errorMsg={adminError.msg}
               onSubmit={onCreateAdmin}
             />
           </Modal>

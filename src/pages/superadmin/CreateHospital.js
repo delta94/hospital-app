@@ -5,6 +5,7 @@ import Layout from '../../hoc/Layout';
 import CreateHospitalForm from '../../components/forms/CreateHospitalForm';
 import Loader from '../../components/ui/Loader';
 import HospitalCard from '../../components/hospital/HospitalCard';
+import Permission from '../Permission';
 
 import { HOSPITAL_MUTATION } from '../../graphql/Mutation';
 import { HOSPITAL_QUERY } from "../../graphql/Query";
@@ -19,7 +20,7 @@ function CreateHospital({history}) {
   const [addHospital] = useMutation(HOSPITAL_MUTATION, {
     refetchQueries: [{ query: HOSPITAL_QUERY }]
   });
-  const { loading, data} = useQuery(HOSPITAL_QUERY);
+  const { loading, error,  data} = useQuery(HOSPITAL_QUERY);
 
   const variables = {
     hospital: {name: hospital.name}
@@ -39,6 +40,9 @@ function CreateHospital({history}) {
   };
 
   const onClickHospital = (id) => history.push(`/hospital/${id}`);
+
+  if (loading) return <Layout><Loader /></Layout>;
+  if (error) return <Permission />;
 
   return (
     <Layout>

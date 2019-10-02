@@ -50,8 +50,6 @@ function HospitalEdit({ match }) {
         }
       }));
 
-    console.log(err)
-
     if (err) {
       return setAdminError({
         error: true,

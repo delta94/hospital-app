@@ -1,7 +1,7 @@
 import React from "react";
 
 const Input = props => (
-  <div className={props.bm ? "form-group  mb-0" : "form-group"}>
+  <div className={props.bm ? "form-group" : "form-group   mb-0"}>
     {props.label && <label htmlFor={props.name}>{props.label}</label>}
     <input
       value={props.value}

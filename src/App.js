@@ -1,5 +1,5 @@
 import React from 'react';
-import { ApolloClient } from 'apollo-boost';
+import { ApolloClient, ApolloLink } from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-common';
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { HttpLink } from "apollo-link-http";
@@ -10,8 +10,22 @@ import ModalContextProvider from './context/modalContext';
 import RouterComponent from "./routes";
 
 function App() {
+  const httpLink = new HttpLink({ uri: config.baseUrl });
+
+  const authLink = new ApolloLink((operation, forward) => {
+    const token = localStorage.getItem('token');
+    operation.setContext({
+      headers: {
+        'x-auth-token': token ? token : ''
+      }
+    });
+
+    // Call the next link in the middleware chain.
+    return forward(operation);
+  });
+
   const client = new ApolloClient({
-    link: new HttpLink({uri: config.baseUrl}),
+    link: authLink.concat(httpLink),
     cache: new InMemoryCache()
   });
 

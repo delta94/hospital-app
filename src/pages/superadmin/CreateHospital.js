@@ -48,8 +48,8 @@ function CreateHospital({ history }) {
   const onChangeFile = async (e) => {
     const [file] = e.target.files;
     console.log(file);
-    let [err, response] = await to(singleUpload({ variables: { file: { filename: file.name, mimetype: file.type, encoding: 'UTF-8' } } }));
-    console.log(err, response);
+    let [err] = await to(singleUpload({ variables: { file } }));
+    console.log(err);
   }
 
   if (loading) return <Layout><Loader /></Layout>;

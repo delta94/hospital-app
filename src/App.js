@@ -1,5 +1,6 @@
 import React from 'react';
-import { ApolloClient, ApolloLink } from 'apollo-boost';
+import ApolloClient from 'apollo-client';
+import { ApolloLink } from 'apollo-boost';
 import { createUploadLink } from 'apollo-upload-client';
 import { ApolloProvider } from '@apollo/react-common';
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -11,7 +12,7 @@ import ModalContextProvider from './context/modalContext';
 import RouterComponent from "./routes";
 
 function App() {
-  const httpLink = new createUploadLink({ uri: config.baseUrl });
+  const httpLink = createUploadLink({ uri: config.baseUrl });
 
   const authLink = new ApolloLink((operation, forward) => {
     const token = localStorage.getItem('token');

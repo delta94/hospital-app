@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import to from 'await-to-js';
 import Layout from '../../hoc/Layout';
@@ -8,9 +9,10 @@ import HospitalCard from '../../components/hospital/HospitalCard';
 import Permission from '../Permission';
 
 import { HOSPITAL_MUTATION } from '../../graphql/Mutation';
+import { UPLOAD_FILE } from "../../graphql/Mutation";
 import { HOSPITAL_QUERY } from "../../graphql/Query";
 
-function CreateHospital({history}) {
+function CreateHospital({ history }) {
   const [hospital, setHospital] = useState({
     name: '',
     error: false,
@@ -20,6 +22,8 @@ function CreateHospital({history}) {
   const [addHospital] = useMutation(HOSPITAL_MUTATION, {
     refetchQueries: [{ query: HOSPITAL_QUERY }]
   });
+
+  const [singleUpload] = useMutation(UPLOAD_FILE);
   const { loading, error,  data} = useQuery(HOSPITAL_QUERY);
 
   const variables = {
@@ -41,6 +45,13 @@ function CreateHospital({history}) {
 
   const onClickHospital = (id) => history.push(`/hospital/${id}`);
 
+  const onChangeFile = async (e) => {
+    const [file] = e.target.files;
+    console.log(file);
+    let [err, response] = await to(singleUpload({ variables: { file: { filename: file.name, mimetype: file.type, encoding: 'UTF-8' } } }));
+    console.log(err, response);
+  }
+
   if (loading) return <Layout><Loader /></Layout>;
   if (error) return <Permission />;
 
@@ -53,6 +64,7 @@ function CreateHospital({history}) {
         onHospitalSubmit={createHospital}
         error={hospital.error}
         errorMsg={hospital.msg}
+        onChangeFile={onChangeFile}
       />
 
       <div className="hospitals-wrapper row pt-8">

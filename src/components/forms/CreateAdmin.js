@@ -7,6 +7,7 @@ const CreateAdminFrom = props => (
   <form action="" onSubmit={props.onSubmit}>
     <Input
       name="firstName"
+      bm={true}
       value={props.adminFirstnameValue}
       onChange={props.onChange}
       placeholder="Firstname"
@@ -15,6 +16,7 @@ const CreateAdminFrom = props => (
 
     <Input
       name="lastName"
+      bm={true}
       value={props.adminLastnameValue}
       onChange={props.onChange}
       placeholder="Lastname"
@@ -23,6 +25,7 @@ const CreateAdminFrom = props => (
 
     <Input
       name="email"
+      bm={true}
       value={props.adminEmailValue}
       onChange={props.onChange}
       placeholder="Email"
@@ -31,6 +34,7 @@ const CreateAdminFrom = props => (
 
     <Input
       name="password"
+      bm={true}
       type="password"
       value={props.adminPasswordValue}
       onChange={props.onChange}

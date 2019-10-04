@@ -16,6 +16,17 @@ const CreateHospitalForm = props => (
           placeholder="Hospital Name"
           className="form-control white"
         />
+
+        <Input
+          label="Create Hospital"
+          name="file"
+          type="file"
+          bm={false}
+
+          onChange={props.onChangeFile}
+          placeholder="Hospital logo"
+          className="form-control white"
+        />
       </div>
       <div className="col-md-4">
         <Button type="submit" text="Add Hospital" />

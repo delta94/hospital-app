@@ -61,6 +61,9 @@ function HospitalEdit({ match }) {
     closeModal();
   };
 
+
+
+
   if (loading)
     return (
       <Layout>
@@ -86,6 +89,7 @@ function HospitalEdit({ match }) {
               adminEmailValue={adminData.email}
               adminPasswordValue={adminData.password}
               onChange={onChangeInput}
+
               error={adminError.error}
               errorMsg={adminError.msg}
               onSubmit={onCreateAdmin}

@@ -22,9 +22,9 @@ export const HOSPITAL_MUTATION = gql`
 
 
 export const UPLOAD_FILE = gql`
-         mutation uploadFile($file: Upload!) {
-           singleUpload(file: $file) {
-             filename
-           }
-         }
-       `;
+  mutation uploadFile($file: Upload!) {
+    singleUpload(file: $file) {
+      filename
+    }
+  }
+`;

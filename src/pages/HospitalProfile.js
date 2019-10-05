@@ -1,5 +1,7 @@
 import React, {useContext} from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
+import to from 'await-to-js';
+
 import Layout from '../hoc/Layout';
 import Loader from '../components/ui/Loader';
 import Button from '../components/ui/Button';
@@ -7,8 +9,9 @@ import Button from '../components/ui/Button';
 import { AuthContext } from '../context/authContext';
 
 import { SINGLE_HOSPITAL } from '../graphql/Query';
+import { UPLOAD_FILE } from "../graphql/Mutation";
 
-import img from '../img/image-placeholder.jpg';
+//import img from '../img/image-placeholder.jpg';
 
 
 function Hospital() {
@@ -18,7 +21,15 @@ function Hospital() {
     variables: {id: user.hospital}
   });
 
+  const [singleUpload] = useMutation(UPLOAD_FILE);
+
   console.log(data);
+
+  const handleFile = async (e) => {
+    const [file] = e.target.files;
+    await to(singleUpload({ variables: { file } }));
+    console.log(file);
+  };
 
   if (loading)
     return <Layout><Loader /></Layout>;
@@ -37,7 +48,10 @@ function Hospital() {
           <h2>{data.hospital.name}</h2>
           <p className="card-text">{data.hospital.location}</p>
         </div>
+
       </div>
+
+        <input type="file" onChange={handleFile}/>
     </Layout>
   );
 };

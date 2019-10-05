@@ -61,9 +61,6 @@ function HospitalEdit({ match }) {
     closeModal();
   };
 
-
-
-
   if (loading)
     return (
       <Layout>

@@ -9,6 +9,7 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { config } from './config';
 
 import ModalContextProvider from './context/modalContext';
+import AuthContextProvider from './context/authContext';
 import RouterComponent from "./routes";
 
 function App() {
@@ -35,9 +36,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        <ModalContextProvider>
-          <RouterComponent />
-        </ModalContextProvider>
+        <AuthContextProvider>
+          <ModalContextProvider>
+            <RouterComponent />
+          </ModalContextProvider>
+        </AuthContextProvider>
       </div>
     </ApolloProvider>
   );

@@ -1,12 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
+import AdminRoute from './AdminRoute';
 
 import Header from '../components/Header';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import CreateHospital from '../pages/superadmin/CreateHospital';
 import HospitalEdit from '../pages/superadmin/HospitalAdmin';
+import Hospital from '../pages/HospitalProfile';
 
 import { getItemFromLocal } from '../utils/localStorage';
 
@@ -20,9 +22,8 @@ function RouterComponent() {
         <Route path="/register" component={Register} />
         <PrivateRoute path="/hospital/create" routeComponet={CreateHospital} />
         <PrivateRoute path="/hospital/:id" routeComponet={HospitalEdit} />
+        <AdminRoute path="/hospital/" routeComponent={Hospital} />
       </Switch>
-
-
     </Router>
   );
 }

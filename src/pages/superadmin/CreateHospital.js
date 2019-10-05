@@ -50,11 +50,10 @@ function CreateHospital({ history }) {
     await to(singleUpload({ variables: { file } }));
   }
 
-  if (loading) return <Layout><Loader /></Layout>;
   if (error) return <Permission />;
 
   return (
-    <Layout>
+    <Layout loading={loading}>
       <h2 className="pb-3">Hospitals</h2>
       <CreateHospitalForm
         hospitalValue={hospital.name}

@@ -41,13 +41,6 @@ function Hospital() {
       }
     }));
 
-    console.log(response);
-
-    // if (err) {
-    //   console.log(err.networkError.result.errors);
-    //   return;
-    // }
-
     await to(
       updateHospital({
         variables: {
@@ -75,7 +68,7 @@ function Hospital() {
 
         </div>
         <div className="card-img-overlay d-flex align-items-center justify-content-center flex-column">
-          <h2>{data.hospital.name}</h2>
+          <h2 className="fc-white">{data.hospital.name}</h2>
           <p className="card-text">{data.hospital.location}</p>
         </div>
 

@@ -31,8 +31,8 @@ export const HOSPITAL_UPDATE_MUTATION = gql`
 
 
 export const UPLOAD_FILE = gql`
-  mutation uploadFile($file: Upload!) {
-    singleUpload(file: $file) {
+  mutation uploadFile($file: Upload!, $id: ID!, $type: String!) {
+    singleUpload(file: $file, id: $id, type: $type) {
       filename
     }
   }

@@ -29,28 +29,36 @@ function Hospital() {
     refetchQueries: [{ query: SINGLE_HOSPITAL, variables: {id: user.hospital} }]
   });
 
-  console.log(config.staticUrl);
-
-  console.log(data);
 
   const handleFile = async (e) => {
     const [file] = e.target.files;
-    console.log(e.target.name);
-    const [err, response] = await to(singleUpload({ variables: { file } }));
-    const { data: { singleUpload: { filename } } } = response;
-    console.log(err, response);
-    const [error, res] = await to(
+    // Upload mutation for get the
+    const [, response] = await to(singleUpload({
+      variables: {
+        file,
+        id: data.hospital.id,
+        type: e.target.name
+      }
+    }));
+
+    console.log(response);
+
+    // if (err) {
+    //   console.log(err.networkError.result.errors);
+    //   return;
+    // }
+
+    await to(
       updateHospital({
         variables: {
           id: data.hospital.id,
           update: {
             name: data.hospital.name,
-            coverphoto: config.staticUrl + filename
+            coverphoto: config.staticUrl + response.data.singleUpload.filename
           }
         }
       })
     );
-    console.log('update error', error, res);
   };
 
   if (loading)

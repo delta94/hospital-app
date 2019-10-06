@@ -20,6 +20,15 @@ export const HOSPITAL_MUTATION = gql`
   }
 `;
 
+export const HOSPITAL_UPDATE_MUTATION = gql`
+         mutation UpdateHospital($id: ID!, $update: UpdateHospital!) {
+           updateHospital(id: $id, update: $update) {
+             name,
+             coverphoto
+           }
+         }
+       `;
+
 
 export const UPLOAD_FILE = gql`
   mutation uploadFile($file: Upload!) {

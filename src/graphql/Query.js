@@ -4,7 +4,8 @@ export const hospitalFragment = gql`
   fragment hospital on Hospital {
     name
     location
-    id
+    id,
+    coverphoto
   }
 `;
 

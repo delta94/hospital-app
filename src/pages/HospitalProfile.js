@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import to from "await-to-js";
+import { omit } from 'lodash';
 
 import { config } from "../config";
 import { AuthContext } from "../context/authContext";
@@ -32,13 +33,16 @@ function Hospital() {
 
   const handleFile = async e => {
     const [file] = e.target.files;
+    const { name } = e.target;
+    let hospital = data.hospital;
+    hospital = omit(hospital, ['__typename']);
     // Upload mutation for get the
-    const [, response] = await to(
+    const [err,response] = await to(
       singleUpload({
         variables: {
           file,
-          id: data.hospital.id,
-          type: e.target.name
+          id: hospital.id,
+          type: name
         }
       })
     );
@@ -46,17 +50,24 @@ function Hospital() {
     const { data: { singleUpload: { filename } } } = response;
     const filePath = config.staticUrl + filename
 
-    await to(
+    console.log(hospital);
+
+
+
+    const [error, res] = await to(
       updateHospital({
         variables: {
-          id: data.hospital.id,
+          id: hospital.id,
           update: {
-            name: data.hospital.name,
-            coverphoto: filePath
+            ...hospital,
+            coverphoto: name === 'coverphoto' ? filePath : hospital.coverphoto,
+            logo: name === 'logo' ? filePath : hospital.logo
           }
         }
       })
     );
+
+    //console.log("error", error.networkError.result.errors);
   };
 
   if (loading)
@@ -78,8 +89,18 @@ function Hospital() {
         >
           {user.role === "admin" ? <Button text="Edit" btnSize="sm" /> : null}
           <div className="card-img-overlay">
-            <FileUpload onChange={handleFile} />
+            <FileUpload onChange={handleFile} name="coverphoto" />
           </div>
+        </div>
+
+        <div
+          className="upload-logo bg-light"
+          style={{
+            background:
+              "url(" + data.hospital.logo + ") center center no-repeat"
+          }}
+        >
+          <FileUpload onChange={handleFile} name="logo" />
         </div>
 
         <div className="card-body">

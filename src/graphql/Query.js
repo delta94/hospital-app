@@ -1,11 +1,15 @@
-import { gql } from 'apollo-boost';
+import { gql } from "apollo-boost";
 
 export const hospitalFragment = gql`
   fragment hospital on Hospital {
+    id
     name
     location
-    id,
     coverphoto
+    logo
+    doctors
+    specialties
+    description
   }
 `;
 

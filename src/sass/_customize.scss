@@ -24,6 +24,17 @@
 
 .content-wrapper {min-height: calc(100vh - 65px) !important}
 
+.upload-logo {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 2px solid $border-color;
+  border-radius: 4px;
+  margin-top: -140px;
+  left: 30px;
+  background-size: cover !important;
+}
+
 .file-upload {
   position: absolute;
   right: 0px;

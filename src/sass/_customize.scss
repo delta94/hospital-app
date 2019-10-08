@@ -11,7 +11,7 @@
 
 .overlay-img {
   position: relative;
-  height: 250px;
+  height: 400px;
   background-size: cover !important;
 }
 
@@ -23,4 +23,27 @@
 }
 
 .content-wrapper {min-height: calc(100vh - 65px) !important}
+
+.file-upload {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  cursor: pointer;
+  input {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    width: 38px;
+    height: 38px;
+  }
+
+  button {
+    width: 30px;
+    height: 30px;
+    border-radius: 0;
+    i {
+      font-size: 14px;
+    }
+  }
+}
 

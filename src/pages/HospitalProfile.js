@@ -3,7 +3,6 @@ import { useQuery, useMutation } from '@apollo/react-hooks';
 import to from 'await-to-js';
 
 import { config } from '../config';
-
 import { AuthContext } from '../context/authContext';
 
 import { SINGLE_HOSPITAL } from '../graphql/Query';
@@ -13,6 +12,7 @@ import { HOSPITAL_UPDATE_MUTATION } from '../graphql/Mutation';
 import Layout from '../hoc/Layout';
 import Loader from '../components/ui/Loader';
 import Button from '../components/ui/Button';
+import FileUpload from '../components/forms/FileUpload';
 
 //import img from '../img/image-placeholder.jpg';
 
@@ -59,22 +59,25 @@ function Hospital() {
 
   return (
     <Layout>
-      <div className="card bg-dark text-white">
+      <div className="card bg-white text-white">
         <div
-          className="overlay-img text-right p-2"
+          className="overlay-img bg-primary text-right p-2"
           style={{ background: "url("+ data.hospital.coverphoto + ") center center no-repeat" }}
         >
-        {user.role === 'admin' ? <Button text="Edit" btnSize="sm"/> : null}
+          {user.role === 'admin' ? <Button text="Edit" btnSize="sm"/> : null}
+          <div className="card-img-overlay">
+            <FileUpload onChange={handleFile} />
+          </div>
+        </div>
 
-        </div>
-        <div className="card-img-overlay d-flex align-items-center justify-content-center flex-column">
-          <h2 className="fc-white">{data.hospital.name}</h2>
-          <p className="card-text">{data.hospital.location}</p>
-        </div>
+
+        <h2 className="fc-white">{data.hospital.name}</h2>
+        <p className="card-text">{data.hospital.location}</p>
 
       </div>
 
-        <input type="file" name="coverphoto" onChange={handleFile}/>
+
+
     </Layout>
   );
 };

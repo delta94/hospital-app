@@ -69,9 +69,33 @@ function Hospital() {
     );
   };
 
-  const onChangeValue = (e) => {
-
+  let updatedHospital;
+  if (!loading) {
+    updatedHospital = data.hospital;
+    updatedHospital = omit(updatedHospital, ["__typename"]);
   }
+
+  const onChangeValue = (e) => {
+    console.log(updatedHospital);
+    updatedHospital = { ...updatedHospital, [e.target.name]: e.target.value };
+  };
+
+  const onUpdateHospital = async (e) => {
+    e.preventDefault();
+
+    await to(
+      updateHospital({
+        variables: {
+          id: data.hospital.id,
+          update: updatedHospital,
+        }
+      })
+    );
+    //console.log(error.networkError.result.errors);
+    closeModal();
+  };
+
+
 
   if (loading)
     return (
@@ -104,8 +128,8 @@ function Hospital() {
           <FileUpload onChange={handleFile} name="logo" />
         </div>
         <div className="card-body">
-          <h2 className="fc-white">{data.hospital.name}</h2>
-          <p className="card-text">{data.hospital.location}</p>
+          <h2 className="">{data.hospital.name}</h2>
+          <p className="text-dark">{data.hospital.location}</p>
 
           {user.role === "admin" ? (
             <Button onClick={openModal} text="Edit" btnSize="sm" />
@@ -115,7 +139,8 @@ function Hospital() {
           show={show}
           onClose={closeModal}
           onChange={onChangeValue}
-          hospital={data.hospital}
+          hospital={updatedHospital}
+          onSubmit={onUpdateHospital}
         />
       </div>
     </Layout>

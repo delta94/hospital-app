@@ -20,11 +20,28 @@ const UpdateHospital = (props) => {
           name="location"
           type="text"
           bm={true}
-          value={props.hospital.location || ""}
+          value={props.hospital.location}
           onChange={props.onChange}
           className="form-control"
           placeholder="Location"
         />
+
+        <Input
+          name="description"
+          type="text"
+          bm={true}
+          value={props.hospital.description}
+          onChange={props.onChange}
+          className="form-control"
+          placeholder="Description"
+        />
+
+        <button
+          type="submit"
+          className="btn btn-primary font-weight-medium auth-form-btn"
+        >
+          Update Info
+        </button>
       </form>
     </Modal>
   );

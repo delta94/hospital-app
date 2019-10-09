@@ -36,8 +36,8 @@ function Hospital() {
     const { name } = e.target;
     let hospital = data.hospital;
     hospital = omit(hospital, ['__typename']);
-    // Upload mutation for get the
-    const [err,response] = await to(
+    // Upload mutation for get the hospital logo/coverphoto
+    const [,response] = await to(
       singleUpload({
         variables: {
           file,
@@ -50,11 +50,7 @@ function Hospital() {
     const { data: { singleUpload: { filename } } } = response;
     const filePath = config.staticUrl + filename
 
-    console.log(hospital);
-
-
-
-    const [error, res] = await to(
+    await to(
       updateHospital({
         variables: {
           id: hospital.id,
@@ -66,8 +62,6 @@ function Hospital() {
         }
       })
     );
-
-    //console.log("error", error.networkError.result.errors);
   };
 
   if (loading)

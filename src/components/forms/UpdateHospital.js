@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from '../modal/Modal';
 import Input from './Input';
+import Textarea from './TextArea';
 
 const UpdateHospital = (props) => {
   return (
@@ -27,8 +28,18 @@ const UpdateHospital = (props) => {
         />
 
         <Input
-          name="description"
+          name="specialties"
           type="text"
+          bm={true}
+          value={props.speciatiesValue}
+          onChange={props.onChange}
+          className="form-control"
+          placeholder="Specialties"
+          info="Add specialties separate by comma"
+        />
+
+        <Textarea
+          name="description"
           bm={true}
           value={props.hospital.description}
           onChange={props.onChange}

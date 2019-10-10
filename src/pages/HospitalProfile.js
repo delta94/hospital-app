@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import to from "await-to-js";
 import { omit } from 'lodash';
@@ -23,6 +23,8 @@ import UpdateHospital from '../components/forms/UpdateHospital';
 function Hospital() {
   const { user } = useContext(AuthContext);
   const { show, openModal, closeModal } = useContext(ModalContext);
+
+  const [specialtiesValue, setSpecialtiesValue] = useState('')
 
   const { loading, data } = useQuery(SINGLE_HOSPITAL, {
     variables: { id: user.hospital }
@@ -76,8 +78,18 @@ function Hospital() {
   }
 
   const onChangeValue = (e) => {
-    console.log(updatedHospital);
-    updatedHospital = { ...updatedHospital, [e.target.name]: e.target.value };
+    const { name, value } = e.target;
+    console.log(e.target.name);
+    // if (name === 'specialties') {
+    //   setSpecialtiesValue(specialtiesValue + value);
+    //   const newSpecialtiesValue = value.split(',');
+    //   updatedHospital.specialties = updatedHospital.specialties.concat(
+    //     newSpecialtiesValue
+    //   );
+
+    // } else {
+      updatedHospital = { ...updatedHospital, [name]: value };
+    //}
   };
 
   const onUpdateHospital = async (e) => {
@@ -94,8 +106,6 @@ function Hospital() {
     //console.log(error.networkError.result.errors);
     closeModal();
   };
-
-
 
   if (loading)
     return (
@@ -129,7 +139,14 @@ function Hospital() {
         </div>
         <div className="card-body">
           <h2 className="">{data.hospital.name}</h2>
-          <p className="text-dark">{data.hospital.location}</p>
+          <p className="text-dark pb-3">{data.hospital.location}</p>
+
+          {data.hospital.specialties &&
+            data.hospital.specialties.map(item => (
+            <div className="badge-outline-primary">{item}</div>
+          ))}
+
+          <p className="text-dark pt-3">{data.hospital.description}</p>
 
           {user.role === "admin" ? (
             <Button onClick={openModal} text="Edit" btnSize="sm" />
@@ -140,6 +157,7 @@ function Hospital() {
           onClose={closeModal}
           onChange={onChangeValue}
           hospital={updatedHospital}
+          speciatiesValue={specialtiesValue}
           onSubmit={onUpdateHospital}
         />
       </div>

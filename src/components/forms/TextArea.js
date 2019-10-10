@@ -9,6 +9,7 @@ const Textarea = props => (
       name={props.name}
       className={props.className}
       placeholder={props.placeholder}
+      rows="5"
     />
   </div>
 );

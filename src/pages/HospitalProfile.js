@@ -87,13 +87,12 @@ function Hospital() {
     const { name, value } = e.target;
 
     if (name === 'specialties') {
-      setSpecialtiesValue(specialtiesValue + value);
-      const newSpecialtiesValue = value.split(',');
+      setSpecialtiesValue(value);
+      const newSpecialtiesValue = value.split(',').map(item => item.trim());
+
       setHospital({
         ...hospital,
-        specialties: hospital.specialties.concat(
-          newSpecialtiesValue
-        )
+        specialties: newSpecialtiesValue
       });
 
     } else {
@@ -112,7 +111,6 @@ function Hospital() {
         }
       })
     );
-    //console.log(error.networkError.result.errors);
     closeModal();
   };
 
@@ -151,8 +149,8 @@ function Hospital() {
           <p className="text-dark pb-3">{data.hospital.location}</p>
 
           {data.hospital.specialties &&
-            data.hospital.specialties.map(item => (
-              <div className="badge badge-outline-primary mr-2">{item}</div>
+            data.hospital.specialties.map((item, i) => (
+              <div key={i} className="badge badge-outline-primary mr-2">{item}</div>
             ))}
 
           <p className="text-dark pt-3">{data.hospital.description}</p>
@@ -161,6 +159,7 @@ function Hospital() {
             <Button onClick={openEditModal} text="Edit" btnSize="sm" />
           ) : null}
         </div>
+
         <UpdateHospital
           show={show}
           onClose={closeModal}

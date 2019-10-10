@@ -35,7 +35,7 @@ const UpdateHospital = (props) => {
           onChange={props.onChange}
           className="form-control"
           placeholder="Specialties"
-          info="Add specialties separate by comma"
+
         />
 
         <Textarea

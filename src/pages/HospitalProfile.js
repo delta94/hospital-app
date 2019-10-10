@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState,  useContext } from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import to from "await-to-js";
 import { omit } from 'lodash';
@@ -24,12 +24,12 @@ function Hospital() {
   const { user } = useContext(AuthContext);
   const { show, openModal, closeModal } = useContext(ModalContext);
 
-  const [specialtiesValue, setSpecialtiesValue] = useState('')
+  const [specialtiesValue, setSpecialtiesValue] = useState("");
+  const [hospital, setHospital] = useState({});
 
   const { loading, data } = useQuery(SINGLE_HOSPITAL, {
     variables: { id: user.hospital }
   });
-
 
   const [singleUpload] = useMutation(UPLOAD_FILE);
   const [updateHospital] = useMutation(HOSPITAL_UPDATE_MUTATION, {
@@ -77,19 +77,28 @@ function Hospital() {
     updatedHospital = omit(updatedHospital, ["__typename"]);
   }
 
+  const openEditModal = () => {
+    setHospital(updatedHospital);
+    setSpecialtiesValue(updatedHospital.specialties.join());
+    openModal();
+  }
+
   const onChangeValue = (e) => {
     const { name, value } = e.target;
-    console.log(e.target.name);
-    // if (name === 'specialties') {
-    //   setSpecialtiesValue(specialtiesValue + value);
-    //   const newSpecialtiesValue = value.split(',');
-    //   updatedHospital.specialties = updatedHospital.specialties.concat(
-    //     newSpecialtiesValue
-    //   );
 
-    // } else {
-      updatedHospital = { ...updatedHospital, [name]: value };
-    //}
+    if (name === 'specialties') {
+      setSpecialtiesValue(specialtiesValue + value);
+      const newSpecialtiesValue = value.split(',');
+      setHospital({
+        ...hospital,
+        specialties: hospital.specialties.concat(
+          newSpecialtiesValue
+        )
+      });
+
+    } else {
+      setHospital({ ...hospital, [name]: value });
+    }
   };
 
   const onUpdateHospital = async (e) => {
@@ -99,7 +108,7 @@ function Hospital() {
       updateHospital({
         variables: {
           id: data.hospital.id,
-          update: updatedHospital,
+          update: hospital,
         }
       })
     );
@@ -143,20 +152,20 @@ function Hospital() {
 
           {data.hospital.specialties &&
             data.hospital.specialties.map(item => (
-            <div className="badge-outline-primary">{item}</div>
-          ))}
+              <div className="badge badge-outline-primary mr-2">{item}</div>
+            ))}
 
           <p className="text-dark pt-3">{data.hospital.description}</p>
 
           {user.role === "admin" ? (
-            <Button onClick={openModal} text="Edit" btnSize="sm" />
+            <Button onClick={openEditModal} text="Edit" btnSize="sm" />
           ) : null}
         </div>
         <UpdateHospital
           show={show}
           onClose={closeModal}
           onChange={onChangeValue}
-          hospital={updatedHospital}
+          hospital={hospital}
           speciatiesValue={specialtiesValue}
           onSubmit={onUpdateHospital}
         />

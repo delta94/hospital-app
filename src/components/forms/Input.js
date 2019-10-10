@@ -11,7 +11,6 @@ const Input = props => (
       className={props.className}
       placeholder={props.placeholder}
     />
-    {props.info !== '' ? <p className="info text-warning">{props.info}</p> : null}
   </div>
 );
 

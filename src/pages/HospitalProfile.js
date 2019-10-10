@@ -71,21 +71,24 @@ function Hospital() {
     );
   };
 
-  let updatedHospital;
+  // Add hospital data to local variable for manipulate
+  let hostpitalFromQuery;
   if (!loading) {
-    updatedHospital = data.hospital;
-    updatedHospital = omit(updatedHospital, ["__typename"]);
+    hostpitalFromQuery = data.hospital;
+    hostpitalFromQuery = omit(hostpitalFromQuery, ["__typename"]);
   }
 
+  // When modal open setHospital to hostpitalFromQuery
   const openEditModal = () => {
-    setHospital(updatedHospital);
-    setSpecialtiesValue(updatedHospital.specialties.join());
+    setHospital(hostpitalFromQuery);
+    setSpecialtiesValue(hostpitalFromQuery.specialties.join());
     openModal();
   }
 
   const onChangeValue = (e) => {
     const { name, value } = e.target;
 
+    // Take a special care for specialties
     if (name === 'specialties') {
       setSpecialtiesValue(value);
       const newSpecialtiesValue = value.split(',').map(item => item.trim());
@@ -100,6 +103,7 @@ function Hospital() {
     }
   };
 
+  // Update hospital function
   const onUpdateHospital = async (e) => {
     e.preventDefault();
 
@@ -114,6 +118,7 @@ function Hospital() {
     closeModal();
   };
 
+  // If loading return loader component
   if (loading)
     return (
       <Layout>
@@ -132,7 +137,7 @@ function Hospital() {
           }}
         >
           <div className="card-img-overlay">
-            <FileUpload onChange={handleFile} name="coverphoto" />
+            <FileUpload onChange={handleFile} name="coverphoto" user={user} />
           </div>
         </div>
         <div
@@ -142,22 +147,25 @@ function Hospital() {
               "url(" + data.hospital.logo + ") center center no-repeat"
           }}
         >
-          <FileUpload onChange={handleFile} name="logo" />
+          <FileUpload onChange={handleFile} name="logo" user={user} />
         </div>
         <div className="card-body">
-          <h2 className="">{data.hospital.name}</h2>
-          <p className="text-dark pb-3">{data.hospital.location}</p>
+          <h2 className="d-flex align-items-center justify-content-between">
+            {data.hospital.name}
+            {user.role === "admin" ? (
+              <Button onClick={openEditModal} text="Edit" btnSize="sm" />
+            ) : null}
+          </h2>
+          <p className="text-dark pb-2">{data.hospital.location}</p>
 
           {data.hospital.specialties &&
             data.hospital.specialties.map((item, i) => (
-              <div key={i} className="badge badge-outline-primary mr-2">{item}</div>
+              <div key={i} className="badge badge-outline-primary mr-2">
+                {item}
+              </div>
             ))}
 
-          <p className="text-dark pt-3">{data.hospital.description}</p>
-
-          {user.role === "admin" ? (
-            <Button onClick={openEditModal} text="Edit" btnSize="sm" />
-          ) : null}
+          <p className="text-dark pt-5">{data.hospital.description}</p>
         </div>
 
         <UpdateHospital

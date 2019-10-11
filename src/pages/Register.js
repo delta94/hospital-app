@@ -15,8 +15,8 @@ import { REGISTER_MUTATION } from "../graphql/Mutation";
 
 function Register() {
   const [authData, setAuthData] = useState({
-    firstname: '',
-    lastname: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
     role: 'manager',
@@ -49,7 +49,8 @@ function Register() {
       }
     }));
 
-    console.log(err, response);
+    console.log(response);
+    if (err) return;
 
     // Set token and user data to localstorage
     setTokenToLocal.token(data.token);
@@ -74,8 +75,8 @@ function Register() {
           <Input
             type="text"
             onChange={onChangeInput}
-            value={authData.firstname}
-            name="firstname"
+            value={authData.firstName}
+            name="firstName"
             placeholder="First name"
             className="form-control form-control-lg"
           />
@@ -84,8 +85,8 @@ function Register() {
           <Input
             type="text"
             onChange={onChangeInput}
-            value={authData.lastname}
-            name="lastname"
+            value={authData.lastName}
+            name="lastName"
             placeholder="Last name"
             className="form-control form-control-lg"
           />

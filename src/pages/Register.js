@@ -1,28 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
 import to from 'await-to-js';
 
 import Input from '../components/forms/Input';
 import AuthWrapper from '../hoc/AuthWrapper';
 
-import { http } from '../http';
 import { setTokenToLocal } from '../utils/setTokenToLocal';
 
 import bg from "../img/authbg.jpg";
 import { HOSPITAL_QUERY } from '../graphql/Query';
+import { REGISTER_MUTATION } from "../graphql/Mutation";
 
 
-
-
-
-function Register({history}){
+function Register() {
   const [authData, setAuthData] = useState({
     firstname: '',
     lastname: '',
     email: '',
     password: '',
-    role: '',
+    role: 'manager',
     hospital: ''
   });
 
@@ -31,7 +28,10 @@ function Register({history}){
     msg: ''
   });
 
-  const { loading, data } = useQuery(HOSPITAL_QUERY);
+  const { loading,error, data } = useQuery(HOSPITAL_QUERY);
+  const [addUser] = useMutation(REGISTER_MUTATION)
+
+  if (error) console.log(error.networkError.result.errors);
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
@@ -46,18 +46,26 @@ function Register({history}){
   const onSubmit = async (e) => {
     e.preventDefault();
 
+    const [err, response] = await to(addUser({
+      variables: {
+        userInput: authData
+      }
+    }));
+
+    console.log(err, response);
 
     // Set token and user data to localstorage
     setTokenToLocal.token(data.token);
     setTokenToLocal.user(data.token);
   }
 
-  const getHospitalList = () => {
-    if (!loading)
-      return data.hospitals.map(hospital =>
-        <option value={hospital.id}>{hospital.name}</option>
-        )
-  }
+  const getHospitalList = dataArg => {
+    return dataArg && dataArg.hospitals.map(hospital => (
+      <option value={hospital.id} key={hospital.id}>
+        {hospital.name}
+      </option>
+    ));
+  };
 
   return (
     <AuthWrapper bg={bg}>
@@ -113,8 +121,9 @@ function Register({history}){
                 className="form-check-input"
                 name="manager"
                 id="manager"
-                value="manager"
+                value={authData.role}
                 onChange={onChangeInput}
+                checked
               />
               Manager
               <i className="input-helper"></i>
@@ -127,7 +136,7 @@ function Register({history}){
                 className="form-check-input"
                 name="doctor"
                 id="doctor"
-                value="doctor"
+                value={authData.role}
                 onChange={onChangeInput}
               />
               Doctor
@@ -137,9 +146,13 @@ function Register({history}){
         </div>
 
         <div className="form-group">
-          <select name="hospital" className="form-control">
+          <select
+            name="hospital"
+            className="form-control"
+            onChange={onChangeInput}
+          >
             <option value="1">Select Hospital</option>
-            <option value="2">another</option>
+            {loading === false ? getHospitalList(data) : ''}
           </select>
         </div>
 

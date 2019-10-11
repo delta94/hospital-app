@@ -166,6 +166,11 @@ function Hospital() {
             ))}
 
           <p className="text-dark pt-5">{data.hospital.description}</p>
+
+
+          <div className="doctors-list pt-5">
+            <h3>Doctors</h3>
+          </div>
         </div>
 
         <UpdateHospital
@@ -176,6 +181,7 @@ function Hospital() {
           speciatiesValue={specialtiesValue}
           onSubmit={onUpdateHospital}
         />
+
       </div>
     </Layout>
   );

@@ -44659,3 +44659,6 @@ div.tagsinput {
     border-radius: 0; }
     .file-upload button i {
       font-size: 14px; }
+
+.full-page-wrapper {
+  background-size: cover !important; }

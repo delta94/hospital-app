@@ -1,24 +1,29 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@apollo/react-hooks';
 import to from 'await-to-js';
 
 import Input from '../components/forms/Input';
 import AuthWrapper from '../hoc/AuthWrapper';
 
-import { config } from '../config';
 import { http } from '../http';
-
 import { setTokenToLocal } from '../utils/setTokenToLocal';
 
-const regUri = `${config.baseUrl}/user/register`
+import bg from "../img/authbg.jpg";
+import { HOSPITAL_QUERY } from '../graphql/Query';
+
+
+
+
 
 function Register({history}){
   const [authData, setAuthData] = useState({
-    username: '',
     firstname: '',
     lastname: '',
     email: '',
-    password: ''
+    password: '',
+    role: '',
+    hospital: ''
   });
 
   const [authError, setAuthError] = useState({
@@ -26,31 +31,36 @@ function Register({history}){
     msg: ''
   });
 
+  const { loading, data } = useQuery(HOSPITAL_QUERY);
+
   const onChangeInput = (e) => {
     const { name, value } = e.target;
-    setAuthData({ ...authData, [name]: value });
+    console.log(name, value);
+    if (name === 'doctor' || name === 'manager') {
+      setAuthData({ ...authData, role: value });
+    } else {
+      setAuthData({ ...authData, [name]: value });
+    }
   }
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    let [err, {data}] = await to(http.post(regUri, authData));
-
-    if (err)
-      return setAuthError({
-        error: true,
-        msg: err.response.data.msg
-      });
 
     // Set token and user data to localstorage
     setTokenToLocal.token(data.token);
     setTokenToLocal.user(data.token);
+  }
 
-    history.push('/');
+  const getHospitalList = () => {
+    if (!loading)
+      return data.hospitals.map(hospital =>
+        <option value={hospital.id}>{hospital.name}</option>
+        )
   }
 
   return (
-    <AuthWrapper>
+    <AuthWrapper bg={bg}>
       <form className="pt-3" onSubmit={onSubmit}>
         <div className="form-group">
           <Input
@@ -75,19 +85,7 @@ function Register({history}){
 
         <div className="form-group">
           <Input
-            type="text"
-            onChange={onChangeInput}
-            value={authData.username}
-            name="username"
-            placeholder="Username"
-            className="form-control form-control-lg"
-          />
-        </div>
-
-        <div className="form-group">
-          <Input
             type="email"
-            label="Email"
             onChange={onChangeInput}
             value={authData.email}
             name="email"
@@ -107,12 +105,56 @@ function Register({history}){
           />
         </div>
 
-        {authError.error ? <div className="alert alert-danger" role="alert">
-          {authError.msg}
-        </div> : ''}
+        <div className="form-group d-flex">
+          <div className="form-check mr-3">
+            <label className="form-check-label">
+              <input
+                type="radio"
+                className="form-check-input"
+                name="manager"
+                id="manager"
+                value="manager"
+                onChange={onChangeInput}
+              />
+              Manager
+              <i className="input-helper"></i>
+            </label>
+          </div>
+          <div className="form-check">
+            <label className="form-check-label">
+              <input
+                type="radio"
+                className="form-check-input"
+                name="doctor"
+                id="doctor"
+                value="doctor"
+                onChange={onChangeInput}
+              />
+              Doctor
+              <i className="input-helper"></i>
+            </label>
+          </div>
+        </div>
+
+        <div className="form-group">
+          <select name="hospital" className="form-control">
+            <option value="1">Select Hospital</option>
+            <option value="2">another</option>
+          </select>
+        </div>
+
+        {authError.error ? (
+          <div className="alert alert-danger" role="alert">
+            {authError.msg}
+          </div>
+        ) : (
+          ""
+        )}
 
         <div className="mt-3">
-          <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Register</button>
+          <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+            Register
+          </button>
         </div>
 
         <div className="text-center mt-4 font-weight-light">

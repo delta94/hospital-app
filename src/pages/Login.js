@@ -11,6 +11,8 @@ import Error from '../components/ui/Error';
 
 import { setTokenToLocal } from "../utils/localStorage";
 
+import bg from '../img/authbg.jpg';
+
 function Login({ history }) {
   const [authData, setAuthData] = useState({
     email: '',
@@ -55,7 +57,7 @@ function Login({ history }) {
   };
 
   return (
-    <AuthWrapper>
+    <AuthWrapper bg={bg}>
       <form className="pt-3" onSubmit={onSubmitForm}>
         <div className="form-group">
           <Input
@@ -90,6 +92,7 @@ function Login({ history }) {
             <label className="form-check-label text-muted">
               <input type="checkbox" className="form-check-input" />
               Keep me signed in
+              <i class="input-helper"></i>
             </label>
           </div>
           {/* <Link to="/forgot-password" className="auth-link text-black">

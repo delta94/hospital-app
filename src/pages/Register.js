@@ -28,14 +28,11 @@ function Register() {
     msg: ''
   });
 
-  const { loading,error, data } = useQuery(HOSPITAL_QUERY);
+  const { loading, data } = useQuery(HOSPITAL_QUERY);
   const [addUser] = useMutation(REGISTER_MUTATION)
-
-  if (error) console.log(error.networkError.result.errors);
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
     if (name === 'doctor' || name === 'manager') {
       setAuthData({ ...authData, role: value });
     } else {
@@ -59,12 +56,15 @@ function Register() {
     setTokenToLocal.user(data.token);
   }
 
-  const getHospitalList = dataArg => {
-    return dataArg && dataArg.hospitals.map(hospital => (
-      <option value={hospital.id} key={hospital.id}>
-        {hospital.name}
-      </option>
-    ));
+  const getHospitalList = () => {
+    if (!loading)
+      return data.hospitals.map(hospital => (
+        <option value={hospital.id} key={hospital.id}>
+          {hospital.name}
+        </option>
+      ));
+
+    return null;
   };
 
   return (
@@ -134,9 +134,9 @@ function Register() {
               <input
                 type="radio"
                 className="form-check-input"
-                name="doctor"
+                name="manager"
                 id="doctor"
-                value={authData.role}
+                value="doctor"
                 onChange={onChangeInput}
               />
               Doctor
@@ -152,7 +152,7 @@ function Register() {
             onChange={onChangeInput}
           >
             <option value="1">Select Hospital</option>
-            {loading === false ? getHospitalList(data) : ''}
+            {getHospitalList()}
           </select>
         </div>
 

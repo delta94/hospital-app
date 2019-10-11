@@ -1,6 +1,6 @@
 import React from 'react';
 import ApolloClient from 'apollo-client';
-import { ApolloLink } from 'apollo-boost';
+//import { ApolloLink } from 'apollo-boost';
 import { createUploadLink } from 'apollo-upload-client';
 import { ApolloProvider } from '@apollo/react-common';
 import { InMemoryCache } from "apollo-cache-inmemory";

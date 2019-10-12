@@ -12901,7 +12901,7 @@ button.bg-dark:focus {
 .d-table-cell {
   display: table-cell !important; }
 
-.d-flex, .loader-demo-box, .list-wrapper ul li, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user, .email-wrapper .mail-list-container .mail-list .details, .email-wrapper .message-body .attachments-sections ul li .thumb, .email-wrapper .message-body .attachments-sections ul li .details .buttons, .lightGallery .image-tile .demo-gallery-poster, .swal2-modal, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item, .horizontal-menu .bottom-navbar .page-navigation > .nav-item > .nav-link {
+.d-flex, .loader-demo-box, .list-wrapper ul li, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user, .email-wrapper .mail-list-container .mail-list .details, .email-wrapper .message-body .attachments-sections ul li .thumb, .email-wrapper .message-body .attachments-sections ul li .details .buttons, .lightGallery .image-tile .demo-gallery-poster, .swal2-modal, .top-navbar .navbar-menu-wrapper .navbar-nav, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item, .bottom-navbar .page-navigation > .nav-item > .nav-link {
   display: flex !important; }
 
 .d-inline-flex, .email-wrapper .message-body .attachments-sections ul li {
@@ -13053,7 +13053,7 @@ button.bg-dark:focus {
 .embed-responsive-1by1::before {
   padding-top: 100%; }
 
-.flex-row, .email-wrapper .message-body .attachments-sections ul li, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav {
+.flex-row, .email-wrapper .message-body .attachments-sections ul li, .top-navbar .navbar-menu-wrapper .navbar-nav {
   flex-direction: row !important; }
 
 .flex-column, .nav-tabs.nav-tabs-vertical, .nav-tabs.nav-tabs-vertical-custom, .nav-pills.nav-pills-vertical, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user {
@@ -13110,7 +13110,7 @@ button.bg-dark:focus {
 .align-items-end {
   align-items: flex-end !important; }
 
-.align-items-center, .loader-demo-box, .list-wrapper ul li, .email-wrapper .message-body .attachments-sections ul li .thumb, .email-wrapper .message-body .attachments-sections ul li .details .buttons, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item, .horizontal-menu .bottom-navbar .page-navigation > .nav-item > .nav-link {
+.align-items-center, .loader-demo-box, .list-wrapper ul li, .email-wrapper .message-body .attachments-sections ul li .thumb, .email-wrapper .message-body .attachments-sections ul li .details .buttons, .top-navbar .navbar-menu-wrapper .navbar-nav, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item, .bottom-navbar .page-navigation > .nav-item > .nav-link {
   align-items: center !important; }
 
 .align-items-baseline {
@@ -13497,7 +13497,7 @@ button.bg-dark:focus {
 .position-sticky {
   position: sticky !important; }
 
-.fixed-top, .horizontal-menu.fixed-on-scroll .bottom-navbar {
+.fixed-top {
   position: fixed;
   top: 0;
   right: 0;
@@ -13613,7 +13613,7 @@ button.bg-dark:focus {
 .my-0 {
   margin-top: 0 !important; }
 
-.mr-0, .rtl .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item i,
+.mr-0, .rtl .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item i,
 .mx-0 {
   margin-right: 0 !important; }
 
@@ -15056,10 +15056,10 @@ button.bg-dark:focus {
 .text-white {
   color: #ffffff !important; }
 
-.text-primary, .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .category-heading {
+.text-primary, .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .category-heading {
   color: #f76e63 !important; }
 
-a.text-primary:hover, .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu a.category-heading:hover, a.text-primary:focus, .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu a.category-heading:focus {
+a.text-primary:hover, .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu a.category-heading:hover, a.text-primary:focus, .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu a.category-heading:focus {
   color: #f32a1a !important; }
 
 .text-secondary, .list-wrapper .remove {
@@ -15223,7 +15223,7 @@ a.text-dark:hover, a.text-dark:focus {
     transform: none;
     transform: translate3d(0, 0px, 0); } }
 
-.dropdownAnimation, .horizontal-menu .top-navbar .navbar-menu-wrapper .dropdown .dropdown-menu, .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu {
+.dropdownAnimation, .top-navbar .navbar-menu-wrapper .dropdown .dropdown-menu, .bottom-navbar .page-navigation > .nav-item .submenu {
   animation-name: dropdownAnimation;
   -webkit-animation-duration: 0.25s;
   -moz-animation-duration: 0.25s;
@@ -34798,7 +34798,7 @@ button.bg-dark:focus {
 .d-table-cell {
   display: table-cell !important; }
 
-.d-flex, .loader-demo-box, .list-wrapper ul li, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user, .email-wrapper .mail-list-container .mail-list .details, .email-wrapper .message-body .attachments-sections ul li .thumb, .email-wrapper .message-body .attachments-sections ul li .details .buttons, .lightGallery .image-tile .demo-gallery-poster, .swal2-modal, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item, .horizontal-menu .bottom-navbar .page-navigation > .nav-item > .nav-link {
+.d-flex, .loader-demo-box, .list-wrapper ul li, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user, .email-wrapper .mail-list-container .mail-list .details, .email-wrapper .message-body .attachments-sections ul li .thumb, .email-wrapper .message-body .attachments-sections ul li .details .buttons, .lightGallery .image-tile .demo-gallery-poster, .swal2-modal, .top-navbar .navbar-menu-wrapper .navbar-nav, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item, .bottom-navbar .page-navigation > .nav-item > .nav-link {
   display: flex !important; }
 
 .d-inline-flex, .email-wrapper .message-body .attachments-sections ul li {
@@ -34974,7 +34974,7 @@ button.bg-dark:focus {
 .embed-responsive-1by1::before {
   padding-top: 100%; }
 
-.flex-row, .email-wrapper .message-body .attachments-sections ul li, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav {
+.flex-row, .email-wrapper .message-body .attachments-sections ul li, .top-navbar .navbar-menu-wrapper .navbar-nav {
   flex-direction: row !important; }
 
 .flex-column, .nav-tabs.nav-tabs-vertical, .nav-tabs.nav-tabs-vertical-custom, .nav-pills.nav-pills-vertical, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user {
@@ -35031,7 +35031,7 @@ button.bg-dark:focus {
 .align-items-end {
   align-items: flex-end !important; }
 
-.align-items-center, .loader-demo-box, .list-wrapper ul li, .email-wrapper .message-body .attachments-sections ul li .thumb, .email-wrapper .message-body .attachments-sections ul li .details .buttons, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item, .horizontal-menu .bottom-navbar .page-navigation > .nav-item > .nav-link {
+.align-items-center, .loader-demo-box, .list-wrapper ul li, .email-wrapper .message-body .attachments-sections ul li .thumb, .email-wrapper .message-body .attachments-sections ul li .details .buttons, .top-navbar .navbar-menu-wrapper .navbar-nav, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item, .bottom-navbar .page-navigation > .nav-item > .nav-link {
   align-items: center !important; }
 
 .align-items-baseline {
@@ -35418,7 +35418,7 @@ button.bg-dark:focus {
 .position-sticky {
   position: sticky !important; }
 
-.fixed-top, .horizontal-menu.fixed-on-scroll .bottom-navbar {
+.fixed-top {
   position: fixed;
   top: 0;
   right: 0;
@@ -35534,7 +35534,7 @@ button.bg-dark:focus {
 .my-0 {
   margin-top: 0 !important; }
 
-.mr-0, .rtl .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item i,
+.mr-0, .rtl .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item i,
 .mx-0 {
   margin-right: 0 !important; }
 
@@ -36977,10 +36977,10 @@ button.bg-dark:focus {
 .text-white {
   color: #ffffff !important; }
 
-.text-primary, .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .category-heading {
+.text-primary, .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .category-heading {
   color: #f76e63 !important; }
 
-a.text-primary:hover, .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu a.category-heading:hover, a.text-primary:focus, .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu a.category-heading:focus {
+a.text-primary:hover, .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu a.category-heading:hover, a.text-primary:focus, .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu a.category-heading:focus {
   color: #f32a1a !important; }
 
 .text-secondary, .list-wrapper .remove {
@@ -37144,7 +37144,7 @@ a.text-dark:hover, a.text-dark:focus {
     transform: none;
     transform: translate3d(0, 0px, 0); } }
 
-.dropdownAnimation, .horizontal-menu .top-navbar .navbar-menu-wrapper .dropdown .dropdown-menu, .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu {
+.dropdownAnimation, .top-navbar .navbar-menu-wrapper .dropdown .dropdown-menu, .bottom-navbar .page-navigation > .nav-item .submenu {
   animation-name: dropdownAnimation;
   -webkit-animation-duration: 0.25s;
   -moz-animation-duration: 0.25s;
@@ -43877,152 +43877,152 @@ div.tagsinput {
     .footer-wrapper {
       max-width: 1140px; } }
 
-.horizontal-menu .top-navbar {
+.top-navbar {
   font-weight: 400;
   background: #f76e63;
   border-bottom: 1px solid #f6f2f2; }
-  .horizontal-menu .top-navbar .navbar-brand-wrapper {
+  .top-navbar .navbar-brand-wrapper {
     width: auto;
     height: 63px; }
-    .horizontal-menu .top-navbar .navbar-brand-wrapper .navbar-brand {
+    .top-navbar .navbar-brand-wrapper .navbar-brand {
       color: #27367f;
       font-size: 1.5rem;
       line-height: 48px;
       margin-right: 0;
       padding: .25rem 0;
       text-align: left; }
-      .horizontal-menu .top-navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini {
+      .top-navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini {
         display: none;
         padding-left: 0;
         text-align: center; }
-        .horizontal-menu .top-navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini img {
+        .top-navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini img {
           width: 50px;
           max-width: 100%;
           margin: auto; }
-      .horizontal-menu .top-navbar .navbar-brand-wrapper .navbar-brand:active, .horizontal-menu .top-navbar .navbar-brand-wrapper .navbar-brand:focus, .horizontal-menu .top-navbar .navbar-brand-wrapper .navbar-brand:hover {
+      .top-navbar .navbar-brand-wrapper .navbar-brand:active, .top-navbar .navbar-brand-wrapper .navbar-brand:focus, .top-navbar .navbar-brand-wrapper .navbar-brand:hover {
         color: #1b2658; }
-      .horizontal-menu .top-navbar .navbar-brand-wrapper .navbar-brand img {
+      .top-navbar .navbar-brand-wrapper .navbar-brand img {
         max-width: 90%;
         height: 34px;
         margin: auto;
         vertical-align: middle; }
       @media (max-width: 991px) {
-        .horizontal-menu .top-navbar .navbar-brand-wrapper .navbar-brand {
+        .top-navbar .navbar-brand-wrapper .navbar-brand {
           width: 55px; }
-          .horizontal-menu .top-navbar .navbar-brand-wrapper .navbar-brand.brand-logo {
+          .top-navbar .navbar-brand-wrapper .navbar-brand.brand-logo {
             display: none; }
-          .horizontal-menu .top-navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini {
+          .top-navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini {
             display: block; } }
-  .horizontal-menu .top-navbar .navbar-menu-wrapper {
+  .top-navbar .navbar-menu-wrapper {
     color: #ffffff;
     width: auto;
     height: 63px;
     -webkit-flex-grow: 1;
     flex-grow: 1; }
     @media (max-width: 991px) {
-      .horizontal-menu .top-navbar .navbar-menu-wrapper {
+      .top-navbar .navbar-menu-wrapper {
         width: calc(100% - 55px);
         padding-left: 15px;
         padding-right: 15px; } }
-    .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-toggler {
+    .top-navbar .navbar-menu-wrapper .navbar-toggler {
       border: 0;
       color: inherit;
       font-size: 1.5rem; }
       @media (max-width: 991px) {
-        .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-toggler:not(.navbar-toggler-right) {
+        .top-navbar .navbar-menu-wrapper .navbar-toggler:not(.navbar-toggler-right) {
           display: none; } }
       @media (max-width: 991px) {
-        .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-toggler.navbar-toggler-right {
+        .top-navbar .navbar-menu-wrapper .navbar-toggler.navbar-toggler-right {
           padding-left: 15px;
           padding-right: 11px; } }
-    .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item {
+    .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item {
       margin-left: .75rem;
       margin-right: .75rem; }
-      .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link {
+      .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link {
         color: inherit;
         font-size: 1rem; }
-      .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile img {
+      .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile img {
         width: 30px;
         height: 30px;
         border-radius: 100%;
         -webkit-box-shadow: 4px 5px 6px 0px rgba(0, 0, 0, 0.5);
         -moz-box-shadow: 4px 5px 6px 0px rgba(0, 0, 0, 0.5);
         box-shadow: 4px 5px 6px 0px rgba(0, 0, 0, 0.5); }
-      .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-profile-name {
+      .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-profile-name {
         margin-left: .5rem; }
         @media (max-width: 767px) {
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-profile-name {
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-profile-name {
             display: none; } }
-      .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search {
+      .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search {
         margin-left: 2rem; }
-        .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap {
+        .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap {
           background: transparent;
           border: 1px solid rgba(255, 255, 255, 0.4);
           border-radius: 4px;
           padding: .625rem 1.625rem; }
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=text], .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=text],
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select,
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=number], .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=number], .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single .select2-search__field, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single .select2-search__field, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead,
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query,
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query,
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint,
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint,
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .input-group-text,
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .input-group-text {
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=text], .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=text],
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select,
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=number], .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=number], .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single .select2-search__field, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single .select2-search__field, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead,
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query,
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query,
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint,
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint,
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .input-group-text,
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .input-group-text {
             background: transparent;
             border: 0;
             color: #ffffff;
             padding: 0;
             font-size: 10px; }
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select i, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select i, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text] i, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=text] i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text] i, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=text] i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select i, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select i, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number] i, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=number] i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number] i, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=number] i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single i, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single i, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single i, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field i, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint i, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint i,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .input-group-text i,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .input-group-text i {
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select i, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select i, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text] i, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=text] i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text] i, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=text] i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select i, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select i, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number] i, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=number] i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number] i, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=number] i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single i, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single i, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single i, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field i, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint i, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint i,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .input-group-text i,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .input-group-text i {
               font-size: 13px; }
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=text], .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=text],
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select,
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=number], .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=number], .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single .select2-search__field, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single .select2-search__field, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead,
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query,
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query,
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint,
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint {
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=text], .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=text],
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select,
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=number], .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=number], .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single .select2-search__field, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single .select2-search__field, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead,
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query,
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query,
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint,
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint {
             margin-left: .5rem; }
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select::-webkit-input-placeholder, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select::-webkit-input-placeholder, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text]::-webkit-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=text]::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text]::-webkit-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=text]::-webkit-input-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select::-webkit-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select::-webkit-input-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select::-webkit-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number]::-webkit-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=number]::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number]::-webkit-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=number]::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single::-webkit-input-placeholder, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single::-webkit-input-placeholder, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single .select2-search__field::-webkit-input-placeholder, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single .select2-search__field::-webkit-input-placeholder, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead::-webkit-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead::-webkit-input-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query::-webkit-input-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query::-webkit-input-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint::-webkit-input-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint::-webkit-input-placeholder {
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select::-webkit-input-placeholder, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select::-webkit-input-placeholder, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text]::-webkit-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=text]::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text]::-webkit-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=text]::-webkit-input-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select::-webkit-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select::-webkit-input-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select::-webkit-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number]::-webkit-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=number]::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number]::-webkit-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=number]::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single::-webkit-input-placeholder, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single::-webkit-input-placeholder, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single .select2-search__field::-webkit-input-placeholder, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single .select2-search__field::-webkit-input-placeholder, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead::-webkit-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead::-webkit-input-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query::-webkit-input-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query::-webkit-input-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint::-webkit-input-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint::-webkit-input-placeholder {
               color: #ffffff;
               font-size: 10px; }
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control:-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control:-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input:-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input:-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select:-moz-placeholder, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select:-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select:-moz-placeholder, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select:-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input:-moz-placeholder[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input:-moz-placeholder[type=text], .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input:-moz-placeholder[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input:-moz-placeholder[type=text],
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select:-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select:-moz-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select:-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select:-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input:-moz-placeholder[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input:-moz-placeholder[type=number], .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input:-moz-placeholder[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input:-moz-placeholder[type=number], .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single:-moz-placeholder, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single:-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single:-moz-placeholder, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single:-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single .select2-search__field:-moz-placeholder, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field:-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single .select2-search__field:-moz-placeholder, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field:-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead:-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead:-moz-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query:-moz-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query:-moz-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint:-moz-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint:-moz-placeholder {
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control:-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control:-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input:-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input:-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select:-moz-placeholder, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select:-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select:-moz-placeholder, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select:-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input:-moz-placeholder[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input:-moz-placeholder[type=text], .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input:-moz-placeholder[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input:-moz-placeholder[type=text],
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select:-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select:-moz-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select:-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select:-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input:-moz-placeholder[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input:-moz-placeholder[type=number], .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input:-moz-placeholder[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input:-moz-placeholder[type=number], .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single:-moz-placeholder, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single:-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single:-moz-placeholder, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single:-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single .select2-search__field:-moz-placeholder, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field:-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single .select2-search__field:-moz-placeholder, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field:-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead:-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead:-moz-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query:-moz-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query:-moz-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint:-moz-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint:-moz-placeholder {
               color: #ffffff;
               font-size: 10px; }
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select::-moz-placeholder, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select::-moz-placeholder, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text]::-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=text]::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text]::-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=text]::-moz-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select::-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select::-moz-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select::-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number]::-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=number]::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number]::-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=number]::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single::-moz-placeholder, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single::-moz-placeholder, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single .select2-search__field::-moz-placeholder, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single .select2-search__field::-moz-placeholder, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead::-moz-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead::-moz-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query::-moz-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query::-moz-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint::-moz-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint::-moz-placeholder {
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select::-moz-placeholder, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select::-moz-placeholder, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text]::-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=text]::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=text]::-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=text]::-moz-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select::-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select::-moz-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select::-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number]::-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input[type=number]::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input[type=number]::-moz-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input[type=number]::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single::-moz-placeholder, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single::-moz-placeholder, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single .select2-search__field::-moz-placeholder, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single .select2-search__field::-moz-placeholder, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead::-moz-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead::-moz-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query::-moz-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query::-moz-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint::-moz-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint::-moz-placeholder {
               color: #ffffff;
               font-size: 10px; }
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control:-ms-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control:-ms-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input:-ms-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input:-ms-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select:-ms-input-placeholder, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select:-ms-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select:-ms-input-placeholder, .dataTables_wrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select:-ms-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input:-ms-input-placeholder[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input:-ms-input-placeholder[type=text], .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input:-ms-input-placeholder[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input:-ms-input-placeholder[type=text],
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select:-ms-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select:-ms-input-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select:-ms-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select:-ms-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input:-ms-input-placeholder[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input:-ms-input-placeholder[type=number], .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input:-ms-input-placeholder[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input:-ms-input-placeholder[type=number], .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single:-ms-input-placeholder, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single:-ms-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single:-ms-input-placeholder, .select2-container--default .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single:-ms-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single .select2-search__field:-ms-input-placeholder, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field:-ms-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single .select2-search__field:-ms-input-placeholder, .select2-container--default .select2-selection--single .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field:-ms-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead:-ms-input-placeholder, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead:-ms-input-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query:-ms-input-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query:-ms-input-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint:-ms-input-placeholder,
-            .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint:-ms-input-placeholder {
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .form-control:-ms-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .form-control:-ms-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .asColorPicker-input:-ms-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .asColorPicker-input:-ms-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .dataTables_wrapper select:-ms-input-placeholder, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select:-ms-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .dataTables_wrapper select:-ms-input-placeholder, .dataTables_wrapper .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select:-ms-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input:-ms-input-placeholder[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input:-ms-input-placeholder[type=text], .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input:-ms-input-placeholder[type=text], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input:-ms-input-placeholder[type=text],
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row select:-ms-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group select:-ms-input-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row select:-ms-input-placeholder, .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap select:-ms-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .jsgrid .jsgrid-table .jsgrid-filter-row input:-ms-input-placeholder[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group input:-ms-input-placeholder[type=number], .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .jsgrid .jsgrid-table .jsgrid-filter-row input:-ms-input-placeholder[type=number], .jsgrid .jsgrid-table .jsgrid-filter-row .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap input:-ms-input-placeholder[type=number], .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single:-ms-input-placeholder, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-selection--single:-ms-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single:-ms-input-placeholder, .select2-container--default .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-selection--single:-ms-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-container--default .select2-selection--single .select2-search__field:-ms-input-placeholder, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .select2-search__field:-ms-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-container--default .select2-selection--single .select2-search__field:-ms-input-placeholder, .select2-container--default .select2-selection--single .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .select2-search__field:-ms-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .typeahead:-ms-input-placeholder, .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .typeahead:-ms-input-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-query:-ms-input-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-query:-ms-input-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .input-group .tt-hint:-ms-input-placeholder,
+            .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search .asColorPicker-wrap .tt-hint:-ms-input-placeholder {
               color: #ffffff;
               font-size: 10px; }
-      .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown {
+      .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown {
         position: absolute;
         font-size: 0.9rem;
         margin-top: 0;
@@ -44030,66 +44030,66 @@ div.tagsinput {
         left: auto;
         top: 48px;
         padding: 0; }
-        .rtl .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown {
+        .rtl .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown {
           right: auto;
           left: 0; }
-        .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item {
+        .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item {
           margin-bottom: 0;
           padding: 11px 13px; }
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item i {
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item i {
             font-size: 17px; }
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item .badge {
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item .badge {
             margin-left: 2.5rem; }
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item .ellipsis {
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item .ellipsis {
             max-width: 200px;
             overflow: hidden;
             text-overflow: ellipsis; }
-          .rtl .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item i {
+          .rtl .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item i {
             margin-left: 10px; }
-          .rtl .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item .badge {
+          .rtl .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item .badge {
             margin-left: 0;
             margin-right: 2.5rem; }
-        .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-divider {
+        .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-divider {
           margin: 0; }
-      .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown i {
+      .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown i {
         margin-right: .5rem;
         vertical-align: middle; }
       @media (max-width: 991px) {
-        .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown {
+        .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown {
           position: static; }
-          .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown {
+          .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown {
             left: 20px;
             right: 20px;
             top: 63px;
             width: calc(100% - 40px); } }
-      .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item:last-child {
+      .top-navbar .navbar-menu-wrapper .navbar-nav .nav-item:last-child {
         margin-right: 0; }
     @media (min-width: 992px) {
-      .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav.navbar-nav-right {
+      .top-navbar .navbar-menu-wrapper .navbar-nav.navbar-nav-right {
         margin-left: auto; }
-        .rtl .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav.navbar-nav-right {
+        .rtl .top-navbar .navbar-menu-wrapper .navbar-nav.navbar-nav-right {
           margin-left: 0;
           margin-right: auto; } }
-    .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn.btn-outline-secondary, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .fc button.btn-outline-secondary, .fc .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav button.btn-outline-secondary, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .fc .editable-container.editable-inline .editableform .control-group .editable-buttons button.editable-cancel, .fc .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav button.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .fc button.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .fc .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav button.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-upload-dragdrop .btn-outline-secondary.ajax-file-upload, .ajax-upload-dragdrop .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn-outline-secondary.ajax-file-upload, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-file-upload.editable-cancel, .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-file-upload.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .ajax-file-upload.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-file-upload.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-modal .swal2-buttonswrapper .btn-outline-secondary.swal2-styled, .swal2-modal .swal2-buttonswrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn-outline-secondary.swal2-styled, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-styled.editable-cancel, .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-styled.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .swal2-styled.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-styled.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .btn.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions a.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav a.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons a.editable-cancel, .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav a.editable-cancel, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .wizard > .actions a.btn-outline-secondary, .wizard > .actions .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav a.btn-outline-secondary {
+    .top-navbar .navbar-menu-wrapper .navbar-nav .btn.btn-outline-secondary, .top-navbar .navbar-menu-wrapper .navbar-nav .fc button.btn-outline-secondary, .fc .top-navbar .navbar-menu-wrapper .navbar-nav button.btn-outline-secondary, .top-navbar .navbar-menu-wrapper .navbar-nav .fc .editable-container.editable-inline .editableform .control-group .editable-buttons button.editable-cancel, .fc .editable-container.editable-inline .editableform .control-group .editable-buttons .top-navbar .navbar-menu-wrapper .navbar-nav button.editable-cancel, .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .fc button.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .fc .top-navbar .navbar-menu-wrapper .navbar-nav button.editable-cancel, .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-upload-dragdrop .btn-outline-secondary.ajax-file-upload, .ajax-upload-dragdrop .top-navbar .navbar-menu-wrapper .navbar-nav .btn-outline-secondary.ajax-file-upload, .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-file-upload.editable-cancel, .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-file-upload.editable-cancel, .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .ajax-file-upload.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-file-upload.editable-cancel, .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-modal .swal2-buttonswrapper .btn-outline-secondary.swal2-styled, .swal2-modal .swal2-buttonswrapper .top-navbar .navbar-menu-wrapper .navbar-nav .btn-outline-secondary.swal2-styled, .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-styled.editable-cancel, .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-styled.editable-cancel, .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .swal2-styled.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-styled.editable-cancel, .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .btn.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .top-navbar .navbar-menu-wrapper .navbar-nav .btn.editable-cancel, .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions a.editable-cancel, .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions .top-navbar .navbar-menu-wrapper .navbar-nav a.editable-cancel, .top-navbar .navbar-menu-wrapper .navbar-nav .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons a.editable-cancel, .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons .top-navbar .navbar-menu-wrapper .navbar-nav a.editable-cancel, .top-navbar .navbar-menu-wrapper .navbar-nav .wizard > .actions a.btn-outline-secondary, .wizard > .actions .top-navbar .navbar-menu-wrapper .navbar-nav a.btn-outline-secondary {
       color: #ffffff;
       border: 1px solid rgba(246, 242, 242, 0.5); }
-      .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn.btn-outline-secondary:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .fc button.btn-outline-secondary:hover, .fc .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav button.btn-outline-secondary:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .fc .editable-container.editable-inline .editableform .control-group .editable-buttons button.editable-cancel:hover, .fc .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav button.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .fc button.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .fc .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav button.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-upload-dragdrop .btn-outline-secondary.ajax-file-upload:hover, .ajax-upload-dragdrop .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn-outline-secondary.ajax-file-upload:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-file-upload.editable-cancel:hover, .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-file-upload.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .ajax-file-upload.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-file-upload.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-modal .swal2-buttonswrapper .btn-outline-secondary.swal2-styled:hover, .swal2-modal .swal2-buttonswrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn-outline-secondary.swal2-styled:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-styled.editable-cancel:hover, .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-styled.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .swal2-styled.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-styled.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .btn.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .btn.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions a.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav a.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons a.editable-cancel:hover, .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav a.editable-cancel:hover, .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav .wizard > .actions a.btn-outline-secondary:hover, .wizard > .actions .horizontal-menu .top-navbar .navbar-menu-wrapper .navbar-nav a.btn-outline-secondary:hover {
+      .top-navbar .navbar-menu-wrapper .navbar-nav .btn.btn-outline-secondary:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .fc button.btn-outline-secondary:hover, .fc .top-navbar .navbar-menu-wrapper .navbar-nav button.btn-outline-secondary:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .fc .editable-container.editable-inline .editableform .control-group .editable-buttons button.editable-cancel:hover, .fc .editable-container.editable-inline .editableform .control-group .editable-buttons .top-navbar .navbar-menu-wrapper .navbar-nav button.editable-cancel:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .fc button.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .fc .top-navbar .navbar-menu-wrapper .navbar-nav button.editable-cancel:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-upload-dragdrop .btn-outline-secondary.ajax-file-upload:hover, .ajax-upload-dragdrop .top-navbar .navbar-menu-wrapper .navbar-nav .btn-outline-secondary.ajax-file-upload:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-file-upload.editable-cancel:hover, .ajax-upload-dragdrop .editable-container.editable-inline .editableform .control-group .editable-buttons .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-file-upload.editable-cancel:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .ajax-file-upload.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .ajax-upload-dragdrop .top-navbar .navbar-menu-wrapper .navbar-nav .ajax-file-upload.editable-cancel:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-modal .swal2-buttonswrapper .btn-outline-secondary.swal2-styled:hover, .swal2-modal .swal2-buttonswrapper .top-navbar .navbar-menu-wrapper .navbar-nav .btn-outline-secondary.swal2-styled:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-styled.editable-cancel:hover, .swal2-modal .swal2-buttonswrapper .editable-container.editable-inline .editableform .control-group .editable-buttons .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-styled.editable-cancel:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .swal2-styled.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .swal2-modal .swal2-buttonswrapper .top-navbar .navbar-menu-wrapper .navbar-nav .swal2-styled.editable-cancel:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .btn.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .top-navbar .navbar-menu-wrapper .navbar-nav .btn.editable-cancel:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions a.editable-cancel:hover, .editable-container.editable-inline .editableform .control-group .editable-buttons .wizard > .actions .top-navbar .navbar-menu-wrapper .navbar-nav a.editable-cancel:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons a.editable-cancel:hover, .wizard > .actions .editable-container.editable-inline .editableform .control-group .editable-buttons .top-navbar .navbar-menu-wrapper .navbar-nav a.editable-cancel:hover, .top-navbar .navbar-menu-wrapper .navbar-nav .wizard > .actions a.btn-outline-secondary:hover, .wizard > .actions .top-navbar .navbar-menu-wrapper .navbar-nav a.btn-outline-secondary:hover {
         background: transparent;
         border: 1px solid rgba(246, 242, 242, 0.7); }
-    .horizontal-menu .top-navbar .navbar-menu-wrapper .dropdown-menu {
+    .top-navbar .navbar-menu-wrapper .dropdown-menu {
       border: none;
       -webkit-box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
       -moz-box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
       box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2); }
-    .horizontal-menu .top-navbar .navbar-menu-wrapper .count-indicator {
+    .top-navbar .navbar-menu-wrapper .count-indicator {
       position: relative;
       padding: 0;
       text-align: center; }
-      .horizontal-menu .top-navbar .navbar-menu-wrapper .count-indicator i {
+      .top-navbar .navbar-menu-wrapper .count-indicator i {
         font-size: 1.25rem;
         margin-right: 0;
         vertical-align: middle; }
-      .horizontal-menu .top-navbar .navbar-menu-wrapper .count-indicator .count {
+      .top-navbar .navbar-menu-wrapper .count-indicator .count {
         position: absolute;
         left: 35%;
         width: 6px;
@@ -44097,10 +44097,10 @@ div.tagsinput {
         border-radius: 100%;
         background: #e94437;
         top: -2px; }
-      .horizontal-menu .top-navbar .navbar-menu-wrapper .count-indicator:after {
+      .top-navbar .navbar-menu-wrapper .count-indicator:after {
         display: none; }
 
-.horizontal-menu .bottom-navbar {
+.bottom-navbar {
   background: #ffffff;
   position: relative;
   top: 0;
@@ -44123,13 +44123,13 @@ div.tagsinput {
   -webkit-box-shadow: 0 19px 34px -15px #d2d2f2;
   -moz-box-shadow: 0 19px 34px -15px #d2d2f2; }
   @media (max-width: 991.98px) {
-    .horizontal-menu .bottom-navbar {
+    .bottom-navbar {
       display: none; }
-      .horizontal-menu .bottom-navbar.header-toggled {
+      .bottom-navbar.header-toggled {
         display: block;
         max-height: calc(100vh - 63px);
         overflow: auto; } }
-  .horizontal-menu .bottom-navbar .page-navigation {
+  .bottom-navbar .page-navigation {
     position: relative;
     width: 100%;
     z-index: 99;
@@ -44144,41 +44144,41 @@ div.tagsinput {
     -o-transition-property: background, box-shadow;
     transition-property: background, box-shadow; }
     @media (max-width: 991.98px) {
-      .horizontal-menu .bottom-navbar .page-navigation {
+      .bottom-navbar .page-navigation {
         border: none; } }
-    .horizontal-menu .bottom-navbar .page-navigation > .nav-item {
+    .bottom-navbar .page-navigation > .nav-item {
       line-height: 1;
       text-align: left; }
       @media (max-width: 991.98px) {
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item {
+        .bottom-navbar .page-navigation > .nav-item {
           display: block;
           width: 100%;
           border-right: none; } }
       @media (min-width: 992px) {
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item:first-child > .nav-link {
+        .bottom-navbar .page-navigation > .nav-item:first-child > .nav-link {
           padding-left: 0; } }
-      .horizontal-menu .bottom-navbar .page-navigation > .nav-item:last-child {
+      .bottom-navbar .page-navigation > .nav-item:last-child {
         border-right: none; }
         @media (min-width: 992px) {
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item:last-child > .nav-link {
+          .bottom-navbar .page-navigation > .nav-item:last-child > .nav-link {
             padding-right: 0; } }
-      .horizontal-menu .bottom-navbar .page-navigation > .nav-item > .nav-link {
+      .bottom-navbar .page-navigation > .nav-item > .nav-link {
         color: #686868;
         padding: 22px 10px;
         line-height: 1;
         font-weight: 400; }
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item > .nav-link .menu-title {
+        .bottom-navbar .page-navigation > .nav-item > .nav-link .menu-title {
           font-size: 0.875rem;
           font-weight: 300; }
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item > .nav-link .menu-icon {
+        .bottom-navbar .page-navigation > .nav-item > .nav-link .menu-icon {
           margin-right: 10px;
           font-size: 1.25rem;
           color: #686868;
           font-weight: 400; }
-          .rtl .horizontal-menu .bottom-navbar .page-navigation > .nav-item > .nav-link .menu-icon {
+          .rtl .bottom-navbar .page-navigation > .nav-item > .nav-link .menu-icon {
             margin-right: 0;
             margin-left: 10px; }
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item > .nav-link .menu-arrow {
+        .bottom-navbar .page-navigation > .nav-item > .nav-link .menu-arrow {
           margin-left: 5px;
           display: inline-block;
           -moz-transform: rotate(0deg);
@@ -44195,7 +44195,7 @@ div.tagsinput {
           -moz-transition-duration: 0.25s;
           -o-transition-duration: 0.25s;
           transition-duration: 0.25s; }
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item > .nav-link .menu-arrow:before {
+          .bottom-navbar .page-navigation > .nav-item > .nav-link .menu-arrow:before {
             content: "\F140";
             font-family: "Material Design Icons";
             font-style: normal;
@@ -44203,15 +44203,15 @@ div.tagsinput {
             font-size: 20px;
             line-height: 10px; }
       @media (min-width: 768px) {
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item:hover .submenu {
+        .bottom-navbar .page-navigation > .nav-item:hover .submenu {
           display: block; }
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item:hover > .nav-link {
+        .bottom-navbar .page-navigation > .nav-item:hover > .nav-link {
           background: transparent; }
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item:hover > .nav-link i,
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item:hover > .nav-link .menu-title {
+          .bottom-navbar .page-navigation > .nav-item:hover > .nav-link i,
+          .bottom-navbar .page-navigation > .nav-item:hover > .nav-link .menu-title {
             color: #f76e63;
             transition: color 1s ease; }
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item:hover > .nav-link .menu-arrow {
+          .bottom-navbar .page-navigation > .nav-item:hover > .nav-link .menu-arrow {
             -moz-transform: rotate(-180deg);
             -o-transform: rotate(-180deg);
             -ms-transform: rotate(-180deg);
@@ -44227,15 +44227,15 @@ div.tagsinput {
             -o-transition-duration: 0.25s;
             transition-duration: 0.25s; } }
       @media (max-width: 991.98px) {
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item.show-submenu .submenu {
+        .bottom-navbar .page-navigation > .nav-item.show-submenu .submenu {
           display: block; }
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item.show-submenu > .nav-link {
+        .bottom-navbar .page-navigation > .nav-item.show-submenu > .nav-link {
           background: transparent; }
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item.show-submenu > .nav-link i,
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item.show-submenu > .nav-link .menu-title {
+          .bottom-navbar .page-navigation > .nav-item.show-submenu > .nav-link i,
+          .bottom-navbar .page-navigation > .nav-item.show-submenu > .nav-link .menu-title {
             color: #f76e63;
             transition: color 1s ease; }
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item.show-submenu > .nav-link .menu-arrow {
+          .bottom-navbar .page-navigation > .nav-item.show-submenu > .nav-link .menu-arrow {
             -moz-transform: rotate(-180deg);
             -o-transform: rotate(-180deg);
             -ms-transform: rotate(-180deg);
@@ -44250,9 +44250,9 @@ div.tagsinput {
             -moz-transition-duration: 0.25s;
             -o-transition-duration: 0.25s;
             transition-duration: 0.25s; } }
-      .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link {
+      .bottom-navbar .page-navigation > .nav-item.active > .nav-link {
         position: relative; }
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link:before {
+        .bottom-navbar .page-navigation > .nav-item.active > .nav-link:before {
           position: absolute;
           content: "";
           left: 0;
@@ -44260,25 +44260,25 @@ div.tagsinput {
           width: 100%;
           height: 5px; }
           @media (max-width: 991px) {
-            .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link:before {
+            .bottom-navbar .page-navigation > .nav-item.active > .nav-link:before {
               left: -15px;
               top: 0;
               bottom: 0;
               height: 100%;
               width: 5px; } }
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link .menu-title,
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link i,
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link .menu-arrow {
+        .bottom-navbar .page-navigation > .nav-item.active > .nav-link .menu-title,
+        .bottom-navbar .page-navigation > .nav-item.active > .nav-link i,
+        .bottom-navbar .page-navigation > .nav-item.active > .nav-link .menu-arrow {
           color: #f76e63; }
-      .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu {
+      .bottom-navbar .page-navigation > .nav-item .submenu {
         display: none; }
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul {
+        .bottom-navbar .page-navigation > .nav-item .submenu ul {
           list-style-type: none;
           padding-left: 0; }
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul li {
+          .bottom-navbar .page-navigation > .nav-item .submenu ul li {
             display: block;
             line-height: 20px; }
-            .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul li a {
+            .bottom-navbar .page-navigation > .nav-item .submenu ul li a {
               display: block;
               padding: 5px 10px;
               font-weight: 300;
@@ -44299,27 +44299,27 @@ div.tagsinput {
               -o-transition-property: background;
               transition-property: background;
               border-radius: 6px; }
-              .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul li a:hover {
+              .bottom-navbar .page-navigation > .nav-item .submenu ul li a:hover {
                 color: #f76e63;
                 -webkit-transition: color 0.1s linear;
                 -moz-transition: color 0.1s linear;
                 -ms-transition: color 0.1s linear;
                 -o-transition: color 0.1s linear;
                 transition: color 0.1s linear; }
-                .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul li a:hover:before {
+                .bottom-navbar .page-navigation > .nav-item .submenu ul li a:hover:before {
                   background: #f76e63; }
-              .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul li a.active {
+              .bottom-navbar .page-navigation > .nav-item .submenu ul li a.active {
                 color: #f76e63; }
-            .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul li.active a {
+            .bottom-navbar .page-navigation > .nav-item .submenu ul li.active a {
               color: #f76e63; }
-              .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul li.active a:before {
+              .bottom-navbar .page-navigation > .nav-item .submenu ul li.active a:before {
                 background: #f76e63; }
-      .horizontal-menu .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) {
+      .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) {
         position: relative; }
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu {
+        .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu {
           left: 0; }
           @media (min-width: 768px) {
-            .horizontal-menu .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu {
+            .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu {
               position: absolute;
               top: 61px;
               z-index: 999;
@@ -44328,10 +44328,10 @@ div.tagsinput {
               border-radius: 4px;
               box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
               -webkit-box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08); }
-              .horizontal-menu .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu li a {
+              .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu li a {
                 position: relative;
                 padding-left: 20px; }
-                .horizontal-menu .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu li a::before {
+                .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu li a::before {
                   position: absolute;
                   content: "";
                   width: 6px;
@@ -44341,26 +44341,26 @@ div.tagsinput {
                   top: 12px;
                   left: 0; } }
           @media (max-width: 991.98px) {
-            .horizontal-menu .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu {
+            .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu {
               position: relative;
               top: 0;
               box-shadow: none; } }
           @media (max-width: 991.98px) {
-            .horizontal-menu .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu {
+            .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu {
               top: 0; } }
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu ul {
+          .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu ul {
             width: auto;
             padding: 25px; }
             @media (max-width: 991.98px) {
-              .horizontal-menu .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu ul {
+              .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) .submenu ul {
                 padding: 0 23px; } }
-      .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu {
+      .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu {
         width: 100%;
         left: 0;
         right: 0;
         padding: 25px; }
         @media (min-width: 768px) {
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu {
+          .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu {
             position: absolute;
             top: 61px;
             z-index: 999;
@@ -44369,10 +44369,10 @@ div.tagsinput {
             border-radius: 4px;
             box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
             -webkit-box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08); }
-            .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu li a {
+            .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu li a {
               position: relative;
               padding-left: 20px; }
-              .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu li a::before {
+              .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu li a::before {
                 position: absolute;
                 content: "";
                 width: 6px;
@@ -44382,43 +44382,32 @@ div.tagsinput {
                 top: 12px;
                 left: 0; } }
         @media (max-width: 991.98px) {
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu {
+          .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu {
             position: relative;
             top: 0;
             box-shadow: none; } }
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .category-heading {
+        .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .category-heading {
           font-size: .875rem;
           font-weight: 500;
           text-align: left;
           color: #000;
           padding: 1rem 0;
           margin-bottom: 0; }
-        .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .col-group-wrapper {
+        .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .col-group-wrapper {
           padding: 0 1rem; }
         @media (max-width: 991.98px) {
-          .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu {
+          .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu {
             padding: 0 32px; }
-            .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .col-group-wrapper {
+            .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .col-group-wrapper {
               margin-left: 0;
               margin-right: 0;
               padding: 0; }
-              .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .col-group-wrapper .col-group {
+              .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .col-group-wrapper .col-group {
                 padding-left: 0;
                 padding-right: 0;
                 margin-bottom: 20px; }
-                .horizontal-menu .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .col-group-wrapper .col-group .category-heading:after {
+                .bottom-navbar .page-navigation > .nav-item.mega-menu .submenu .col-group-wrapper .col-group .category-heading:after {
                   display: none; } }
-
-.horizontal-menu.fixed-on-scroll .bottom-navbar {
-  border-bottom: 1px solid #f6f2f2; }
-
-@media (max-width: 991px) {
-  .horizontal-menu {
-    position: fixed;
-    z-index: 1030;
-    top: 0;
-    left: 0;
-    right: 0; } }
 
 .page-header-tab {
   border: 1px solid rgba(166, 171, 182, 0.3);

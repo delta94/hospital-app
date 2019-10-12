@@ -9,6 +9,7 @@ import Register from '../pages/Register';
 import CreateHospital from '../pages/superadmin/CreateHospital';
 import HospitalEdit from '../pages/superadmin/HospitalAdmin';
 import Hospital from '../pages/HospitalProfile';
+import Pending from '../pages/AuthPending';
 
 import { getItemFromLocal } from '../utils/localStorage';
 
@@ -20,6 +21,7 @@ function RouterComponent() {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <Route path="/pending" component={Pending} />
         <PrivateRoute path="/hospital/create" routeComponet={CreateHospital} />
         <PrivateRoute path="/hospital/:id" routeComponet={HospitalEdit} />
         <AdminRoute path="/hospital/" routeComponent={Hospital} />

@@ -6,14 +6,12 @@ import to from 'await-to-js';
 import Input from '../components/forms/Input';
 import AuthWrapper from '../hoc/AuthWrapper';
 
-import { setTokenToLocal } from '../utils/setTokenToLocal';
-
 import bg from "../img/authbg.jpg";
 import { HOSPITAL_QUERY } from '../graphql/Query';
 import { REGISTER_MUTATION } from "../graphql/Mutation";
 
 
-function Register() {
+function Register({history}) {
   const [authData, setAuthData] = useState({
     firstName: '',
     lastName: '',
@@ -49,12 +47,16 @@ function Register() {
       }
     }));
 
-    console.log(response);
-    if (err) return;
+    if (err) return setAuthError({
+      error: true,
+      msg: err.graphQLErrors[0].message
+    });
 
-    // Set token and user data to localstorage
-    setTokenToLocal.token(data.token);
-    setTokenToLocal.user(data.token);
+    history.push('/pending');
+
+    // //Set token and user data to localstorage
+    // setTokenToLocal.token(response.data.addUser);
+    // setTokenToLocal.user(response.data.addUser);
   }
 
   const getHospitalList = () => {

@@ -9,7 +9,7 @@ import Input from "../components/forms/Input";
 import AuthWrapper from "../hoc/AuthWrapper";
 import Error from '../components/ui/Error';
 
-import { setTokenToLocal } from "../utils/localStorage";
+import { setTokenToLocal, getItemFromLocal } from "../utils/localStorage";
 
 import bg from '../img/authbg.jpg';
 
@@ -53,6 +53,9 @@ function Login({ history }) {
     setTokenToLocal.token(response.data.authUser);
     setTokenToLocal.user(response.data.authUser);
     // Push user to home page
+
+    const user = await getItemFromLocal('user');
+    if (user.pending) return history.push('/pending');
     history.push("/");
   };
 

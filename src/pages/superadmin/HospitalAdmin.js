@@ -18,7 +18,8 @@ const initialState = {
   email: '',
   password: '',
   role: 'admin',
-  hospital: ''
+  hospital: '',
+  pending: false
 }
 
 function HospitalEdit({ match }) {
@@ -43,6 +44,7 @@ function HospitalEdit({ match }) {
 
   const onCreateAdmin = async e => {
     e.preventDefault();
+    console.log(adminData);
     let [err, ] = await to(
       addUser({
         variables: {
@@ -50,7 +52,7 @@ function HospitalEdit({ match }) {
         }
       }));
 
-    if (err) {
+    if (err !== null) {
       return setAdminError({
         error: true,
         msg: err.graphQLErrors[0].message

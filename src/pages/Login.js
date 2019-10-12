@@ -55,6 +55,9 @@ function Login({ history }) {
     // Push user to home page
 
     const user = await getItemFromLocal('user');
+    if (user.role === 'superadmin')
+      return history.push('/');
+
     if (user.pending) return history.push('/pending');
     history.push("/");
   };
@@ -95,7 +98,7 @@ function Login({ history }) {
             <label className="form-check-label text-muted">
               <input type="checkbox" className="form-check-input" />
               Keep me signed in
-              <i class="input-helper"></i>
+              <i className="input-helper"></i>
             </label>
           </div>
           {/* <Link to="/forgot-password" className="auth-link text-black">

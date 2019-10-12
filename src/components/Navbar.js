@@ -22,7 +22,7 @@ const Navbar = () => {
           </li>
           {user.role === "admin" ? (
             <li className="nav-item">
-              <Link to="/hospital/users" className="nav-link d-flex align-items-center">
+              <Link to="/users" className="nav-link d-flex align-items-center">
                 <i className="material-icons menu-icon mr-1">
                   supervised_user_circle
                 </i>

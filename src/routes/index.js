@@ -28,7 +28,7 @@ function RouterComponent() {
         <PrivateRoute path="/hospital/create" routeComponet={CreateHospital} />
         <PrivateRoute path="/hospital/:id" routeComponet={HospitalEdit} />
         <AdminRoute path="/hospital/" routeComponent={Hospital} />
-        <AdminRoute path="/hospital/users" routeComponent={HospitalUsers} />
+        <AdminRoute path="/users" exact routeComponent={HospitalUsers} />
       </Switch>
     </Router>
   );

@@ -41,7 +41,7 @@ function Register({history}) {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const [err, response] = await to(addUser({
+    const [err, ] = await to(addUser({
       variables: {
         userInput: authData
       }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import logo from '../img/logo.svg';
+import logo from '../img/logo-white.svg';
 
 function Header({ user, location }) {
   const isAuthPage = () => {
@@ -15,7 +15,7 @@ function Header({ user, location }) {
   return (
     <>
     {isAuthPage() ? (
-      <nav className="navbar top-navbar ">
+      <nav className="navbar top-navbar bg-primary">
         <div className="text-left navbar-brand-wrapper d-flex align-items-center justify-content-between">
           <Link className="navbar-brand brand-logo" to="/">
             <img src={logo} alt="logo" />

@@ -4,6 +4,7 @@ import PrivateRoute from './PrivateRoute';
 import AdminRoute from './AdminRoute';
 
 import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import CreateHospital from '../pages/superadmin/CreateHospital';
@@ -19,6 +20,7 @@ function RouterComponent() {
   return (
     <Router>
       <Header user={user} />
+      <Navbar />
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />

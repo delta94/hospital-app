@@ -13,6 +13,19 @@ export const hospitalFragment = gql`
   }
 `;
 
+export const userFragment = gql`
+  fragment user on User {
+    id
+    firstName
+    lastName
+    email
+    role
+    password
+    hospital
+    pending
+  }
+`
+
 export const HOSPITAL_QUERY = gql`
   {
     hospitals {
@@ -35,11 +48,9 @@ export const SINGLE_HOSPITAL = gql`
 export const HOSPITAL_USERS = gql`
   query getHospitalUsers($id: ID!) {
     getHospitalUsers(id: $id) {
-      id
-      firstName
-      email
-      pending
+      ...user
     }
   }
+  ${userFragment}
 `;
 

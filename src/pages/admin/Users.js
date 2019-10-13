@@ -15,10 +15,10 @@ const HospitalUsers = () => {
     variables: {id: user.hospital}
   });
 
+
+
   if (loading)
     return <Layout><Loader /></Layout>
-
-  console.log(data);
 
   return (
     <Layout>

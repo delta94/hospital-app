@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import to from 'await-to-js';
-import Layout from '../../hoc/Layout';
 import CreateHospitalForm from '../../components/forms/CreateHospitalForm';
 import Loader from '../../components/ui/Loader';
 import HospitalCard from '../../components/hospital/HospitalCard';
@@ -53,7 +52,7 @@ function CreateHospital({ history }) {
   if (error) return <Permission />;
 
   return (
-    <Layout loading={loading}>
+    <>
       <h2 className="pb-3">Hospitals</h2>
       <CreateHospitalForm
         hospitalValue={hospital.name}
@@ -79,7 +78,7 @@ function CreateHospital({ history }) {
           ))
         )}
       </div>
-    </Layout>
+    </>
   );
 };
 

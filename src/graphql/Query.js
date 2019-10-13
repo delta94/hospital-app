@@ -23,6 +23,7 @@ export const userFragment = gql`
     password
     hospital
     pending
+    avatar
   }
 `
 

@@ -1,7 +1,6 @@
 import React from 'react';
 
-const FileUpload = ({onChange, name, user}) => {
-  if (user.role !== 'admin') return null;
+const FileUpload = ({onChange, name}) => {
   return (
     <div className="file-upload">
       <input type="file" onChange={onChange} name={name} />

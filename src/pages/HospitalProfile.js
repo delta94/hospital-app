@@ -132,7 +132,9 @@ function Hospital() {
         }}
       >
         <div className="card-img-overlay">
-          <FileUpload onChange={handleFile} name="coverphoto" user={user} />
+          {user.role === 'admin'
+            ? <FileUpload onChange={handleFile} name="coverphoto" />
+            : null}
         </div>
       </div>
       <div
@@ -141,7 +143,9 @@ function Hospital() {
           background: "url(" + data.hospital.logo + ") center center no-repeat"
         }}
       >
-        <FileUpload onChange={handleFile} name="logo" user={user} />
+        {user.role === 'admin'
+          ? <FileUpload onChange={handleFile} name="logo" user={user} />
+          : null}
       </div>
       <div className="card-body">
         <h2 className="d-flex align-items-center justify-content-between">

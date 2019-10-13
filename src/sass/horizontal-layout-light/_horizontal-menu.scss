@@ -432,32 +432,30 @@
       }
 
 
-      &.active {
-        > .nav-link {
-          position: relative;
+      > .nav-link.active {
+        position: relative;
 
-          &:before {
-            position: absolute;
-            content: "";
-            left: 0;
-            bottom: -2px;
-            width: 100%;
-            height: 5px;
+        &:before {
+          position: absolute;
+          content: "";
+          left: 0;
+          bottom: -2px;
+          width: 100%;
+          height: 5px;
 
-            @media (max-width: 991px) {
-              left: -15px;
-              top: 0;
-              bottom: 0;
-              height: 100%;
-              width: 5px;
-            }
+          @media (max-width: 991px) {
+            left: -15px;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 5px;
           }
+        }
 
-          .menu-title,
-          i,
-          .menu-arrow {
-            color: $horizontal-bottom-menu-item-active-color;
-          }
+        .menu-title,
+        i,
+        .menu-arrow {
+          color: $horizontal-bottom-menu-item-active-color;
         }
       }
 
@@ -590,4 +588,3 @@
     }
   }
 }
-

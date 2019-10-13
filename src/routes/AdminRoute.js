@@ -11,7 +11,7 @@ const AdminRoute = ({ routeComponent: Component, ...rest }) => {
     <Route
     {...rest}
       render={props =>
-        user && user.role === 'admin'
+        (user && user.role === 'admin') || (user && user.role === 'manager')
           ? <Component {...props}/>
           : <Permission />
     }

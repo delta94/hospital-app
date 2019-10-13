@@ -35,6 +35,15 @@ export const HOSPITAL_QUERY = gql`
   ${hospitalFragment}
 `;
 
+export const USER_QUERY = gql`
+  query getSingleUser($id: ID!) {
+    user(id: $id) {
+      ...user
+    }
+  }
+  ${userFragment}
+`
+
 
 export const SINGLE_HOSPITAL = gql`
   query getHospital($id: ID!) {

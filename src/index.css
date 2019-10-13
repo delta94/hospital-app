@@ -44661,3 +44661,12 @@ select.tt-hint {
 
 .pointer {
   cursor: pointer; }
+
+.user-avatar {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 6px;
+  background-size: cover !important;
+  margin: 0 auto;
+  margin-bottom: 20px; }

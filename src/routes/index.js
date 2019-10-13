@@ -12,8 +12,9 @@ import CreateHospital from '../pages/superadmin/CreateHospital';
 import HospitalEdit from '../pages/superadmin/HospitalAdmin';
 import Hospital from '../pages/HospitalProfile';
 import Pending from '../pages/AuthPending';
-import HospitalUsers from '../pages/admin/Users';
+import HospitalUsers from '../pages/admin/HospitalUsers';
 import Dashboard from '../pages/Dashboard';
+import UserProfile from '../pages/UserProfile';
 
 import { getItemFromLocal } from '../utils/localStorage';
 
@@ -35,6 +36,7 @@ function RouterComponent() {
           <PrivateRoute path="/hospital/:id" routeComponet={HospitalEdit} />
           <AdminRoute path="/hospital/" routeComponent={Hospital} />
           <AdminRoute path="/users" exact routeComponent={HospitalUsers} />
+          <AdminRoute path="/profile" exact routeComponent={UserProfile} />
           <AdminRoute path="/" exact routeComponent={Dashboard} />
         </Switch>
       </Layout>

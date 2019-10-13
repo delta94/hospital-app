@@ -55,6 +55,18 @@ const Navbar = ({ location }) => {
                   </NavLink>
                 </li>
               ) : null}
+              <li className="nav-item">
+                <NavLink
+                  to="/profile"
+                  activeClassName="active"
+                  className="nav-link d-flex align-items-center"
+                >
+                  <i className="material-icons menu-icon mr-1">
+                    description
+                  </i>
+                  <span className="menu-title">Profile</span>
+                </NavLink>
+              </li>
             </ul>
           </div>
         </nav>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { omit } from 'lodash';
 import to from 'await-to-js';
@@ -17,9 +17,16 @@ import { config } from '../config';
 const UserProfile = () => {
   const localuser = getItemFromLocal('user');
 
+  const [userState, setUserState] = useState({});
+
   const { loading,  data } = useQuery(USER_QUERY, {
-    variables: { id: localuser._id }
+    variables: { id: localuser._id },
+    fetchPolicy: 'cache-and-network',
+    onCompleted: data => setUserState(data.user)
   });
+
+
+
 
   const [singleUpload] = useMutation(UPLOAD_FILE);
   const [updateUser] = useMutation(UPDATE_USER_MUTATION, {

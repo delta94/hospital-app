@@ -7,7 +7,7 @@ import Input from '../components/forms/Input';
 import AuthWrapper from '../hoc/AuthWrapper';
 
 import bg from "../img/authbg.jpg";
-import { HOSPITAL_QUERY } from '../graphql/Query';
+import { HOSPITAL_QUERY, HOSPITAL_USERS } from "../graphql/Query";
 import { REGISTER_MUTATION } from "../graphql/Mutation";
 
 
@@ -44,7 +44,8 @@ function Register({history}) {
     const [err, ] = await to(addUser({
       variables: {
         userInput: authData
-      }
+      },
+      refetchQueries: [{query: HOSPITAL_USERS, variables: {id: authData.hospital}}]
     }));
 
     if (err) return setAuthError({

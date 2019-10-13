@@ -40,12 +40,17 @@ const HospitalUserTable = ({ users }) => {
                 <i
                   className={
                     user && !user.pending
-                      ? "material-icons text-success"
-                      : "material-icons text-muted"
+                      ? "material-icons text-success pointer"
+                      : "material-icons-outlined text-muted pointer"
                   }
                 >
                   verified_user
+                </i><i
+                  className="material-icons pointer ml-2"
+                >
+                  delete
                 </i>
+
               </div>
             </td>
           </tr>

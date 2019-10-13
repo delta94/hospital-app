@@ -44658,3 +44658,6 @@ select.tt-hint {
 
 .full-page-wrapper {
   background-size: cover !important; }
+
+.pointer {
+  cursor: pointer; }

@@ -5,11 +5,12 @@ const Input = props => (
     {props.label && <label htmlFor={props.name}>{props.label}</label>}
     <input
       value={props.value || ''}
-      type={props.type}
+      type={props.type || 'text'}
       onChange={props.onChange}
       name={props.name}
       className={props.className}
       placeholder={props.placeholder}
+      disabled={props.disabled}
     />
   </div>
 );

@@ -25,28 +25,29 @@ function Hospital() {
   const [specialtiesValue, setSpecialtiesValue] = useState("");
   const [hospital, setHospital] = useState({});
 
-  const { loading, data } = useQuery(SINGLE_HOSPITAL, {
-    variables: { id: user.hospital }
+  const { loading } = useQuery(SINGLE_HOSPITAL, {
+    variables: { id: user.hospital },
+    onCompleted: data => setHospital(data.hospital)
   });
 
   const [singleUpload] = useMutation(UPLOAD_FILE);
   const [updateHospital] = useMutation(HOSPITAL_UPDATE_MUTATION, {
     refetchQueries: [
-      { query: SINGLE_HOSPITAL, variables: { id: user.hospital } }
+      { query: SINGLE_HOSPITAL, variables: { id: user.hospital }, onCompleted: data => setHospital(data.hosital) }
     ]
   });
 
   const handleFile = async e => {
     const [file] = e.target.files;
     const { name } = e.target;
-    let hospital = data.hospital;
-    hospital = omit(hospital, ["__typename"]);
+    let hospitalData = {...hospital};
+    hospitalData = omit(hospitalData, ["__typename"]);
     // Upload mutation for get the hospital logo/coverphoto
     const [, response] = await to(
       singleUpload({
         variables: {
           file,
-          id: hospital.id,
+          id: hospitalData.id,
           type: name
         }
       })
@@ -62,28 +63,22 @@ function Hospital() {
     await to(
       updateHospital({
         variables: {
-          id: hospital.id,
+          id: hospitalData.id,
           update: {
-            ...hospital,
-            coverphoto: name === "coverphoto" ? filePath : hospital.coverphoto,
-            logo: name === "logo" ? filePath : hospital.logo
+            ...hospitalData,
+            coverphoto:
+              name === "coverphoto" ? filePath : hospitalData.coverphoto,
+            logo: name === "logo" ? filePath : hospitalData.logo
           }
         }
       })
     );
   };
 
-  // Add hospital data to local variable for manipulate
-  let hostpitalFromQuery;
-  if (!loading) {
-    hostpitalFromQuery = data.hospital;
-    hostpitalFromQuery = omit(hostpitalFromQuery, ["__typename"]);
-  }
 
   // When modal open setHospital to hostpitalFromQuery
   const openEditModal = () => {
-    setHospital(hostpitalFromQuery);
-    setSpecialtiesValue(hostpitalFromQuery.specialties.join());
+    setSpecialtiesValue(hospital.specialties.join());
     openModal();
   };
 
@@ -108,11 +103,14 @@ function Hospital() {
   const onUpdateHospital = async e => {
     e.preventDefault();
 
+    let hospitalData = { ...hospital };
+    hospitalData = omit(hospitalData, ["__typename"]);
+
     await to(
       updateHospital({
         variables: {
-          id: data.hospital.id,
-          update: hospital
+          id: hospital.id,
+          update: hospitalData
         }
       })
     );
@@ -128,7 +126,7 @@ function Hospital() {
         className="overlay-img bg-primary text-right p-2"
         style={{
           background:
-            "url(" + data.hospital.coverphoto + ") center center no-repeat"
+            "url(" + hospital.coverphoto + ") center center no-repeat"
         }}
       >
         <div className="card-img-overlay">
@@ -140,7 +138,7 @@ function Hospital() {
       <div
         className="upload-logo bg-light"
         style={{
-          background: "url(" + data.hospital.logo + ") center center no-repeat"
+          background: "url(" + hospital.logo + ") center center no-repeat"
         }}
       >
         {user.role === 'admin'
@@ -149,21 +147,21 @@ function Hospital() {
       </div>
       <div className="card-body">
         <h2 className="d-flex align-items-center justify-content-between">
-          {data.hospital.name}
+          {hospital.name}
           {user.role === "admin" ? (
             <Button onClick={openEditModal} text="Edit" btnSize="sm" />
           ) : null}
         </h2>
-        <p className="text-dark pb-2">{data.hospital.location}</p>
+        <p className="text-dark pb-2">{hospital.location}</p>
 
-        {data.hospital.specialties &&
-          data.hospital.specialties.map((item, i) => (
+        {hospital.specialties &&
+          hospital.specialties.map((item, i) => (
             <div key={i} className="badge badge-outline-primary mr-2">
               {item}
             </div>
           ))}
 
-        <p className="text-dark pt-5">{data.hospital.description}</p>
+        <p className="text-dark pt-5">{hospital.description}</p>
 
         <div className="doctors-list pt-5">
           <h3>Doctors</h3>

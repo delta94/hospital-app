@@ -44664,9 +44664,9 @@ select.tt-hint {
 
 .user-avatar {
   position: relative;
-  width: 120px;
-  height: 120px;
   border-radius: 6px;
   background-size: cover !important;
-  margin: 0 auto;
+  margin: 0;
   margin-bottom: 20px; }
+  .user-avatar img {
+    width: 100%; }

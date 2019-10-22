@@ -3,30 +3,28 @@ import { useQuery, useMutation } from '@apollo/react-hooks';
 import { omit } from 'lodash';
 import to from 'await-to-js';
 
+import { getItemFromLocal } from '../utils/localStorage';
+import { config } from '../config';
+
 import { USER_QUERY } from '../graphql/Query';
 import { UPLOAD_FILE, UPDATE_USER_MUTATION } from '../graphql/Mutation';
 
 import FileUpload from '../components/forms/FileUpload';
 import Loader from '../components/ui/Loader';
-
-import { getItemFromLocal } from '../utils/localStorage';
-import { config } from '../config';
-
-
+import Input from '../components/forms/Input';
+import Button from '../components/ui/Button';
 
 const UserProfile = () => {
   const localuser = getItemFromLocal('user');
 
-  const [userState, setUserState] = useState({});
+  const [user, setUser] = useState({});
+  const [password, setPassword] = useState('')
 
-  const { loading,  data } = useQuery(USER_QUERY, {
+  const { loading } = useQuery(USER_QUERY, {
     variables: { id: localuser._id },
     fetchPolicy: 'cache-and-network',
-    onCompleted: data => setUserState(data.user)
+    onCompleted: data => setUser(data.user)
   });
-
-
-
 
   const [singleUpload] = useMutation(UPLOAD_FILE);
   const [updateUser] = useMutation(UPDATE_USER_MUTATION, {
@@ -36,14 +34,14 @@ const UserProfile = () => {
   const handleFile = async e => {
     const [file] = e.target.files;
     const { name } = e.target;
-    let user = data.user;
-    user = omit(user, ["__typename"]);
+    let userData = user;
+    userData = omit(userData, ["__typename"]);
     // Upload mutation for get the hospital logo/coverphoto
     const [, response] = await to(
       singleUpload({
         variables: {
           file,
-          id: user.id,
+          id: userData.id,
           type: name
         }
       })
@@ -59,9 +57,9 @@ const UserProfile = () => {
     await to(
       updateUser({
         variables: {
-          id: user.id,
+          id: userData.id,
           userInput: {
-            ...user,
+            ...userData,
             avatar: filePath
           }
         }
@@ -70,51 +68,102 @@ const UserProfile = () => {
     //console.log(err.networkError.result.errors);
   };
 
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'password') {
+      setPassword(value);
+      return;
+    }
+
+    setUser({ ...user, [name]: value });
+  }
+  const onUpdateInfo = async (e) => {
+    e.preventDefault();
+    let userInfo = omit(user, ["__typename"]);
+    if (password === '') {
+      userInfo.password = user.password;
+    }
+    console.log(userInfo);
+    await to(
+      updateUser({
+        variables: {
+          id: user.id,
+          userInput: userInfo,
+        }
+      })
+    );
+
+  };
+
   if (loading)
     return <Loader />;
 
-    console.log(data);
-
   return (
     <>
-
       <div className="card">
         <div className="card-body">
           <div className="row">
-            <div className="col-lg-4">
-              <div className="border-bottom text-center pb-4">
-                <div className="user-avatar bg-primary" style={{ background: 'url(' + data.user.avatar + ') center center no-repeat' }}>
+            <div className="col-lg-3">
+              <div className="border-bottom pb-4">
+                <div className="user-avatar bg-primary">
+                  <img src={user.avatar} alt="" />
                   <FileUpload onChange={handleFile} name="avatar" />
-
                 </div>
-                <div className="mb-3">
-                  <h3>{data.user.firstName} {data.user.lastName}</h3>
+                <div className="mb-2">
+                  <h3>
+                    {user.firstName} {user.lastName}
+                  </h3>
                 </div>
               </div>
 
-              <div className="py-4">
-                <p className="clearfix">
-                  <span className="float-left">
-                    Status
-                  </span>
-                  <span className="float-right text-muted">
-                    Active
-                  </span>
-                </p>
-                <p className="clearfix">
-                  <span className="float-left">
-                    Mail
-                  </span>
-                  <span className="float-right text-muted">
-                    Jacod@testmail.com
-                  </span>
+              <div className="py-9">
+                <p className="clearfix pt-4">
+                  <span className="float-left">Mail</span>
+                  <span className="float-right text-muted">{user.email}</span>
                 </p>
               </div>
             </div>
             <div className="col-lg-8">
+              <h3 className="pb-4">Update profile</h3>
+              <form action="" onSubmit={onUpdateInfo}>
+                <Input
+                  label="First name"
+                  name="firstName"
+                  value={user.firstName}
+                  onChange={onChange}
+                  className="form-control"
+                  bm={true}
+                />
+                <Input
+                  label="Last name"
+                  name="lastName"
+                  value={user.lastName}
+                  onChange={onChange}
+                  className="form-control"
+                  bm={true}
+                />
+                <Input
+                  disabled={true}
+                  label="Email"
+                  name="email"
+                  value={user.email}
+                  onChange={onChange}
+                  className="form-control"
+                  bm={true}
+                />
 
+                <Input
+                  label="Password"
+                  name="password"
+                  type="password"
+                  value={password}
+                  onChange={onChange}
+                  className="form-control"
+                  bm={true}
+                />
 
-
+                <Button type="submit" text="Update profile" />
+              </form>
             </div>
           </div>
         </div>

@@ -79,12 +79,15 @@ const UserProfile = () => {
   }
   const onUpdateInfo = async (e) => {
     e.preventDefault();
-    let userInfo = omit(user, ["__typename"]);
+    let userInfo = {...user};
+    userInfo = omit(userInfo, ["__typename"])
     if (password === '') {
       userInfo.password = user.password;
+    } else {
+      userInfo.password = password;
     }
-    console.log(userInfo);
-    await to(
+
+    const [err, response] = await to(
       updateUser({
         variables: {
           id: user.id,
@@ -92,6 +95,8 @@ const UserProfile = () => {
         }
       })
     );
+
+    if (err) console.log(err);
 
   };
 
@@ -162,7 +167,11 @@ const UserProfile = () => {
                   bm={true}
                 />
 
-                <Button type="submit" text="Update profile" />
+                <Button
+                  type="submit"
+                  text="Update profile"
+                  loading={loading}
+                />
               </form>
             </div>
           </div>

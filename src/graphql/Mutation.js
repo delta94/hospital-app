@@ -1,54 +1,24 @@
-import { gql } from "apollo-boost";
+import {
+  LOGIN_MUTATION,
+  REGISTER_MUTATION,
+  UPDATE_USER_MUTATION
+} from './mutation/userMutation';
 
-import { userFragment } from "./Query";
+import {
+  HOSPITAL_MUTATION,
+  HOSPITAL_UPDATE_MUTATION
+} from './mutation/hospitalMutation';
 
-export const LOGIN_MUTATION = gql`
-  mutation LoginUser($email: String!, $password: String!) {
-    authUser(email: $email, password: $password)
-  }
-`;
+import { UPLOAD_FILE } from './mutation/uploadFileMutation';
 
-export const REGISTER_MUTATION = gql`
-  mutation AddUser($userInput: CreateUser!) {
-    addUser(userInput: $userInput)
-  }
-`;
+export {
+  LOGIN_MUTATION,
+  REGISTER_MUTATION,
+  UPDATE_USER_MUTATION,
+  HOSPITAL_MUTATION,
+  HOSPITAL_UPDATE_MUTATION,
+  UPLOAD_FILE
+};
 
-export const UPDATE_USER_MUTATION = gql`
-  mutation updateUser($userInput: UpdateUser!) {
-    updateUser(userInput: $userInput) {
-      ...user
-    }
-  }
-  ${userFragment}
-`;
 
-export const HOSPITAL_MUTATION = gql`
-  mutation AddHospital($hospital: CreateHospital!) {
-    addHospital(hospital: $hospital) {
-      name
-    }
-  }
-`;
 
-export const HOSPITAL_UPDATE_MUTATION = gql`
-  mutation UpdateHospital($id: ID!, $update: UpdateHospital!) {
-    updateHospital(id: $id, update: $update) {
-      name
-      coverphoto
-      logo
-      location
-      specialties
-      doctors
-      description
-    }
-  }
-`;
-
-export const UPLOAD_FILE = gql`
-  mutation uploadFile($file: Upload!, $id: ID!, $type: String!) {
-    singleUpload(file: $file, id: $id, type: $type) {
-      filename
-    }
-  }
-`;

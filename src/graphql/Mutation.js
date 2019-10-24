@@ -9,6 +9,12 @@ import {
   HOSPITAL_UPDATE_MUTATION
 } from './mutation/hospitalMutation';
 
+import {
+  DOCTOR_LOGIN_MUTATION,
+  DOCTOR_REGISTER_MUTATION,
+  UPDATE_DOCTOR_MUTATION
+} from './mutation/doctorMutation';
+
 import { UPLOAD_FILE } from './mutation/uploadFileMutation';
 
 export {
@@ -17,7 +23,10 @@ export {
   UPDATE_USER_MUTATION,
   HOSPITAL_MUTATION,
   HOSPITAL_UPDATE_MUTATION,
-  UPLOAD_FILE
+  UPLOAD_FILE,
+  DOCTOR_LOGIN_MUTATION,
+  DOCTOR_REGISTER_MUTATION,
+  UPDATE_DOCTOR_MUTATION
 };
 
 

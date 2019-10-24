@@ -7,8 +7,11 @@ import Input from '../components/forms/Input';
 import AuthWrapper from '../hoc/AuthWrapper';
 
 import bg from "../img/authbg.jpg";
-import { HOSPITAL_QUERY, HOSPITAL_USERS } from "../graphql/Query";
-import { REGISTER_MUTATION } from "../graphql/Mutation";
+import { HOSPITAL_QUERY } from "../graphql/Query";
+import {
+  REGISTER_MUTATION,
+  DOCTOR_REGISTER_MUTATION
+} from "../graphql/Mutation";
 
 
 function Register({history}) {
@@ -27,33 +30,43 @@ function Register({history}) {
   });
 
   const { loading, data } = useQuery(HOSPITAL_QUERY);
-  const [addUser] = useMutation(REGISTER_MUTATION)
+  const [addUser] = useMutation(REGISTER_MUTATION);
+  const [addDoctor] = useMutation(DOCTOR_REGISTER_MUTATION);
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
-    if (name === 'doctor' || name === 'manager') {
-      setAuthData({ ...authData, role: value });
-    } else {
-      setAuthData({ ...authData, [name]: value });
-    }
+    if (name === 'role')
+      return setAuthData({ ...authData, role: e.currentTarget.value });
+
+    setAuthData({ ...authData, [name]: value });
   }
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    let err;
 
-    const [err, ] = await to(addUser({
-      variables: {
-        userInput: authData
-      },
-      refetchQueries: [{query: HOSPITAL_USERS, variables: {id: authData.hospital}}]
-    }));
+    if (authData.role === "manager") {
+      [err] = await to(
+        addUser({
+          variables: { userInput: authData }
+        })
+      );
+    } else {
+      [err] = await to(
+        addDoctor({
+          variables: { userInput: authData }
+        })
+      );
+    }
 
     if (err) return setAuthError({
       error: true,
       msg: err.graphQLErrors[0].message
     });
 
-    history.push('/pending');
+    if (authData.role === 'manager') {
+      history.push('/pending');
+    }
 
     // //Set token and user data to localstorage
     // setTokenToLocal.token(response.data.addUser);
@@ -123,11 +136,11 @@ function Register({history}) {
               <input
                 type="radio"
                 className="form-check-input"
-                name="manager"
+                name="role"
                 id="manager"
-                value={authData.role}
+                value="manager"
                 onChange={onChangeInput}
-                checked
+                checked={authData.role === "manager"}
               />
               Manager
               <i className="input-helper"></i>
@@ -138,10 +151,11 @@ function Register({history}) {
               <input
                 type="radio"
                 className="form-check-input"
-                name="manager"
+                name="role"
                 id="doctor"
                 value="doctor"
                 onChange={onChangeInput}
+                checked={authData.role === "doctor"}
               />
               Doctor
               <i className="input-helper"></i>

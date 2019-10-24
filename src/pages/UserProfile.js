@@ -160,7 +160,7 @@ const UserProfile = () => {
                 />
 
                 <Input
-                  label="Password"
+                  label="Change password"
                   name="password"
                   type="password"
                   value={password}

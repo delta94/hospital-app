@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 
 import Layout from "../hoc/Layout";
-import Header from "../components/Header";
-import Navbar from "../components/Navbar";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import CreateHospital from "../pages/superadmin/CreateHospital";
@@ -19,8 +17,6 @@ import UserProfile from "../pages/UserProfile";
 function RouterComponent() {
   return (
     <Router>
-      <Header />
-      <Navbar />
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />

@@ -1,11 +1,12 @@
 import React from 'react'
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { getItemFromLocal } from '../utils/localStorage';
 
 import Permission from '../pages/Permission';
 
-const AdminRoute = ({ routeComponent: Component, ...rest }) => {
+const AdminRoute = ({ routeComponent: Component, history, ...rest }) => {
   const user = getItemFromLocal('user');
+  if (user === null) history.push('/login');
 
   return (
     <Route
@@ -21,4 +22,4 @@ const AdminRoute = ({ routeComponent: Component, ...rest }) => {
   )
 }
 
-export default AdminRoute;
+export default withRouter(AdminRoute);

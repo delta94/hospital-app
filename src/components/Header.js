@@ -3,18 +3,17 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import logo from '../img/logo-white.svg';
 
-function Header({ user, location }) {
-  const isAuthPage = () => {
-    if (location.pathname === "/register" || location.pathname === "/login") {
-      return false;
-    }
+import { getItemFromLocal, clearStorage } from "../utils/localStorage";
+import { isAuthPage } from "../utils/authpage";
 
-    return true;
-  };
+function Header({ location }) {
+  const user = getItemFromLocal('user');
+
+  const handleLogOut = () => clearStorage(['user', 'token']);
 
   return (
     <>
-    {isAuthPage() ? (
+    {isAuthPage(location) ? (
       <nav className="navbar top-navbar bg-primary">
         <div className="text-left navbar-brand-wrapper d-flex align-items-center justify-content-between">
           <Link className="navbar-brand brand-logo" to="/">
@@ -25,8 +24,11 @@ function Header({ user, location }) {
           <ul className="navbar-nav navbar-nav-right">
             <li className="nav-item nav-user-icon">
               <Link className="nav-link" to="/profile">
-                <img src="https://via.placeholder.com/37x37" alt="" />
+                  <div className="avatar" style={{ background: 'url(' + user.avatar + ') center center no-repeat' }}></div>
               </Link>
+            </li>
+              <li className="nav-item" onClick={handleLogOut}>
+                <Link  className="nav-link" to="/login">Log Out</Link>
             </li>
           </ul>
         </div>

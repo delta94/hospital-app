@@ -1,20 +1,14 @@
 import React from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import { getItemFromLocal } from "../utils/localStorage";
+import { isAuthPage } from '../utils/authpage';
 
 const Navbar = ({ location }) => {
   const user = getItemFromLocal("user");
-  const isAuthPage = () => {
-    if (location.pathname === "/register" || location.pathname === "/login") {
-      return false;
-    }
-
-    return true;
-  };
 
   return (
     <>
-      {isAuthPage() ? (
+      {isAuthPage(location) ? (
         <nav className="bottom-navbar ">
           <div className="container">
             <ul className="nav page-navigation justify-content-start">

@@ -15,3 +15,7 @@ export const getItemFromLocal = (item) => {
   const getItem = localStorage.getItem(item);
   return JSON.parse(getItem);
 };
+
+export const clearStorage = (items) => {
+  return items.map(item => localStorage.removeItem(item));
+}

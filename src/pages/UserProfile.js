@@ -28,13 +28,16 @@ const UserProfile = () => {
 
   const [singleUpload] = useMutation(UPLOAD_FILE);
   const [updateUser] = useMutation(UPDATE_USER_MUTATION, {
-    refetchQueries: [{query: USER_QUERY, variables: {id: localuser._id}}]
+    refetchQueries: [{
+      query: USER_QUERY,
+      variables: { id: localuser._id }
+    }]
   });
 
   const handleFile = async e => {
     const [file] = e.target.files;
     const { name } = e.target;
-    let userData = user;
+    let userData = {...user};
     userData = omit(userData, ["__typename"]);
     // Upload mutation for get the hospital logo/coverphoto
     const [, response] = await to(
@@ -54,6 +57,7 @@ const UserProfile = () => {
     } = response;
     const filePath = config.staticUrl + filename;
 
+
     await to(
       updateUser({
         variables: {
@@ -65,6 +69,7 @@ const UserProfile = () => {
         }
       })
     );
+    setUser({ ...user, avatar: filePath });
     //console.log(err.networkError.result.errors);
   };
 
@@ -87,7 +92,7 @@ const UserProfile = () => {
       userInfo.password = password;
     }
 
-    const [err, response] = await to(
+    await to(
       updateUser({
         variables: {
           id: user.id,
@@ -95,9 +100,6 @@ const UserProfile = () => {
         }
       })
     );
-
-    if (err) console.log(err);
-
   };
 
   if (loading)

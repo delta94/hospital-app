@@ -1,43 +1,47 @@
-import React, {useState} from 'react';
-import { useQuery, useMutation } from '@apollo/react-hooks';
-import { omit } from 'lodash';
-import to from 'await-to-js';
+import React, { useState } from "react";
+import { useQuery, useMutation } from "@apollo/react-hooks";
+import { omit } from "lodash";
+import to from "await-to-js";
 
-import { getItemFromLocal } from '../utils/localStorage';
-import { config } from '../config';
+import { getItemFromLocal } from "../utils/localStorage";
+import { config } from "../config";
 
-import { USER_QUERY } from '../graphql/Query';
-import { UPLOAD_FILE, UPDATE_USER_MUTATION } from '../graphql/Mutation';
+import { USER_QUERY } from "../graphql/Query";
+import { UPLOAD_FILE, UPDATE_USER_MUTATION } from "../graphql/Mutation";
 
-import FileUpload from '../components/forms/FileUpload';
-import Loader from '../components/ui/Loader';
-import Input from '../components/forms/Input';
-import Button from '../components/ui/Button';
+import FileUpload from "../components/forms/FileUpload";
+import Loader from "../components/ui/Loader";
+import Input from "../components/forms/Input";
+import Button from "../components/ui/Button";
 
 const UserProfile = () => {
-  const localuser = getItemFromLocal('user');
+  const localuser = getItemFromLocal("user");
+
+  const allDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 
   const [user, setUser] = useState({});
-  const [password, setPassword] = useState('')
+  const [password, setPassword] = useState("");
 
   const { loading } = useQuery(USER_QUERY, {
     variables: { id: localuser._id },
-    fetchPolicy: 'cache-and-network',
+    fetchPolicy: "cache-and-network",
     onCompleted: data => setUser(data.user)
   });
 
   const [singleUpload] = useMutation(UPLOAD_FILE);
   const [updateUser] = useMutation(UPDATE_USER_MUTATION, {
-    refetchQueries: [{
-      query: USER_QUERY,
-      variables: { id: localuser._id }
-    }]
+    refetchQueries: [
+      {
+        query: USER_QUERY,
+        variables: { id: localuser._id }
+      }
+    ]
   });
 
   const handleFile = async e => {
     const [file] = e.target.files;
     const { name } = e.target;
-    let userData = {...user};
+    let userData = { ...user };
     userData = omit(userData, ["__typename"]);
     // Upload mutation for get the hospital logo/coverphoto
     const [, response] = await to(
@@ -72,20 +76,20 @@ const UserProfile = () => {
     //console.log(err.networkError.result.errors);
   };
 
-  const onChange = (e) => {
+  const onChange = e => {
     const { name, value } = e.target;
-    if (name === 'password') {
+    if (name === "password") {
       setPassword(value);
       return;
     }
 
     setUser({ ...user, [name]: value });
-  }
-  const onUpdateInfo = async (e) => {
+  };
+  const onUpdateInfo = async e => {
     e.preventDefault();
-    let userInfo = {...user};
-    userInfo = omit(userInfo, ["__typename"])
-    if (password === '') {
+    let userInfo = { ...user };
+    userInfo = omit(userInfo, ["__typename"]);
+    if (password === "") {
       userInfo.password = user.password;
     } else {
       userInfo.password = password;
@@ -95,14 +99,18 @@ const UserProfile = () => {
       updateUser({
         variables: {
           id: user.id,
-          userInput: userInfo,
+          userInput: userInfo
         }
       })
     );
   };
 
-  if (loading)
-    return <Loader />;
+  const onSelectDay = (e) => {
+    console.log(e.currentTarget.value);
+    setUser({ ...user, availableDays: [...user.availableDays, e.currentTarget.value] });
+  }
+
+  if (loading) return <Loader />;
 
   return (
     <>
@@ -127,6 +135,14 @@ const UserProfile = () => {
                   <span className="float-left">Mail</span>
                   <span className="float-right text-muted">{user.email}</span>
                 </p>
+                {user.phone ? (
+                  <p className="clearfix">
+                    <span className="float-left">Phone</span>
+                    <span className="float-right text-muted">{user.phone}</span>
+                  </p>
+                ) : null}
+
+                {}
               </div>
             </div>
             <div className="col-lg-8">
@@ -157,6 +173,33 @@ const UserProfile = () => {
                   className="form-control"
                   bm={true}
                 />
+                <Input
+                  label="Phone"
+                  name="phone"
+                  value={user.phone}
+                  onChange={onChange}
+                  className="form-control"
+                  bm={true}
+                />
+
+                <div className="form-group d-flex">
+                  {allDays.map(day => (
+                    <div className="form-check mr-3" key={day}>
+                      <label className="form-check-label">
+                        <input
+                          type="checkbox"
+                          className="form-check-input"
+                          name={day}
+                          value={day}
+                          onChange={onSelectDay}
+
+                        />
+                        {day}
+                        <i className="input-helper"></i>
+                      </label>
+                    </div>
+                  ))}
+                </div>
 
                 <Input
                   label="Change password"
@@ -168,11 +211,7 @@ const UserProfile = () => {
                   bm={true}
                 />
 
-                <Button
-                  type="submit"
-                  text="Update profile"
-                  loading={loading}
-                />
+                <Button type="submit" text="Update profile" loading={loading} />
               </form>
             </div>
           </div>
@@ -180,6 +219,6 @@ const UserProfile = () => {
       </div>
     </>
   );
-}
+};
 
 export default UserProfile;

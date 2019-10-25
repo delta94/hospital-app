@@ -11,7 +11,8 @@ export const  doctorFragment = gql`
     hospital
     avatar
     phone
-    specialties
+    specialties,
+    availableDays,
   }
 `;
 

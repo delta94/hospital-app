@@ -10,7 +10,10 @@ export const userFragment = gql`
     password
     hospital
     pending
-    avatar
+    avatar,
+    phone,
+    availableDays,
+    specialties
   }
 `;
 

@@ -17,7 +17,15 @@ import Button from "../components/ui/Button";
 const UserProfile = () => {
   const localuser = getItemFromLocal("user");
 
-  const allDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  const allDays = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ];
 
   const [user, setUser] = useState({});
   const [password, setPassword] = useState("");
@@ -105,14 +113,14 @@ const UserProfile = () => {
     );
   };
 
-  const onSelectDay = (e) => {
+  const onSelectDay = e => {
     const { value } = e.currentTarget;
     if (includes(user.availableDays, value)) {
-      const availableDays = filter(user.availableDays, item => item !== value)
+      const availableDays = filter(user.availableDays, item => item !== value);
       return setUser({ ...user, availableDays: availableDays });
     }
     setUser({ ...user, availableDays: [...user.availableDays, value] });
-  }
+  };
 
   if (loading) return <Loader />;
 
@@ -146,7 +154,16 @@ const UserProfile = () => {
                   </p>
                 ) : null}
 
-                {}
+                {user.availableDays && user.availableDays.length > 0 ? (
+                  <p className="clearfix">
+                    <span className="float-left">Available days</span>
+                    {user.availableDays.map(day => (
+                      <span className="float-right text-muted" key={day}>
+                        {day},
+                      </span>
+                    ))}
+                  </p>
+                ) : null}
               </div>
             </div>
             <div className="col-lg-8">
@@ -186,25 +203,31 @@ const UserProfile = () => {
                   bm={true}
                 />
 
-                <div className="form-group d-flex">
-                  {allDays.map(day => (
-                    <div className="form-check mr-3" key={day}>
-                      <label className="form-check-label">
-                        <input
-                          type="checkbox"
-                          className="form-check-input"
-                          name={day}
-                          value={day}
-                          onChange={onSelectDay}
-                          checked={includes(user.availableDays, day)}
-
-                        />
-                        {day}
-                        <i className="input-helper"></i>
-                      </label>
+                {user.role === "doctor" ? (
+                  <>
+                    <div className="form-group mb-0">
+                      <label>Available days</label>
                     </div>
-                  ))}
-                </div>
+                    <div className="form-group d-flex">
+                      {allDays.map(day => (
+                        <div className="form-check mr-3" key={day}>
+                          <label className="form-check-label">
+                            <input
+                              type="checkbox"
+                              className="form-check-input"
+                              name={day}
+                              value={day}
+                              onChange={onSelectDay}
+                              checked={includes(user.availableDays, day)}
+                            />
+                            {day}
+                            <i className="input-helper"></i>
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                ) : null}
 
                 <Input
                   label="Change password"

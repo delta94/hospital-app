@@ -64,9 +64,10 @@ function Register({history}) {
       msg: err.graphQLErrors[0].message
     });
 
-    if (authData.role === 'manager') {
-      history.push('/pending');
-    }
+    if (authData.role === 'manager')
+      return history.push('/pending');
+
+    history.push('/login');
 
     // //Set token and user data to localstorage
     // setTokenToLocal.token(response.data.addUser);

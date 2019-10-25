@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
-import { omit } from "lodash";
+import { omit, includes, filter } from "lodash";
 import to from "await-to-js";
 
 import { getItemFromLocal } from "../utils/localStorage";
@@ -106,8 +106,12 @@ const UserProfile = () => {
   };
 
   const onSelectDay = (e) => {
-    console.log(e.currentTarget.value);
-    setUser({ ...user, availableDays: [...user.availableDays, e.currentTarget.value] });
+    const { value } = e.currentTarget;
+    if (includes(user.availableDays, value)) {
+      const availableDays = filter(user.availableDays, item => item !== value)
+      return setUser({ ...user, availableDays: availableDays });
+    }
+    setUser({ ...user, availableDays: [...user.availableDays, value] });
   }
 
   if (loading) return <Loader />;
@@ -192,6 +196,7 @@ const UserProfile = () => {
                           name={day}
                           value={day}
                           onChange={onSelectDay}
+                          checked={includes(user.availableDays, day)}
 
                         />
                         {day}

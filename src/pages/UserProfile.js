@@ -57,7 +57,6 @@ const UserProfile = () => {
     } = response;
     const filePath = config.staticUrl + filename;
 
-
     await to(
       updateUser({
         variables: {

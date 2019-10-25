@@ -7,27 +7,28 @@ import { LOGIN_MUTATION } from "../graphql/Mutation";
 
 import Input from "../components/forms/Input";
 import AuthWrapper from "../hoc/AuthWrapper";
-import Error from '../components/ui/Error';
+import Error from "../components/ui/Error";
 
 import { setTokenToLocal, getItemFromLocal } from "../utils/localStorage";
 
-import bg from '../img/authbg.jpg';
+import bg from "../img/authbg.jpg";
 
 function Login({ history }) {
   const [authData, setAuthData] = useState({
-    email: '',
-    password: '',
-  });
-
-  const [authError, setAuthError] = useState({
+    role: "manager",
+    email: "",
+    password: "",
     error: false,
-    msg: ''
+    msg: ""
   });
 
   const [authUser] = useMutation(LOGIN_MUTATION);
 
   const onInputChange = e => {
     const { name, value } = e.target;
+    if (name === "role") {
+      setAuthData({ ...authData, role: e.currentTarget.value });
+    }
     setAuthData({ ...authData, [name]: value });
   };
 
@@ -37,13 +38,21 @@ function Login({ history }) {
    */
   const onSubmitForm = async e => {
     e.preventDefault();
+    let err, response;
 
-    const [err, response] = await to(
-      authUser({ variables: authData }));
+    [err, response] = await to(
+      authUser({
+        variables: {
+          email: authData.email,
+          password: authData.password
+        }
+      })
+    );
 
     //If error populate authError state
-    if (err) {
-      return setAuthError({
+    if (err !== null) {
+      return setAuthData({
+        ...authData,
         error: true,
         msg: err.graphQLErrors[0].message
       });
@@ -54,11 +63,10 @@ function Login({ history }) {
     setTokenToLocal.user(response.data.authUser);
     // Push user to home page
 
-    const user = await getItemFromLocal('user');
-    if (user.role === 'superadmin')
-      return history.push('/');
+    const user = await getItemFromLocal("user");
+    if (user.role === "superadmin") return history.push("/");
 
-    if (user.pending) return history.push('/pending');
+    if (user.pending) return history.push("/pending");
     history.push("/");
   };
 
@@ -86,7 +94,7 @@ function Login({ history }) {
           />
         </div>
 
-        <Error err={authError.error} msg={authError.msg} />
+        <Error err={authData.error} msg={authData.msg} />
 
         <div className="mt-3">
           <button className="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">

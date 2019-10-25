@@ -10,7 +10,6 @@ import bg from "../img/authbg.jpg";
 import { HOSPITAL_QUERY } from "../graphql/Query";
 import {
   REGISTER_MUTATION,
-  DOCTOR_REGISTER_MUTATION
 } from "../graphql/Mutation";
 
 
@@ -31,7 +30,6 @@ function Register({history}) {
 
   const { loading, data } = useQuery(HOSPITAL_QUERY);
   const [addUser] = useMutation(REGISTER_MUTATION);
-  const [addDoctor] = useMutation(DOCTOR_REGISTER_MUTATION);
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
@@ -45,26 +43,18 @@ function Register({history}) {
     e.preventDefault();
     let err;
 
-    if (authData.role === "manager") {
       [err] = await to(
         addUser({
           variables: { userInput: authData }
         })
       );
-    } else {
-      [err] = await to(
-        addDoctor({
-          variables: { userInput: authData }
-        })
-      );
-    }
 
     if (err) return setAuthError({
       error: true,
       msg: err.graphQLErrors[0].message
     });
 
-    if (authData.role === 'manager')
+    if (authData.role === 'manager' || authData.role === 'doctor')
       return history.push('/pending');
 
     history.push('/login');

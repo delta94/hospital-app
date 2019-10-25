@@ -44672,6 +44672,9 @@ select.tt-hint {
   .user-avatar img {
     width: 100%; }
 
+.avatar {
+  background-size: cover !important; }
+
 .nav-link .avatar {
   width: 40px;
   height: 40px;

@@ -13,6 +13,7 @@ const HospitalUsers = () => {
     variables: { id: user.hospital }
   });
 
+
   if (loading) return <Loader />;
 
   return (

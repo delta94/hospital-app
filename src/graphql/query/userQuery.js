@@ -13,7 +13,8 @@ export const userFragment = gql`
     avatar,
     phone,
     availableDays,
-    specialties
+    specialties,
+    bio
   }
 `;
 

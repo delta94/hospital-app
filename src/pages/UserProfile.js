@@ -12,6 +12,7 @@ import { UPLOAD_FILE, UPDATE_USER_MUTATION } from "../graphql/Mutation";
 import FileUpload from "../components/forms/FileUpload";
 import Loader from "../components/ui/Loader";
 import Input from "../components/forms/Input";
+import Textarea from "../components/forms/TextArea";
 import Button from "../components/ui/Button";
 
 const UserProfile = () => {
@@ -29,11 +30,15 @@ const UserProfile = () => {
 
   const [user, setUser] = useState({});
   const [password, setPassword] = useState("");
+  const [doctorSpecialties, setDoctorSpecialties] = useState('');
 
   const { loading } = useQuery(USER_QUERY, {
     variables: { id: localuser._id },
     fetchPolicy: "cache-and-network",
-    onCompleted: data => setUser(data.user)
+    onCompleted: data => {
+      setUser(data.user)
+      setDoctorSpecialties(data.user.specialties.join());
+    }
   });
 
   const [singleUpload] = useMutation(UPLOAD_FILE);
@@ -91,6 +96,16 @@ const UserProfile = () => {
       return;
     }
 
+    if (name === "specialties") {
+      setDoctorSpecialties(value);
+      const specialtiesArray = value.split(",").map(item => item.trim());
+
+      return setUser({
+        ...user,
+        specialties: specialtiesArray
+      });
+    }
+
     setUser({ ...user, [name]: value });
   };
   const onUpdateInfo = async e => {
@@ -139,25 +154,36 @@ const UserProfile = () => {
                   <h3>
                     {user.firstName} {user.lastName}
                   </h3>
+                  <p>{user.bio}</p>
                 </div>
               </div>
 
               <div className="py-9">
                 <p className="clearfix pt-4">
-                  <span className="float-left">Mail</span>
+                  <span className="float-left">Mail:</span>
                   <span className="float-right text-muted">{user.email}</span>
                 </p>
                 {user.phone ? (
                   <p className="clearfix">
-                    <span className="float-left">Phone</span>
+                    <span className="float-left">Phone:</span>
                     <span className="float-right text-muted">{user.phone}</span>
                   </p>
                 ) : null}
 
                 {user.availableDays && user.availableDays.length > 0 ? (
                   <p className="clearfix">
-                    <span className="float-left">Available days</span>
+                    <span className="float-left">Available days:</span>
                     {user.availableDays.map(day => (
+                      <span className="float-right text-muted" key={day}>
+                        {day},
+                      </span>
+                    ))}
+                  </p>
+                ) : null}
+                {user.specialties && user.specialties.length > 0 ? (
+                  <p className="clearfix">
+                    <span className="float-left">Specialties:</span>
+                    {user.specialties.map(day => (
                       <span className="float-right text-muted" key={day}>
                         {day},
                       </span>
@@ -181,6 +207,15 @@ const UserProfile = () => {
                   label="Last name"
                   name="lastName"
                   value={user.lastName}
+                  onChange={onChange}
+                  className="form-control"
+                  bm={true}
+                />
+
+                <Textarea
+                  label="Short Bio"
+                  name="bio"
+                  value={user.bio}
                   onChange={onChange}
                   className="form-control"
                   bm={true}
@@ -226,6 +261,16 @@ const UserProfile = () => {
                         </div>
                       ))}
                     </div>
+
+                    <Input
+                      label="Specialties"
+                      name="specialties"
+                      value={doctorSpecialties}
+                      onChange={onChange}
+                      className="form-control"
+                      bm={true}
+                      placeholder="Write specialties seperated by comma"
+                    />
                   </>
                 ) : null}
 

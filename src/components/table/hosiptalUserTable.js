@@ -10,6 +10,7 @@ const HospitalUserTable = ({ users }) => {
 
 
   const approvedUser = async (user) => {
+    console.log(user);
     user = omit(user, ['__typename']);
     await to(
       updateUser({

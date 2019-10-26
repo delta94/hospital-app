@@ -42,6 +42,7 @@ function App() {
         <AuthContextProvider>
           <ModalContextProvider>
             <RouterComponent />
+
             <ToastContainer
               position="top-right"
               autoClose={2000}

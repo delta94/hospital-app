@@ -18297,19 +18297,21 @@ select.tt-hint {
 
 /* Dot opacity loader */
 .dot-opacity-loader {
-  width: 100px;
-  height: 100px;
   border-radius: 100%;
   position: relative;
-  margin: 0 auto; }
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16px; }
 
 .dot-opacity-loader span {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border-radius: 100%;
-  background-color: #f76e63;
-  margin: 35px 5px;
+  background-color: #e1e6fa;
+  margin: 0 5px;
   opacity: 0; }
 
 .dot-opacity-loader span:nth-child(1) {
@@ -40218,19 +40220,21 @@ select.tt-hint {
 
 /* Dot opacity loader */
 .dot-opacity-loader {
-  width: 100px;
-  height: 100px;
   border-radius: 100%;
   position: relative;
-  margin: 0 auto; }
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16px; }
 
 .dot-opacity-loader span {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border-radius: 100%;
-  background-color: #f76e63;
-  margin: 35px 5px;
+  background-color: #e1e6fa;
+  margin: 0 5px;
   opacity: 0; }
 
 .dot-opacity-loader span:nth-child(1) {
@@ -44672,6 +44676,15 @@ select.tt-hint {
   overflow: hidden; }
   .user-avatar img {
     width: 100%; }
+
+.btn, .fc button, .ajax-upload-dragdrop .ajax-file-upload, .swal2-modal .swal2-buttonswrapper .swal2-styled, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-confirm, .swal2-modal .swal2-buttonswrapper .swal2-styled.swal2-cancel, .wizard > .actions a {
+  position: relative; }
+  .btn .dot-opacity-loader, .fc button .dot-opacity-loader, .ajax-upload-dragdrop .ajax-file-upload .dot-opacity-loader, .swal2-modal .swal2-buttonswrapper .swal2-styled .dot-opacity-loader, .wizard > .actions a .dot-opacity-loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
 
 .avatar {
   background-size: cover !important; }

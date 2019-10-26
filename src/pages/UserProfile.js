@@ -43,7 +43,7 @@ const UserProfile = () => {
   });
 
   const [singleUpload] = useMutation(UPLOAD_FILE);
-  const [updateUser, { loading: updating, data}] = useMutation(UPDATE_USER_MUTATION, {
+  const [updateUser, { loading: updating}] = useMutation(UPDATE_USER_MUTATION, {
     refetchQueries: [
       {
         query: USER_QUERY,
@@ -289,7 +289,7 @@ const UserProfile = () => {
                   bm={true}
                 />
 
-                <Button type="submit" text="Update profile" loading={loading} />
+                <Button type="submit" text="Update profile" loading={updating} />
               </form>
             </div>
           </div>

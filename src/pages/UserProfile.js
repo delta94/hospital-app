@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import { omit, includes, filter } from "lodash";
 import to from "await-to-js";
+import { toast } from "react-toastify";
 
 import { getItemFromLocal } from "../utils/localStorage";
 import { config } from "../config";
@@ -42,7 +43,7 @@ const UserProfile = () => {
   });
 
   const [singleUpload] = useMutation(UPLOAD_FILE);
-  const [updateUser] = useMutation(UPDATE_USER_MUTATION, {
+  const [updateUser, { loading: updating, data}] = useMutation(UPDATE_USER_MUTATION, {
     refetchQueries: [
       {
         query: USER_QUERY,
@@ -85,6 +86,7 @@ const UserProfile = () => {
         }
       })
     );
+
     setUser({ ...user, avatar: filePath });
     //console.log(err.networkError.result.errors);
   };
@@ -118,7 +120,7 @@ const UserProfile = () => {
       userInfo.password = password;
     }
 
-    await to(
+    const [err, response] = await to(
       updateUser({
         variables: {
           id: user.id,
@@ -126,6 +128,9 @@ const UserProfile = () => {
         }
       })
     );
+
+    if (err) return toast.error(err.graphQLErrors[0].message);
+    if (response) return toast.success("Update profile successfull!");
   };
 
   const onSelectDay = e => {

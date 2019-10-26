@@ -4,6 +4,9 @@ import ApolloClient from 'apollo-client';
 import { createUploadLink } from 'apollo-upload-client';
 import { ApolloProvider } from '@apollo/react-common';
 import { InMemoryCache } from "apollo-cache-inmemory";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 //import { HttpLink } from "apollo-link-http";
 
 import { config } from './config';
@@ -39,6 +42,13 @@ function App() {
         <AuthContextProvider>
           <ModalContextProvider>
             <RouterComponent />
+            <ToastContainer
+              position="top-right"
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+            />
           </ModalContextProvider>
         </AuthContextProvider>
       </div>

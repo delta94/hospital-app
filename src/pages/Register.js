@@ -7,7 +7,7 @@ import Input from '../components/forms/Input';
 import AuthWrapper from '../hoc/AuthWrapper';
 
 import bg from "../img/authbg.jpg";
-import { HOSPITAL_QUERY } from "../graphql/Query";
+import { NAME_HOSPITAL_QUERY } from "../graphql/Query";
 import {
   REGISTER_MUTATION,
 } from "../graphql/Mutation";
@@ -28,7 +28,7 @@ function Register({history}) {
     msg: ''
   });
 
-  const { loading, data } = useQuery(HOSPITAL_QUERY);
+  const { loading, error, data } = useQuery(NAME_HOSPITAL_QUERY);
   const [addUser] = useMutation(REGISTER_MUTATION);
 
   const onChangeInput = (e) => {
@@ -62,6 +62,10 @@ function Register({history}) {
     // //Set token and user data to localstorage
     // setTokenToLocal.token(response.data.addUser);
     // setTokenToLocal.user(response.data.addUser);
+  }
+
+  if (!loading) {
+    console.log(error);
   }
 
   const getHospitalList = () => {

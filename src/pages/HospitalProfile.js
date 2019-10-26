@@ -15,6 +15,7 @@ import Loader from "../components/ui/Loader";
 import Button from "../components/ui/Button";
 import FileUpload from "../components/forms/FileUpload";
 import UpdateHospital from "../components/forms/UpdateHospital";
+import Card from '../components/card/Card';
 
 //import img from '../img/image-placeholder.jpg';
 
@@ -125,14 +126,13 @@ function Hospital() {
       <div
         className="overlay-img bg-primary text-right p-2"
         style={{
-          background:
-            "url(" + hospital.coverphoto + ") center center no-repeat"
+          background: "url(" + hospital.coverphoto + ") center center no-repeat"
         }}
       >
         <div className="card-img-overlay">
-          {user.role === 'admin'
-            ? <FileUpload onChange={handleFile} name="coverphoto" />
-            : null}
+          {user.role === "admin" ? (
+            <FileUpload onChange={handleFile} name="coverphoto" />
+          ) : null}
         </div>
       </div>
       <div
@@ -141,9 +141,9 @@ function Hospital() {
           background: "url(" + hospital.logo + ") center center no-repeat"
         }}
       >
-        {user.role === 'admin'
-          ? <FileUpload onChange={handleFile} name="logo" user={user} />
-          : null}
+        {user.role === "admin" ? (
+          <FileUpload onChange={handleFile} name="logo" user={user} />
+        ) : null}
       </div>
       <div className="card-body">
         <h2 className="d-flex align-items-center justify-content-between">
@@ -165,6 +165,20 @@ function Hospital() {
 
         <div className="doctors-list pt-5">
           <h3>Doctors</h3>
+          <div className="row pt-3">
+            {hospital.doctors &&
+              hospital.doctors.map(doctor => (
+                <div className="col-md-4">
+                  <Card
+                    firstName={doctor.firstName}
+                    lastName={doctor.lastName}
+                    avatar={doctor.avatar}
+                    bio={doctor.bio}
+                    specialties={doctor.specialties}
+                  />
+                </div>
+              ))}
+          </div>
         </div>
       </div>
 

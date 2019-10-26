@@ -3,6 +3,7 @@ import {
   HOSPITAL_QUERY,
   SINGLE_HOSPITAL,
   HOSPITAL_USERS,
+  NAME_HOSPITAL_QUERY,
   hospitalFragment
 } from './query/hospitalQuery';
 
@@ -11,6 +12,7 @@ export {
   HOSPITAL_QUERY,
   SINGLE_HOSPITAL,
   HOSPITAL_USERS,
+  NAME_HOSPITAL_QUERY,
   userFragment,
   hospitalFragment
 }

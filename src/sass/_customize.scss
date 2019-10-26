@@ -46,12 +46,15 @@
     opacity: 0;
     width: 38px;
     height: 38px;
+    z-index: 2;
   }
 
   button {
     width: 30px;
     height: 30px;
     border-radius: 0;
+    position: relative;
+    z-index: 1;
     i {
       font-size: 14px;
     }

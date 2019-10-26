@@ -1,10 +1,13 @@
 import React from 'react';
 
-const Card = ({ name, onClick }) => {
+const Card = ({ firstName, lastName, avatar, bio, specialties, onClick }) => {
   return (
-    <div className="card" onClick={onClick}>
+    <div className="card mb-4" onClick={onClick}>
       <div className="card-body">
-        <h4 className="card-name">{name}</h4>
+        <img src={avatar} alt=""/>
+        <h4 className="card-name">{firstName} {lastName}</h4>
+        <p>{bio}</p>
+        <p>{specialties && specialties.map(item => <span>{item}</span>)}</p>
       </div>
     </div>
   );

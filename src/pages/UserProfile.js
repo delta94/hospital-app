@@ -53,6 +53,7 @@ const UserProfile = () => {
   });
 
   const handleFile = async e => {
+    console.log('object');
     const [file] = e.target.files;
     const { name } = e.target;
     let userData = { ...user };

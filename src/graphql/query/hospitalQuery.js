@@ -8,7 +8,13 @@ export const hospitalFragment = gql`
     location
     coverphoto
     logo
-    doctors
+    doctors {
+      firstName,
+      lastName
+      avatar
+      bio
+      specialties
+    }
     specialties
     description
   }
@@ -21,6 +27,15 @@ export const HOSPITAL_QUERY = gql`
     }
   }
   ${hospitalFragment}
+`;
+
+export const NAME_HOSPITAL_QUERY = gql`
+  {
+    hospitals {
+      id,
+      name
+    }
+  }
 `;
 
 export const SINGLE_HOSPITAL = gql`

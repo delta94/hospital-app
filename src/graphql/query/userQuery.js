@@ -26,3 +26,16 @@ export const USER_QUERY = gql`
   }
   ${userFragment}
 `;
+
+export const ADMIN_USER_QUERY = gql`
+  query getAdminUser($id: ID!) {
+    user(id: $id) {
+      id
+      firstName,
+      lastName,
+      avatar,
+      password,
+      email,
+    }
+  }
+`

@@ -5,7 +5,6 @@ import to from 'await-to-js';
 import CreateHospitalForm from '../../components/forms/CreateHospitalForm';
 import Loader from '../../components/ui/Loader';
 import HospitalCard from '../../components/hospital/HospitalCard';
-import Permission from '../Permission';
 
 import { HOSPITAL_MUTATION } from '../../graphql/Mutation';
 import { UPLOAD_FILE } from "../../graphql/Mutation";
@@ -23,7 +22,7 @@ function CreateHospital({ history }) {
   });
 
   const [singleUpload] = useMutation(UPLOAD_FILE);
-  const { loading, error,  data} = useQuery(HOSPITAL_QUERY);
+  const { loading,  data} = useQuery(HOSPITAL_QUERY);
 
   const variables = {
     hospital: {name: hospital.name}
@@ -42,14 +41,15 @@ function CreateHospital({ history }) {
     setHospital({ name: '', error: false, msg: '' });
   };
 
-  const onClickHospital = (id) => history.push(`/hospital/${id}`);
+  const onClickHospital = id => history.push(`/edithospital/${id}`);
 
   const onChangeFile = async (e) => {
     const [file] = e.target.files;
     await to(singleUpload({ variables: { file } }));
   }
 
-  if (error) return <Permission />;
+
+  if (loading) return <Loader />;
 
   return (
     <>

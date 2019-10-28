@@ -23,10 +23,15 @@ export const hospitalFragment = gql`
 export const HOSPITAL_QUERY = gql`
   {
     hospitals {
-      ...hospital
+      id
+      name
+      location
+      coverphoto
+      logo,
+      specialties
+      description
     }
   }
-  ${hospitalFragment}
 `;
 
 export const NAME_HOSPITAL_QUERY = gql`

@@ -23,14 +23,11 @@ function RouterComponent() {
         <Route path="/pending" component={Pending} />
 
         <Layout>
-          <PrivateRoute
-            path="/hospital/create"
-            routeComponet={CreateHospital}
-          />
-          <PrivateRoute path="/hospital/:id" routeComponet={HospitalEdit} />
           <AdminRoute path="/hospital/" routeComponent={Hospital} />
           <AdminRoute path="/users" exact routeComponent={HospitalUsers} />
-          <AdminRoute path="/profile" exact routeComponent={UserProfile} />
+          <Route path="/profile" exact component={UserProfile} />
+          <PrivateRoute exact path="/edithospital/:id" component={HospitalEdit} />
+          <PrivateRoute exact path="/create" component={CreateHospital} />
           <AdminRoute path="/" exact routeComponent={Dashboard} />
         </Layout>
       </Switch>

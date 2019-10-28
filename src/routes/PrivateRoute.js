@@ -4,8 +4,9 @@ import Permission from '../pages/Permission';
 
 import { getItemFromLocal } from '../utils/localStorage';
 
-const PrivateRoute = ({routeComponet: Component, ...rest}) => {
+const PrivateRoute = ({component: Component, history, ...rest}) => {
   const user = getItemFromLocal('user');
+  if (user === null) history.push("/login");
 
   return (
     <Route

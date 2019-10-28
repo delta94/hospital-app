@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import { getItemFromLocal } from "../utils/localStorage";
 import { config } from "../config";
 
-import { USER_QUERY } from "../graphql/Query";
+import { USER_QUERY, ADMIN_USER_QUERY } from "../graphql/Query";
 import { UPLOAD_FILE, UPDATE_USER_MUTATION } from "../graphql/Mutation";
 
 import FileUpload from "../components/forms/FileUpload";
@@ -33,14 +33,29 @@ const UserProfile = () => {
   const [password, setPassword] = useState("");
   const [doctorSpecialties, setDoctorSpecialties] = useState('');
 
-  const { loading } = useQuery(USER_QUERY, {
-    variables: { id: localuser._id },
-    fetchPolicy: "cache-and-network",
-    onCompleted: data => {
-      setUser(data.user)
-      setDoctorSpecialties(data.user.specialties.join());
-    }
-  });
+  let { loading } = false;
+  let getUser;
+
+  if (localuser.role === "superadmin") {
+   getUser = useQuery(ADMIN_USER_QUERY, {
+     variables: { id: localuser._id },
+     fetchPolicy: "cache-and-network",
+     onCompleted: data => {
+       setUser(data.user);
+     }
+   });
+    loading = getUser.loading;
+  } else {
+    getUser = useQuery(USER_QUERY, {
+      variables: { id: localuser._id },
+      fetchPolicy: "cache-and-network",
+      onCompleted: data => {
+        setUser(data.user)
+        setDoctorSpecialties(data.user.specialties.join());
+      }
+    });
+    loading = getUser.loading;
+  }
 
   const [singleUpload] = useMutation(UPLOAD_FILE);
   const [updateUser, { loading: updating}] = useMutation(UPDATE_USER_MUTATION, {

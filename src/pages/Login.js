@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { Link } from "react-router-dom";
 import to from "await-to-js";
@@ -12,6 +12,7 @@ import Error from "../components/ui/Error";
 import { setTokenToLocal, getItemFromLocal } from "../utils/localStorage";
 
 import bg from "../img/authbg.jpg";
+import { AuthContext } from "../context/authContext";
 
 function Login({ history }) {
   const [authData, setAuthData] = useState({
@@ -21,6 +22,8 @@ function Login({ history }) {
     error: false,
     msg: ""
   });
+
+  const { setLocalUserToContext } = useContext(AuthContext);
 
   const [authUser] = useMutation(LOGIN_MUTATION);
 
@@ -64,6 +67,7 @@ function Login({ history }) {
     // Push user to home page
 
     const user = await getItemFromLocal("user");
+    setLocalUserToContext(user);
     if (user.role === "superadmin") return history.push("/");
 
     if (user.pending) return history.push("/pending");

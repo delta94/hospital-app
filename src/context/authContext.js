@@ -1,14 +1,23 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import { getItemFromLocal } from '../utils/localStorage';
 
 export const AuthContext = createContext();
 
 const AuthContextProvider = ({children}) => {
-  const user = getItemFromLocal('user');
+  const [user, setUser] = useState({});
 
-  return <AuthContext.Provider value={{ user }}>
-    {children}
-  </AuthContext.Provider>
+  useEffect(() => {
+    setUser(getItemFromLocal('user'));
+  }, []);
+
+  const setLocalUserToContext = user => setUser(user);
+
+
+  return (
+    <AuthContext.Provider value={{ user, setLocalUserToContext }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 export default AuthContextProvider;

@@ -35,6 +35,22 @@ const Navbar = ({ location }) => {
                   <span className="menu-title">Hospital</span>
                 </NavLink>
               </li>
+
+              {user && user.role === 'superadmin' ?
+                <li className="nav-item">
+                  <NavLink
+                    to="/create"
+                    activeClassName="active"
+                    className="nav-link d-flex align-items-center"
+                  >
+                    <i className="material-icons menu-icon mr-1">
+                      edit
+                  </i>
+                    <span className="menu-title">Create Hospital</span>
+                  </NavLink>
+                </li>
+                : null}
+
               {user && user.role === "admin" ? (
                 <li className="nav-item">
                   <NavLink
@@ -55,9 +71,7 @@ const Navbar = ({ location }) => {
                   activeClassName="active"
                   className="nav-link d-flex align-items-center"
                 >
-                  <i className="material-icons menu-icon mr-1">
-                    description
-                  </i>
+                  <i className="material-icons menu-icon mr-1">description</i>
                   <span className="menu-title">Profile</span>
                 </NavLink>
               </li>

@@ -31,6 +31,7 @@ export const ADMIN_USER_QUERY = gql`
   query getAdminUser($id: ID!) {
     user(id: $id) {
       id
+      role
       firstName,
       lastName,
       avatar,

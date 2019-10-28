@@ -8,7 +8,6 @@ const CreateHospitalForm = props => (
     <div className="row align-items-end">
       <div className="col-md-8">
         <Input
-          label="Create Hospital"
           name="name"
           bm={false}
           value={props.hospitalValue}
@@ -18,7 +17,7 @@ const CreateHospitalForm = props => (
         />
       </div>
       <div className="col-md-4">
-        <Button type="submit" text="Add Hospital" />
+        <Button type="submit" text="Add Hospital" btnSize="lg" />
       </div>
 
       <div className="col-md-12 mt-2">

@@ -53,7 +53,7 @@ function CreateHospital({ history }) {
 
   return (
     <>
-      <h2 className="pb-3">Hospitals</h2>
+      <h4 className="pb-3">Create Hospitals</h4>
       <CreateHospitalForm
         hospitalValue={hospital.name}
         onChange={e => setHospital({ name: e.target.value })}
@@ -63,7 +63,9 @@ function CreateHospital({ history }) {
         onChangeFile={onChangeFile}
       />
 
-      <div className="hospitals-wrapper row pt-8">
+
+      <h2 className="pb-3 pt-5">Hospital Lists</h2>
+      <div className="hospitals-wrapper row">
         {loading ? (
           <Loader />
         ) : (
@@ -71,6 +73,7 @@ function CreateHospital({ history }) {
             <div className="col-md-4 pb-4" key={i}>
               <HospitalCard
                 title={hospital.name}
+                img={hospital.logo}
                 location={hospital.location}
                 onClick={() => onClickHospital(hospital.id)}
               />

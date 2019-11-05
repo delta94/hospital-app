@@ -61,19 +61,20 @@ function Hospital() {
     } = response;
     const filePath = config.staticUrl + filename;
 
-    await to(
+    const [err] = await to(
       updateHospital({
         variables: {
           id: hospitalData.id,
           update: {
             ...hospitalData,
-            coverphoto:
-              name === "coverphoto" ? filePath : hospitalData.coverphoto,
+            coverphoto: name === "coverphoto" ? filePath : hospitalData.coverphoto,
             logo: name === "logo" ? filePath : hospitalData.logo
           }
         }
       })
     );
+    console.log('shows from here', err.networkError.result.errors);
+
   };
 
 
@@ -167,8 +168,8 @@ function Hospital() {
           <h3>Doctors</h3>
           <div className="row pt-3">
             {hospital.doctors &&
-              hospital.doctors.map(doctor => (
-                <div className="col-md-4">
+              hospital.doctors.map((doctor, i) => (
+                <div className="col-md-4" key={i}>
                   <Card
                     firstName={doctor.firstName}
                     lastName={doctor.lastName}

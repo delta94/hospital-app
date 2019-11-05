@@ -16,7 +16,10 @@ export const HOSPITAL_UPDATE_MUTATION = gql`
       logo
       location
       specialties
-      doctors
+      doctors {
+        firstName,
+        lastName
+      }
       description
     }
   }

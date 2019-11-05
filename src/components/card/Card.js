@@ -9,7 +9,7 @@ const Card = ({ firstName, lastName, avatar, bio, specialties, onClick }) => {
           {firstName} {lastName}
         </h4>
         <p className="text-muted">{bio}</p>
-        <p className="text-muted">{specialties && specialties.map(item => <span>{item}, </span>)}</p>
+        <p className="text-muted">{specialties && specialties.map(item => <span key={item}>{item}, </span>)}</p>
       </div>
     </div>
   );

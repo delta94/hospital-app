@@ -1,6 +1,6 @@
 import React from 'react';
 import ApolloClient from 'apollo-client';
-//import { ApolloLink } from 'apollo-boost';
+import { ApolloLink } from 'apollo-boost';
 import { createUploadLink } from 'apollo-upload-client';
 import { ApolloProvider } from '@apollo/react-common';
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -18,6 +18,18 @@ import RouterComponent from "./routes";
 function App() {
   const httpLink = createUploadLink({ uri: config.baseUrl });
 
+  const createOmitTypenameLink = new ApolloLink((operation, forward) => {
+    if (operation.variables) {
+      operation.variables = JSON.parse(JSON.stringify(operation.variables), omitTypename)
+    }
+
+    return forward(operation)
+  });
+
+  const omitTypename = (key, value) =>  {
+    return key === '__typename' ? undefined : value
+  }
+
   // const authLink = new ApolloLink((operation, forward) => {
   //   const token = localStorage.getItem('token');
   //   //console.log('this should run after token set to local storage');
@@ -32,8 +44,8 @@ function App() {
   // });
 
   const client = new ApolloClient({
-    link:httpLink,
-    cache: new InMemoryCache(),
+    link: httpLink,
+    cache: new InMemoryCache()
   });
 
   return (

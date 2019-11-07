@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import to from "await-to-js";
-import { omit } from "lodash";
+import { omit, filter } from "lodash";
 
 import { config } from "../config";
 import { AuthContext } from "../context/authContext";
 import { ModalContext } from "../context/modalContext";
 
-import { SINGLE_HOSPITAL } from "../graphql/Query";
+import { SINGLE_HOSPITAL, HOSPITAL_USERS } from "../graphql/Query";
 import { UPLOAD_FILE } from "../graphql/Mutation";
 import { HOSPITAL_UPDATE_MUTATION } from "../graphql/Mutation";
 
@@ -25,6 +25,7 @@ function Hospital() {
 
   const [specialtiesValue, setSpecialtiesValue] = useState("");
   const [hospital, setHospital] = useState({});
+  const [doctors, setDoctors] = useState([]);
 
   const { loading, data } = useQuery(SINGLE_HOSPITAL, {
     variables: { id: user.hospital },
@@ -32,8 +33,19 @@ function Hospital() {
     onCompleted: data => setHospital(data.hospital)
   });
 
+  useQuery(HOSPITAL_USERS, {
+    variables: { id: user.hospital },
+    fetchPolicy: "cache-and-network",
+    onCompleted: data => {
+      const doctorsFromData = filter(data.getHospitalUsers, {
+        role: "doctor"
+      });
+      setDoctors(doctorsFromData);
+    }
+  });
+
   const [singleUpload] = useMutation(UPLOAD_FILE);
-  const [updateHospital, { error }] = useMutation(HOSPITAL_UPDATE_MUTATION, {
+  const [updateHospital] = useMutation(HOSPITAL_UPDATE_MUTATION, {
     refetchQueries: [
       {
         query: SINGLE_HOSPITAL,
@@ -42,9 +54,6 @@ function Hospital() {
     ]
   });
 
-  if (error) {
-    console.log(error);
-  }
 
   const handleFile = async e => {
     const [file] = e.target.files;
@@ -173,8 +182,8 @@ function Hospital() {
         <div className="doctors-list pt-5">
           <h3>Doctors</h3>
           <div className="row pt-3">
-            {/* {hospital.doctors &&
-              hospital.doctors.map((doctor, i) => (
+            {doctors &&
+              doctors.map((doctor, i) => (
                 <div className="col-md-4" key={i}>
                   <Card
                     firstName={doctor.firstName}
@@ -184,7 +193,7 @@ function Hospital() {
                     specialties={doctor.specialties}
                   />
                 </div>
-              ))} */}
+              ))}
           </div>
         </div>
       </div>

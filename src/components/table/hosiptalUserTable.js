@@ -8,7 +8,6 @@ import { HOSPITAL_USERS } from '../../graphql/Query';
 const HospitalUserTable = ({ users }) => {
   const [updateUser] = useMutation(UPDATE_USER_MUTATION);
 
-
   const approvedUser = async (user) => {
     user = omit(user, ['__typename']);
     await to(

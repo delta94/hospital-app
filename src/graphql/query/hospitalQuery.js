@@ -8,13 +8,6 @@ export const hospitalFragment = gql`
     location
     coverphoto
     logo
-    doctors {
-      firstName,
-      lastName
-      avatar
-      bio
-      specialties
-    }
     specialties
     description
   }

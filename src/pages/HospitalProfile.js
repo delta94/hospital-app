@@ -26,17 +26,25 @@ function Hospital() {
   const [specialtiesValue, setSpecialtiesValue] = useState("");
   const [hospital, setHospital] = useState({});
 
-  const { loading } = useQuery(SINGLE_HOSPITAL, {
+  const { loading, data } = useQuery(SINGLE_HOSPITAL, {
     variables: { id: user.hospital },
+    fetchPolicy: "cache-and-network",
     onCompleted: data => setHospital(data.hospital)
   });
 
   const [singleUpload] = useMutation(UPLOAD_FILE);
-  const [updateHospital] = useMutation(HOSPITAL_UPDATE_MUTATION, {
+  const [updateHospital, { error }] = useMutation(HOSPITAL_UPDATE_MUTATION, {
     refetchQueries: [
-      { query: SINGLE_HOSPITAL, variables: { id: user.hospital }, onCompleted: data => setHospital(data.hosital) }
+      {
+        query: SINGLE_HOSPITAL,
+        variables: { id: user.hospital },
+      }
     ]
   });
+
+  if (error) {
+    console.log(error);
+  }
 
   const handleFile = async e => {
     const [file] = e.target.files;
@@ -61,7 +69,7 @@ function Hospital() {
     } = response;
     const filePath = config.staticUrl + filename;
 
-    const [err] = await to(
+    await to(
       updateHospital({
         variables: {
           id: hospitalData.id,
@@ -72,9 +80,7 @@ function Hospital() {
           }
         }
       })
-    );
-    console.log('shows from here', err.networkError.result.errors);
-
+    )
   };
 
 
@@ -127,7 +133,7 @@ function Hospital() {
       <div
         className="overlay-img bg-primary text-right p-2"
         style={{
-          background: "url(" + hospital.coverphoto + ") center center no-repeat"
+          background: "url(" + data.hospital.coverphoto + ") center center no-repeat"
         }}
       >
         <div className="card-img-overlay">
@@ -139,7 +145,7 @@ function Hospital() {
       <div
         className="upload-logo bg-light"
         style={{
-          background: "url(" + hospital.logo + ") center center no-repeat"
+          background: "url(" + data.hospital.logo + ") center center no-repeat"
         }}
       >
         {user.role === "admin" ? (
@@ -153,21 +159,21 @@ function Hospital() {
             <Button onClick={openEditModal} text="Edit" btnSize="sm" />
           ) : null}
         </h2>
-        <p className="text-dark pb-2">{hospital.location}</p>
+        <p className="text-dark pb-2">{data.hospital.location}</p>
 
-        {hospital.specialties &&
-          hospital.specialties.map((item, i) => (
+        {data.hospital.specialties &&
+          data.hospital.specialties.map((item, i) => (
             <div key={i} className="badge badge-outline-primary mr-2">
               {item}
             </div>
           ))}
 
-        <p className="text-dark pt-5">{hospital.description}</p>
+        <p className="text-dark pt-5">{data.hospital.description}</p>
 
         <div className="doctors-list pt-5">
           <h3>Doctors</h3>
           <div className="row pt-3">
-            {hospital.doctors &&
+            {/* {hospital.doctors &&
               hospital.doctors.map((doctor, i) => (
                 <div className="col-md-4" key={i}>
                   <Card
@@ -178,7 +184,7 @@ function Hospital() {
                     specialties={doctor.specialties}
                   />
                 </div>
-              ))}
+              ))} */}
           </div>
         </div>
       </div>

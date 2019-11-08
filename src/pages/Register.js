@@ -65,7 +65,7 @@ function Register({history}) {
   }
 
   if (!loading) {
-    console.log(error);
+    console.log(error.networkError.result.errors);
   }
 
   const getHospitalList = () => {

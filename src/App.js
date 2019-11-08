@@ -1,6 +1,6 @@
 import React from 'react';
 import ApolloClient from 'apollo-client';
-//import { ApolloLink } from 'apollo-boost';
+import { ApolloLink } from 'apollo-boost';
 import { createUploadLink } from 'apollo-upload-client';
 import { ApolloProvider } from '@apollo/react-common';
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -16,23 +16,25 @@ import AuthContextProvider from './context/authContext';
 import RouterComponent from "./routes";
 
 function App() {
-  const httpLink = createUploadLink({ uri: config.baseUrl });
+  const httpLink = createUploadLink({
+    uri: config.baseUrl
+  });
 
-  // const authLink = new ApolloLink((operation, forward) => {
-  //   const token = localStorage.getItem('token');
-  //   //console.log('this should run after token set to local storage');
-  //   operation.setContext({
-  //     headers: {
-  //       'x-auth-token': token ? token : ''
-  //     }
-  //   });
+  const authLink = new ApolloLink((operation, forward) => {
+    const token = localStorage.getItem("token");
+    console.log("this should run after token set to local storage");
+    operation.setContext({
+      headers: {
+        "x-auth-token": token ? token : ""
+      }
+    });
 
-  //   // Call the next link in the middleware chain.
-  //   return forward(operation);
-  // });
+    // Call the next link in the middleware chain.
+    return forward(operation);
+  });
 
   const client = new ApolloClient({
-    link: httpLink,
+    link: authLink.concat(httpLink),
     cache: new InMemoryCache()
   });
 

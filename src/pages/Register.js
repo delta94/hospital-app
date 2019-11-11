@@ -28,7 +28,7 @@ function Register({history}) {
     msg: ''
   });
 
-  const { loading, error, data } = useQuery(NAME_HOSPITAL_QUERY);
+  const { loading, data } = useQuery(NAME_HOSPITAL_QUERY);
   const [addUser] = useMutation(REGISTER_MUTATION);
 
   const onChangeInput = (e) => {
@@ -62,10 +62,6 @@ function Register({history}) {
     // //Set token and user data to localstorage
     // setTokenToLocal.token(response.data.addUser);
     // setTokenToLocal.user(response.data.addUser);
-  }
-
-  if (!loading) {
-    console.log(error.networkError.result.errors);
   }
 
   const getHospitalList = () => {

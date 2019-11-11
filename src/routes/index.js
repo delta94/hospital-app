@@ -28,7 +28,7 @@ function RouterComponent() {
           <Route path="/profile" exact component={UserProfile} />
           <PrivateRoute exact path="/edithospital/:id" component={HospitalEdit} />
           <PrivateRoute exact path="/create" component={CreateHospital} />
-          <AdminRoute path="/" exact routeComponent={Dashboard} />
+          <Route path="/dashboard" exact component={Dashboard} />
         </Layout>
       </Switch>
     </Router>

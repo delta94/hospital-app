@@ -22,7 +22,6 @@ function App() {
 
   const authLink = new ApolloLink((operation, forward) => {
     const token = localStorage.getItem("token");
-    console.log("this should run after token set to local storage");
     operation.setContext({
       headers: {
         "x-auth-token": token ? token : ""

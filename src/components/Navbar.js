@@ -14,7 +14,7 @@ const Navbar = ({ location }) => {
             <ul className="nav page-navigation justify-content-start">
               <li className="nav-item">
                 <NavLink
-                  to="/"
+                  to="/dashboard"
                   exact
                   activeClassName="active"
                   className="nav-link d-flex align-items-center"
@@ -23,18 +23,32 @@ const Navbar = ({ location }) => {
                   <span className="menu-title">Dashboard</span>
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink
-                  to="/hospital"
-                  activeClassName="active"
-                  className="nav-link d-flex align-items-center"
-                >
-                  <i className="material-icons menu-icon mr-1">
-                    local_hospital
-                  </i>
-                  <span className="menu-title">Hospital</span>
-                </NavLink>
-              </li>
+              {user && user.role === "admin" ? (
+                <li className="nav-item">
+                  <NavLink
+                    to="/users"
+                    activeClassName="active"
+                    className="nav-link d-flex align-items-center"
+                  >
+                    <i className="material-icons menu-icon mr-1">
+                      supervised_user_circle
+                    </i>
+                    <span className="menu-title">Users</span>
+                  </NavLink>
+                </li>,
+                <li className="nav-item">
+                  <NavLink
+                    to="/hospital"
+                    activeClassName="active"
+                    className="nav-link d-flex align-items-center"
+                  >
+                    <i className="material-icons menu-icon mr-1">
+                      local_hospital
+                    </i>
+                    <span className="menu-title">Hospital</span>
+                  </NavLink>
+                </li>
+              ) : null}
 
               {user && user.role === 'superadmin' ?
                 <li className="nav-item">
@@ -51,20 +65,7 @@ const Navbar = ({ location }) => {
                 </li>
                 : null}
 
-              {user && user.role === "admin" ? (
-                <li className="nav-item">
-                  <NavLink
-                    to="/users"
-                    activeClassName="active"
-                    className="nav-link d-flex align-items-center"
-                  >
-                    <i className="material-icons menu-icon mr-1">
-                      supervised_user_circle
-                    </i>
-                    <span className="menu-title">Users</span>
-                  </NavLink>
-                </li>
-              ) : null}
+
               <li className="nav-item">
                 <NavLink
                   to="/profile"

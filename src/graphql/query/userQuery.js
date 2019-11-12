@@ -37,6 +37,8 @@ export const ADMIN_USER_QUERY = gql`
       avatar,
       password,
       email,
+      bio,
+      phone
     }
   }
 `

@@ -6,6 +6,7 @@ import Loading from "../../components/ui/Loader";
 import Button from "../../components/ui/Button";
 import Modal from "../../components/modal/Modal";
 import CreateAdmin from "../../components/forms/CreateAdmin";
+import Table from '../../components/ui/Table';
 
 import { SINGLE_HOSPITAL, HOSPITAL_ADMIN } from "../../graphql/Query";
 import { REGISTER_MUTATION } from "../../graphql/Mutation";
@@ -36,14 +37,19 @@ function HospitalEdit({ match }) {
   });
 
   const { loading: adminLoading, data: admin } = useQuery(HOSPITAL_ADMIN, {
-    variables: { id: match.params.id },
+    variables: { id: match.params.id }
   });
 
   if (!adminLoading) {
     console.log(admin);
   }
 
-  const [addUser] = useMutation(REGISTER_MUTATION);
+  const [addUser] = useMutation(REGISTER_MUTATION, {
+    refetchQueries: [{
+      query: HOSPITAL_ADMIN,
+      variables: {id: match.params.id}
+    }]
+  });
 
   const onChangeInput = e => {
     setAdminData({ ...adminData, [e.target.name]: e.target.value });
@@ -96,23 +102,40 @@ function HospitalEdit({ match }) {
             <Button text="Add Admin" onClick={openModal} />
           </h2>
           <p className="text-dark pb-2">{data.hospital.location}</p>
-
           {data.hospital.specialties &&
             data.hospital.specialties.map((item, i) => (
               <div key={i} className="badge badge-outline-primary mr-2">
                 {item}
               </div>
             ))}
+          <p className="text-dark pt-5 pb-5">{data.hospital.description}</p>
 
-          <p className="text-dark pt-5">{data.hospital.description}</p>
+          {admin.getHospitalAdmin.length > 0 ?
+
+            <Table thead={["", "First name", "Last name", "email"]}>
+              {admin.getHospitalAdmin.map(user => (
+                <tr key={user.id}>
+                  <td className="py-1">
+                    <div
+                      className="avatar bg-primary"
+                      style={{
+                        background:
+                          "url(" + user.avatar + ") center center no-repeat",
+                        width: `${36}px`,
+                        height: `${36}px`
+                      }}
+                    ></div>
+                  </td>
+                  <td>{user.firstName}</td>
+                  <td>{user.lastName}</td>
+
+                  <td>{user.email}</td>
+                </tr>
+              ))}
+            </Table>
+            : <p className="alert alert-warning">No admin added for this hospital yet</p>}
         </div>
-
-        {admin.getHospitalAdmin.length > 0 ?
-          admin.getHospitalAdmin.map(user => <h5 key={user.id}>{user.firstName} </h5>)
-          : <p>No admin created yet.</p>
-        }
       </div>
-
 
       <Modal
         show={show}

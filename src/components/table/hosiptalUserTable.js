@@ -14,7 +14,7 @@ const HospitalUserTable = ({ users }) => {
       updateUser({
         variables: { userInput: { ...user, pending: !user.pending } },
         refetchQueries: [
-          { query: HOSPITAL_USERS, variables: { id: user.hospital } }
+          { query: HOSPITAL_USERS, variables: { id: user.hospital }}
         ]
       })
     );

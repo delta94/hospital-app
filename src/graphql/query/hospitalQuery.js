@@ -53,3 +53,13 @@ export const HOSPITAL_USERS = gql`
   }
   ${userFragment}
 `;
+
+export const HOSPITAL_ADMIN = gql`
+  query getHospitalAdmin($id: ID!) {
+    getHospitalAdmin(id: $id) {
+      ...user
+    }
+  }
+  ${userFragment}
+`;
+

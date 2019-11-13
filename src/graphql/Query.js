@@ -4,8 +4,9 @@ import {
   SINGLE_HOSPITAL,
   HOSPITAL_USERS,
   NAME_HOSPITAL_QUERY,
-  hospitalFragment
-} from './query/hospitalQuery';
+  hospitalFragment,
+  HOSPITAL_ADMIN
+} from "./query/hospitalQuery";
 
 export {
   USER_QUERY,
@@ -14,6 +15,7 @@ export {
   SINGLE_HOSPITAL,
   HOSPITAL_USERS,
   NAME_HOSPITAL_QUERY,
+  HOSPITAL_ADMIN,
   userFragment,
   hospitalFragment
 }

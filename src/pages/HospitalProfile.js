@@ -78,6 +78,8 @@ function Hospital() {
     } = response;
     const filePath = config.staticUrl + filename;
 
+    setHospital({ ...hospital, [name]: filePath });
+
     await to(
       updateHospital({
         variables: {

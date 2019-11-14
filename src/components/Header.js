@@ -6,7 +6,7 @@ import logo from "../img/logo-white.svg";
 import { getItemFromLocal, clearStorage } from "../utils/localStorage";
 import { isAuthPage } from "../utils/authpage";
 
-function Header({ location }) {
+function Header({ location, home }) {
   const user = getItemFromLocal("user");
   const avatar = user !== null ? user.avatar : "";
 
@@ -15,7 +15,9 @@ function Header({ location }) {
   return (
     <>
       {isAuthPage(location) ? (
-        <nav className="navbar top-navbar bg-primary">
+        <nav
+          className="navbar top-navbar bg-primary"
+        >
           <div className="text-left navbar-brand-wrapper d-flex align-items-center justify-content-between">
             <Link className="navbar-brand brand-logo" to="/">
               <img src={logo} alt="logo" />
@@ -34,11 +36,19 @@ function Header({ location }) {
                   ></div>
                 </Link>
               </li>
-              <li className="nav-item" onClick={handleLogOut}>
-                <Link className="nav-link" to="/login">
-                  Log Out
-                </Link>
-              </li>
+              {user !== null ? (
+                <li className="nav-item" onClick={handleLogOut}>
+                  <Link className="nav-link" to="/login">
+                    Log Out
+                  </Link>
+                </li>
+              ) : (
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
+                    LogIn
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         </nav>

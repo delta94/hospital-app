@@ -13,6 +13,8 @@ import Pending from "../pages/AuthPending";
 import HospitalUsers from "../pages/admin/HospitalUsers";
 import Dashboard from "../pages/Dashboard";
 import UserProfile from "../pages/UserProfile";
+import Home from "../pages/Home";
+
 
 function RouterComponent() {
   return (
@@ -21,6 +23,7 @@ function RouterComponent() {
         <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
         <Route path="/pending" component={Pending} />
+        <Route exact path="/" component={Home} />
 
         <Layout>
           <AdminRoute path="/hospital/" routeComponent={Hospital} />

@@ -1,27 +1,31 @@
-import React, {useState} from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import React, { useState } from "react";
+import { useQuery } from "@apollo/react-hooks";
 
-
-
-import Header from '../components/Header';
-import Banner from '../components/Banner';
-import Title from '../components/Title';
-import WithLoader from '../components/ui/WithLoader';
-import HospitalCard from '../components/hospital/HospitalCard';
-import Row from '../components/ui/Row';
-import Col from '../components/ui/Col';
+import Header from "../components/Header";
+import Banner from "../components/Banner";
+import Title from "../components/Title";
+import WithLoader from "../components/ui/WithLoader";
+import HospitalCard from "../components/hospital/HospitalCard";
+import Row from "../components/ui/Row";
+import Col from "../components/ui/Col";
+import Card from "../components/card/Card";
 
 import bg from "../img/banner.jpg";
-import { HOSPITAL_QUERY } from '../graphql/query/hospitalQuery';
+import { HOSPITAL_QUERY, DOCTORS_QUERY } from "../graphql/Query";
 
 const Home = () => {
   const [hospitals, setHospitals] = useState([]);
+  const [doctors, setDoctors] = useState([]);
 
   const { loading } = useQuery(HOSPITAL_QUERY, {
-    onCompleted: (data) => setHospitals(data.hospitals)
-  })
+    onCompleted: data => setHospitals(data.hospitals)
+  });
 
-  const onHospitalClick = (hospital) => console.log(hospital);
+  const { loading: doctorLoading } = useQuery(DOCTORS_QUERY, {
+    onCompleted: data => setDoctors(data.doctors)
+  });
+
+  const onHospitalClick = hospital => console.log(hospital);
 
   return (
     <>
@@ -54,8 +58,33 @@ const Home = () => {
           </WithLoader>
         </div>
       </section>
+
+      <section className="grey">
+        <div className="container">
+          <Title
+            text="Find Best doctor"
+            sub="Hospital wise doctor lists also available"
+          />
+        </div>
+
+        <WithLoader loading={doctorLoading}>
+          <Row>
+            {doctors.map(doctor => (
+              <Col take={4} key={doctor.id}>
+                <Card
+                  firstName={doctor.firstName}
+                  lastName={doctor.lastName}
+                  avatar={doctor.avatar}
+                  bio={doctor.bio}
+                  specialties={doctor.specialties}
+                />
+              </Col>
+            ))}
+          </Row>
+        </WithLoader>
+      </section>
     </>
   );
-}
+};
 
 export default Home;

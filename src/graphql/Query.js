@@ -8,6 +8,8 @@ import {
   HOSPITAL_ADMIN
 } from "./query/hospitalQuery";
 
+import { DOCTORS_QUERY } from './query/doctorQuery';
+
 export {
   USER_QUERY,
   ADMIN_USER_QUERY,
@@ -16,6 +18,7 @@ export {
   HOSPITAL_USERS,
   NAME_HOSPITAL_QUERY,
   HOSPITAL_ADMIN,
+  DOCTORS_QUERY,
   userFragment,
   hospitalFragment
 }

@@ -17,7 +17,7 @@ const CreateHospitalForm = props => (
         />
       </div>
       <div className="col-md-4">
-        <Button type="submit" text="Add Hospital" btnSize="lg" />
+        <Button block type="submit" text="Add Hospital" btnSize="lg" />
       </div>
 
       <div className="col-md-12 mt-2">

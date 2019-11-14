@@ -24,6 +24,7 @@ const Navbar = ({ location }) => {
                 </NavLink>
               </li>
               {user && user.role === "admin" ? (
+                <>
                 <li className="nav-item">
                   <NavLink
                     to="/users"
@@ -35,7 +36,7 @@ const Navbar = ({ location }) => {
                     </i>
                     <span className="menu-title">Users</span>
                   </NavLink>
-                </li>,
+                </li>
                 <li className="nav-item">
                   <NavLink
                     to="/hospital"
@@ -48,6 +49,7 @@ const Navbar = ({ location }) => {
                     <span className="menu-title">Hospital</span>
                   </NavLink>
                 </li>
+                </>
               ) : null}
 
               {user && user.role === 'superadmin' ?

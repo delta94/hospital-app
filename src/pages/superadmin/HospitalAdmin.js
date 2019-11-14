@@ -6,7 +6,7 @@ import Loading from "../../components/ui/Loader";
 import Button from "../../components/ui/Button";
 import Modal from "../../components/modal/Modal";
 import CreateAdmin from "../../components/forms/CreateAdmin";
-import Table from '../../components/ui/Table';
+import Table from "../../components/ui/Table";
 
 import { SINGLE_HOSPITAL, HOSPITAL_ADMIN } from "../../graphql/Query";
 import { REGISTER_MUTATION } from "../../graphql/Mutation";
@@ -45,10 +45,12 @@ function HospitalEdit({ match }) {
   }
 
   const [addUser] = useMutation(REGISTER_MUTATION, {
-    refetchQueries: [{
-      query: HOSPITAL_ADMIN,
-      variables: {id: match.params.id}
-    }]
+    refetchQueries: [
+      {
+        query: HOSPITAL_ADMIN,
+        variables: { id: match.params.id }
+      }
+    ]
   });
 
   const onChangeInput = e => {
@@ -102,6 +104,7 @@ function HospitalEdit({ match }) {
             <Button text="Add Admin" onClick={openModal} />
           </h2>
           <p className="text-dark pb-2">{data.hospital.location}</p>
+
           {data.hospital.specialties &&
             data.hospital.specialties.map((item, i) => (
               <div key={i} className="badge badge-outline-primary mr-2">
@@ -110,8 +113,8 @@ function HospitalEdit({ match }) {
             ))}
           <p className="text-dark pt-5 pb-5">{data.hospital.description}</p>
 
-          {admin.getHospitalAdmin.length > 0 ?
-
+          <h4>Admin User lists</h4>
+          {admin.getHospitalAdmin.length > 0 ? (
             <Table thead={["", "First name", "Last name", "email"]}>
               {admin.getHospitalAdmin.map(user => (
                 <tr key={user.id}>
@@ -133,7 +136,11 @@ function HospitalEdit({ match }) {
                 </tr>
               ))}
             </Table>
-            : <p className="alert alert-warning">No admin added for this hospital yet</p>}
+          ) : (
+            <p className="alert alert-warning">
+              No admin added for this hospital yet
+            </p>
+          )}
         </div>
       </div>
 

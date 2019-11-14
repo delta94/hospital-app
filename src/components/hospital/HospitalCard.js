@@ -8,7 +8,7 @@ const HospitalCard = ({ title, location, img, onClick }) => (
         <h4 className="card-name">
           {title}
         </h4>
-        <p className="text-muted">{location}</p>
+        <p className="text-muted pb-0">{location}</p>
       </div>
     </div>
 );

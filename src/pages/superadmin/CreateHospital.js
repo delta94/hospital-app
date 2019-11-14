@@ -70,7 +70,7 @@ function CreateHospital({ history }) {
           <Loader />
         ) : (
           data.hospitals.map((hospital, i) => (
-            <div className="col-md-4 pb-4" key={i}>
+            <div className="col-md-4 pb-2" key={i}>
               <HospitalCard
                 title={hospital.name}
                 img={hospital.logo}

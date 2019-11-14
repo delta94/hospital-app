@@ -22,3 +22,9 @@ export const UPDATE_USER_MUTATION = gql`
   }
   ${userFragment}
 `;
+
+export const REMOVE_USER_MUTATION = gql`
+  mutation removeUser($id: ID!) {
+    removeUser(id: $id)
+  }
+`

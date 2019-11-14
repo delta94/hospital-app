@@ -1,14 +1,14 @@
 import {
   LOGIN_MUTATION,
   REGISTER_MUTATION,
-  UPDATE_USER_MUTATION
+  UPDATE_USER_MUTATION,
+  REMOVE_USER_MUTATION,
 } from './mutation/userMutation';
 
 import {
   HOSPITAL_MUTATION,
   HOSPITAL_UPDATE_MUTATION
 } from './mutation/hospitalMutation';
-
 
 import { UPLOAD_FILE } from './mutation/uploadFileMutation';
 
@@ -19,6 +19,7 @@ export {
   HOSPITAL_MUTATION,
   HOSPITAL_UPDATE_MUTATION,
   UPLOAD_FILE,
+  REMOVE_USER_MUTATION
 };
 
 

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import to from "await-to-js";
+import { toast } from 'react-toastify';
 
 import Loading from "../../components/ui/Loader";
 import Button from "../../components/ui/Button";
@@ -9,7 +10,7 @@ import CreateAdmin from "../../components/forms/CreateAdmin";
 import Table from "../../components/ui/Table";
 
 import { SINGLE_HOSPITAL, HOSPITAL_ADMIN } from "../../graphql/Query";
-import { REGISTER_MUTATION } from "../../graphql/Mutation";
+import { REGISTER_MUTATION, REMOVE_USER_MUTATION } from "../../graphql/Mutation";
 import { ModalContext } from "../../context/modalContext";
 
 const initialState = {
@@ -53,9 +54,20 @@ function HospitalEdit({ match }) {
     ]
   });
 
+  const [removeUser] = useMutation(REMOVE_USER_MUTATION, {
+    refetchQueries: [
+      {
+        query: HOSPITAL_ADMIN,
+        variables: { id: match.params.id }
+      }
+    ]
+  });
+
   const onChangeInput = e => {
     setAdminData({ ...adminData, [e.target.name]: e.target.value });
   };
+
+
 
   const onCreateAdmin = async e => {
     e.preventDefault();
@@ -76,7 +88,19 @@ function HospitalEdit({ match }) {
     }
 
     setAdminData(initialState);
+    toast.success('Admin created!');
     closeModal();
+  };
+
+  const removeAdmin = async (user) => {
+    let [err, response] = await to(
+      removeUser({
+        variables: { id: user.id }
+      })
+    );
+
+    if (err) return;
+    toast.success(response.data.removeUser);
   };
 
   if (loading || adminLoading) return <Loading />;
@@ -115,7 +139,7 @@ function HospitalEdit({ match }) {
 
           <h4>Admin User lists</h4>
           {admin.getHospitalAdmin.length > 0 ? (
-            <Table thead={["", "First name", "Last name", "email"]}>
+            <Table thead={["", "First name", "Last name", "email", "Action"]}>
               {admin.getHospitalAdmin.map(user => (
                 <tr key={user.id}>
                   <td className="py-1">
@@ -131,8 +155,11 @@ function HospitalEdit({ match }) {
                   </td>
                   <td>{user.firstName}</td>
                   <td>{user.lastName}</td>
-
                   <td>{user.email}</td>
+                  <td><i
+                    className="material-icons pointer ml-2 pointer"
+                    onClick={() => removeAdmin(user)}
+                  >delete</i></td>
                 </tr>
               ))}
             </Table>

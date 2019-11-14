@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 import Permission from '../pages/Permission';
 
 import { getItemFromLocal } from '../utils/localStorage';
@@ -22,4 +22,4 @@ const PrivateRoute = ({component: Component, history, ...rest}) => {
   );
 }
 
-export default PrivateRoute;
+export default withRouter(PrivateRoute);

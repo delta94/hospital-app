@@ -1,7 +1,7 @@
-import gql from "graphql-tag";;
+import gql from "graphql-tag";
 
-export const  doctorFragment = gql`
-  fragment doctor on Doctor {
+export const doctorFragment = gql`
+  fragment doctorf on Doctor {
     id
     firstName
     lastName
@@ -11,15 +11,17 @@ export const  doctorFragment = gql`
     hospital
     avatar
     phone
-    specialties,
-    availableDays,
+    specialties
+    availableDay
   }
 `;
 
 export const DOCTORS_QUERY = gql`
-   {
+  {
     doctors {
-      ...doctor
+      doctor {
+        ...doctorf
+      }
     }
   }
   ${doctorFragment}
@@ -28,7 +30,7 @@ export const DOCTORS_QUERY = gql`
 export const SINGLE_DOCTOR_QUERY = gql`
   query getSingleDoctor($id: ID!) {
     doctor(id: $id) {
-      ...doctor
+      ...doctorf
     }
   }
   ${doctorFragment}

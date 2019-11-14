@@ -21,9 +21,14 @@ const Home = () => {
     onCompleted: data => setHospitals(data.hospitals)
   });
 
-  const { loading: doctorLoading } = useQuery(DOCTORS_QUERY, {
+  const { loading: doctorLoading, error, data } = useQuery(DOCTORS_QUERY, {
     onCompleted: data => setDoctors(data.doctors)
   });
+
+  console.log(doctorLoading);
+
+  if (error) console.log(error.networkError.result.errors);
+  if (!doctorLoading) console.log(data);
 
   const onHospitalClick = hospital => console.log(hospital);
 
@@ -65,23 +70,23 @@ const Home = () => {
             text="Find Best doctor"
             sub="Hospital wise doctor lists also available"
           />
-        </div>
 
-        <WithLoader loading={doctorLoading}>
-          <Row>
-            {doctors.map(doctor => (
-              <Col take={4} key={doctor.id}>
-                <Card
-                  firstName={doctor.firstName}
-                  lastName={doctor.lastName}
-                  avatar={doctor.avatar}
-                  bio={doctor.bio}
-                  specialties={doctor.specialties}
-                />
-              </Col>
-            ))}
-          </Row>
-        </WithLoader>
+          <WithLoader loading={doctorLoading}>
+            <Row>
+              {doctors.map(({ doctor }) => (
+                <Col take={4} key={doctor.id}>
+                  <Card
+                    firstName={doctor.firstName}
+                    lastName={doctor.lastName}
+                    avatar={doctor.avatar}
+                    bio={doctor.bio}
+                    specialties={doctor.specialties}
+                  />
+                </Col>
+              ))}
+            </Row>
+          </WithLoader>
+        </div>
       </section>
     </>
   );

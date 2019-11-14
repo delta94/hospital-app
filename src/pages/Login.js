@@ -68,10 +68,10 @@ function Login({ history }) {
 
     const user = await getItemFromLocal("user");
     setLocalUserToContext(user);
-    if (user.role === "superadmin") return history.push("/");
+    if (user.role === "superadmin") return history.push("/dashboard");
 
     if (user.pending) return history.push("/pending");
-    history.push("/");
+    history.push("/dashboard");
   };
 
   return (

@@ -44715,6 +44715,8 @@ select.tt-hint {
   height: 500px;
   background-size: cover !important;
   padding: 100px 20px; }
+  .banner.small {
+    height: 250px; }
   .banner h1 {
     font-size: 50px;
     line-height: 70px; }

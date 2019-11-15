@@ -7,7 +7,7 @@ const LayoutPublic = ({bg, text, small, children}) => {
   return (
     <>
       <Header />
-      <Banner bg={bg} text={text} small={small} />
+      <Banner img={bg} text={text} small={small} />
       {children}
     </>
    );

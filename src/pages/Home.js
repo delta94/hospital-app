@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
 
-import Header from "../components/Header";
-import Banner from "../components/Banner";
+import LayoutPublic from '../hoc/LayoutPublic';
 import Title from "../components/Title";
 import WithLoader from "../components/ui/WithLoader";
 import HospitalCard from "../components/hospital/HospitalCard";
@@ -29,13 +28,10 @@ const Home = ({history}) => {
   const onHospitalClick = hospital => console.log(hospital);
 
   return (
-    <>
-      <Header home />
-      <Banner
-        img={bg}
-        text="Find Best Hospital/Doctor <br />and Make an appointment."
-      />
-
+    <LayoutPublic
+      bg={bg}
+      text="Find Best Hospital/Doctor <br />and Make an appointment."
+    >
       <section>
         <div className="container">
           <Title
@@ -102,7 +98,7 @@ const Home = ({history}) => {
           </WithLoader>
         </div>
       </section>
-    </>
+    </LayoutPublic>
   );
 };
 

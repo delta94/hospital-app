@@ -6,7 +6,7 @@ import logo from "../img/logo-white.svg";
 import { getItemFromLocal, clearStorage } from "../utils/localStorage";
 import { isAuthPage } from "../utils/authpage";
 
-function Header({ location, home }) {
+function Header({ location }) {
   const user = getItemFromLocal("user");
   const avatar = user !== null ? user.avatar : "";
 

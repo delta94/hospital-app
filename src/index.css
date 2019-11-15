@@ -44725,3 +44725,6 @@ section {
   padding: 80px 0; }
   section.grey {
     background: #e7eaed; }
+
+.switch-wrapper {
+  position: relative; }

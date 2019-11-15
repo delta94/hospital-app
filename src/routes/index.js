@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { AnimatedSwitch } from "react-router-transition";
+
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 
@@ -17,8 +19,7 @@ import Home from "../pages/Home";
 import Doctors from "../pages/Doctors";
 import Hospitals from "../pages/Hospitals";
 
-import ScrollToTop from '../components/ui/ScrollToTop';
-
+import ScrollToTop from "../components/ui/ScrollToTop";
 
 function RouterComponent() {
   return (

@@ -8,12 +8,13 @@ import WithLoader from "../components/ui/WithLoader";
 import HospitalCard from "../components/hospital/HospitalCard";
 import Row from "../components/ui/Row";
 import Col from "../components/ui/Col";
+import Button from "../components/ui/Button";
 import Card from "../components/card/Card";
 
 import bg from "../img/banner.jpg";
 import { HOSPITAL_QUERY, DOCTORS_QUERY } from "../graphql/Query";
 
-const Home = () => {
+const Home = ({history}) => {
   const [hospitals, setHospitals] = useState([]);
   const [doctors, setDoctors] = useState([]);
 
@@ -21,14 +22,9 @@ const Home = () => {
     onCompleted: data => setHospitals(data.hospitals)
   });
 
-  const { loading: doctorLoading, error, data } = useQuery(DOCTORS_QUERY, {
+  const { loading: doctorLoading } = useQuery(DOCTORS_QUERY, {
     onCompleted: data => setDoctors(data.doctors)
   });
-
-  console.log(doctorLoading);
-
-  if (error) console.log(error.networkError.result.errors);
-  if (!doctorLoading) console.log(data);
 
   const onHospitalClick = hospital => console.log(hospital);
 
@@ -59,6 +55,15 @@ const Home = () => {
                   />
                 </Col>
               ))}
+
+              <Col take={12}>
+                <div className="text-center pt-3">
+                  <Button
+                    text="View All"
+                    onClick={() => history.push("/hospitals")}
+                  />
+                </div>
+              </Col>
             </Row>
           </WithLoader>
         </div>
@@ -84,6 +89,15 @@ const Home = () => {
                   />
                 </Col>
               ))}
+
+              <Col take={12}>
+                <div className="text-center pt-3">
+                  <Button
+                    text="View All"
+                    onClick={() => history.push("/doctors")}
+                  />
+                </div>
+              </Col>
             </Row>
           </WithLoader>
         </div>

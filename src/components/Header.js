@@ -1,14 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import logo from "../img/logo-white.svg";
 
 import { getItemFromLocal, clearStorage } from "../utils/localStorage";
 import { isAuthPage } from "../utils/authpage";
+import { AvatarContext } from "../context/avatarContext";
 
 function Header({ location }) {
   const user = getItemFromLocal("user");
-  const avatar = user !== null ? user.avatar : "";
+  const { avatar } = useContext(AvatarContext);
 
   const handleLogOut = () => clearStorage(["user", "token"]);
 
@@ -47,16 +48,19 @@ function Header({ location }) {
                   </Link>
                 </li>
               )}
-              <li className="nav-item nav-user-icon">
-                <Link className="nav-link" to="/profile">
-                  <div
-                    className="avatar"
-                    style={{
-                      background: "url(" + avatar + ") center center no-repeat"
-                    }}
-                  ></div>
-                </Link>
-              </li>
+              {avatar !== "" && (
+                <li className="nav-item nav-user-icon">
+                  <Link className="nav-link" to="/profile">
+                    <div
+                      className="avatar"
+                      style={{
+                        background:
+                          "url("+ avatar + ") center center no-repeat"
+                      }}
+                    ></div>
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         </nav>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useQuery, useMutation } from "@apollo/react-hooks";
 import { omit, includes, filter } from "lodash";
 import to from "await-to-js";
@@ -15,9 +15,11 @@ import Loader from "../components/ui/Loader";
 import Input from "../components/forms/Input";
 import Textarea from "../components/forms/TextArea";
 import Button from "../components/ui/Button";
+import { AvatarContext } from "../context/avatarContext";
 
 const UserProfile = () => {
   const localuser = getItemFromLocal("user");
+  const { updateAvatarContext } = useContext(AvatarContext);
 
   const allDays = [
     "Monday",
@@ -90,6 +92,7 @@ const UserProfile = () => {
       }
     } = response;
     const filePath = config.staticUrl + filename;
+    updateAvatarContext(filePath);
 
     await to(
       updateUser({

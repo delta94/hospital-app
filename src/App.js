@@ -13,6 +13,7 @@ import { config } from './config';
 
 import ModalContextProvider from './context/modalContext';
 import AuthContextProvider from './context/authContext';
+import AvatarContextProvider from './context/avatarContext';
 import RouterComponent from "./routes";
 
 function App() {
@@ -42,15 +43,17 @@ function App() {
       <div className="App">
         <AuthContextProvider>
           <ModalContextProvider>
-            <RouterComponent />
+            <AvatarContextProvider>
+              <RouterComponent />
 
-            <ToastContainer
-              position="top-right"
-              autoClose={2000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-            />
+              <ToastContainer
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+              />
+            </AvatarContextProvider>
           </ModalContextProvider>
         </AuthContextProvider>
       </div>

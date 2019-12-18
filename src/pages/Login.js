@@ -13,6 +13,7 @@ import { setTokenToLocal, getItemFromLocal } from "../utils/localStorage";
 
 import bg from "../img/authbg.jpg";
 import { AuthContext } from "../context/authContext";
+import { AvatarContext } from '../context/avatarContext';
 
 function Login({ history }) {
   const [authData, setAuthData] = useState({
@@ -24,6 +25,7 @@ function Login({ history }) {
   });
 
   const { setLocalUserToContext } = useContext(AuthContext);
+  const { updateAvatarContext } = useContext(AvatarContext);
 
   const [authUser] = useMutation(LOGIN_MUTATION);
 
@@ -68,6 +70,7 @@ function Login({ history }) {
 
     const user = await getItemFromLocal("user");
     setLocalUserToContext(user);
+    updateAvatarContext(user.avatar);
     if (user.role === "superadmin") return history.push("/dashboard");
 
     if (user.pending) return history.push("/pending");
